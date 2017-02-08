@@ -13,3 +13,5 @@
 #
 # To provide both the URL and a branch, use:
 partner-contact https://github.com/OCA/partner-contact 8.0
+l10n-indonesia https://github.com/OCA/l10n-indonesia 8.0
+
