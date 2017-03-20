@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
-    "name": "IT Inventory for DJBC Reporting",
+    "name": "Indonesia - IT Inventory for DJBC Reporting",
     "version": "8.0.1.0.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
