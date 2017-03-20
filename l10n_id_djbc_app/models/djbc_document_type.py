@@ -5,7 +5,6 @@
 from openerp import models, fields
 
 
-
 class DocumentType(models.Model):
     _name = "l10n_id.djbc_document_type"
     _description = "Document Type"
@@ -23,4 +22,4 @@ class DocumentType(models.Model):
     )
     description = fields.Text(
         string="Description",
-        )
+    )

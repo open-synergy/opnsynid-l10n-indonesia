@@ -5,14 +5,13 @@
 from openerp import models, fields, api
 
 
-
 class StockMove(models.Model):
     _inherit = "stock.move"
 
     @api.depends(
         "quant_ids",
         "quant_ids.djbc_custom",
-        )
+    )
     @api.multi
     def _compute_djbc(self):
         for move in self:
@@ -26,10 +25,10 @@ class StockMove(models.Model):
         string="DJBC Custom Document",
         comodel_name="l10n_id.djbc_custom_document",
         ondelete="restrict",
-        )
+    )
     djbc_custom = fields.Boolean(
         string="DJBC Marking",
         compute="_compute_djbc",
         store=True,
         readonly=True,
-        )
+    )

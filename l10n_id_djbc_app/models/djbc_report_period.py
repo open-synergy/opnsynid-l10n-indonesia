@@ -7,7 +7,6 @@ from openerp.tools.translate import _
 from datetime import datetime
 
 
-
 class ReportPeriod(models.Model):
     _name = "l10n_id.djbc_report_period"
     _description = "DJBC Report Period"
@@ -35,7 +34,6 @@ class ReportPeriod(models.Model):
         if self.date_end <= self.date_start:
             strWarning = _("The start date must precede it's end date")
             raise models.ValidationError(strWarning)
-
 
     @api.multi
     def _next_period(self, step):

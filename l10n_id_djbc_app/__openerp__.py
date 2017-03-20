@@ -12,7 +12,7 @@
     "application": True,
     "depends": [
         "stock",
-        ],
+    ],
     "data": [
         "security/res_groups.xml",
         "security/ir.model.access.csv",

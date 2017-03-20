@@ -5,7 +5,6 @@
 from openerp import models, fields
 
 
-
 class CustomDocument(models.Model):
     _name = "l10n_id.djbc_custom_document"
     _description = "Custom Document"
@@ -23,4 +22,4 @@ class CustomDocument(models.Model):
         comodel_name="l10n_id.djbc_document_type",
         required=True,
         ondelete="restrict",
-        )
+    )
