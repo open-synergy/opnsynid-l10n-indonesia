@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_all_djbc_report_period,all user l10n_id.djbc_report_period,model_l10n_id_djbc_report_period,,1,0,0,0
+access_all_djbc_document_type,all user l10n_id.djbc_document_type,model_l10n_id_djbc_document_type,,1,0,0,0
+access_all_djbc_custom_document,all user l10n_id.djbc_custom_document,model_l10n_id_djbc_custom_document,,1,0,0,0
+access_user_djbc_report_period,all user l10n_id.djbc_report_period,model_l10n_id_djbc_report_period,l10n_id_djbc_app.group_djbc_user,1,1,1,1
+access_user_djbc_document_type,all user l10n_id.djbc_document_type,model_l10n_id_djbc_document_type,l10n_id_djbc_app.group_djbc_user,1,1,1,1
+access_user_djbc_custom_document,all user l10n_id.djbc_custom_document,model_l10n_id_djbc_custom_document,l10n_id_djbc_app.group_djbc_user,1,1,1,1

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="stock_quant_view_form" model="ir.ui.view">
+    <field name="name">Stock Quant Form</field>
+    <field name="model">stock.quant</field>
+    <field name="inherit_id" ref="stock.view_stock_quant_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='inventory_value']" position="after">
+            <field name="djbc_custom"/>                
+        </xpath>
+    </field>
+</record>
+
+<record id="stock_quant_view_tree" model="ir.ui.view">
+    <field name="name">Stock Quant Tree</field>
+    <field name="model">stock.quant</field>
+    <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='inventory_value']" position="after">
+            <field name="djbc_custom"/>                
+        </xpath>
+    </field>
+</record>
+
+<record id="stock_quant_action" model="ir.actions.act_window">
+    <field name="name">Stock Quants</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">stock.quant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('djbc_custom','=',True)]</field>
+</record>
+
+<menuitem
+    id="djbc_stock_quant_menu"
+    name="Stock Quants"
+    parent="djbc_traceability_menu"
+    groups="l10n_id_djbc_app.group_djbc_user"    
+    action="stock_quant_action"/>
+</data>
+</openerp>
