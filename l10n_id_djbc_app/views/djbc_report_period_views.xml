@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="djbc_report_period_view_tree" model="ir.ui.view">
+    <field name="name">Tree DJBC Report Period</field>
+    <field name="model">l10n_id.djbc_report_period</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+        </tree>
+    </field>
+</record>
+
+<record id="djbc_report_period_view_form" model="ir.ui.view">
+    <field name="name">Form DJBC Report Period</field>
+    <field name="model">l10n_id.djbc_report_period</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_main_1">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="djbc_report_period_action" model="ir.actions.act_window">
+    <field name="name">DJBC Report Period</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.djbc_report_period</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="djbc_report_period_menu"
+    name="Report Period"
+    parent="djbc_configuration_menu"
+    groups="l10n_id_djbc_app.group_djbc_manager"        
+    action="djbc_report_period_action"/>
+</data>
+</openerp>

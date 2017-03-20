@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<menuitem 
+    id="djbc_main_menu"
+    name="IT Inventory"
+    sequence="20"
+    />
+
+<menuitem 
+    id="djbc_custom_document_menu"
+    name="Custom Documents"
+    sequence="1"
+    parent="djbc_main_menu"
+    />
+
+<menuitem 
+    id="djbc_traceability_menu"
+    name="Traceability"
+    sequence="2"
+    parent="djbc_main_menu"
+    />
+
+<menuitem 
+    id="djbc_stock_move_menu"
+    name="Stock Moves"
+    sequence="1"
+    parent="djbc_traceability_menu"
+    />
+
+<menuitem 
+    id="djbc_quant_menu"
+    name="Quants"
+    sequence="1"
+    parent="djbc_traceability_menu"
+    />
+
+<menuitem 
+    id="djbc_reporting_menu"
+    name="Reporting"
+    sequence="99"
+    parent="djbc_main_menu"
+    />
+
+<menuitem 
+    id="djbc_configuration_menu"
+    name="Configuration"
+    sequence="100"
+    parent="djbc_main_menu"
+    />
+
+</data>
+</openerp>
