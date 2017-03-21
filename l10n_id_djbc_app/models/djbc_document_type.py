@@ -19,6 +19,7 @@ class DocumentType(models.Model):
     )
     active = fields.Boolean(
         string="Active",
+        default=True,
     )
     description = fields.Text(
         string="Description",
