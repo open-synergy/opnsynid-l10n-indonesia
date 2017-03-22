@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Indonesia - IT Inventory for DJBC Reporting",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -22,5 +22,6 @@
         "views/djbc_custom_document_views.xml",
         "views/stock_move_views.xml",
         "views/stock_quant_views.xml",
+        "views/product_template_views.xml",
     ],
 }

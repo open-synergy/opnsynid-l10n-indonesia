@@ -7,3 +7,4 @@ from . import djbc_document_type
 from . import djbc_custom_document
 from . import stock_move
 from . import stock_quant
+from . import product_template
