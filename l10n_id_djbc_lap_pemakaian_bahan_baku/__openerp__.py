@@ -11,6 +11,7 @@
     "installable": True,
     "depends": [
         "stock",
+        "l10n_id_djbc_app",
     ],
     "data": [
         "security/ir.model.access.csv",
