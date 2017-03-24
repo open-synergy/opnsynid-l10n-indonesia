@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="djbc_lap_mutasi_hasil_produksi_action" model="ir.actions.act_window">
+    <field name="name">Lap. Mutasi Hasil Produksi</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+    <field name="domain">[('djbc_fg', '=', True)]</field>
+    <field name="context">{'hide_flag': True}</field>
+</record>
+
+<menuitem
+    id="djbc_lap_mutasi_hasil_produksi_menu"
+    name="Lap. Mutasi Hasil Produksi"
+    parent="l10n_id_djbc_app.djbc_reporting_menu"
+    groups="l10n_id_djbc_app.group_djbc_user"
+    action="djbc_lap_mutasi_hasil_produksi_action"/>
+</data>
+</openerp>
