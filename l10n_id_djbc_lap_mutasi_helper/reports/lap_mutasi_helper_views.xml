@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="djbc_lap_mutasi_helper_view_tree" model="ir.ui.view">
+    <field name="name">tree l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="model">l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="report_period_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="product_id"/>
+            <field name="uom_id"/>
+            <field name="djbc_rm"/>
+            <field name="djbc_fg"/>
+            <field name="djbc_wip"/>
+            <field name="beginning_balance_qty"/>
+            <field name="stock_in_qty"/>
+            <field name="stock_out_qty"/>
+            <field name="ending_balance_qty"/>
+            <field name="warehouse_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="djbc_lap_mutasi_helper_action" model="ir.actions.act_window">
+    <field name="name">Lap. Mutasi Helper</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+</record>
+
+<menuitem
+    id="djbc_lap_mutasi_helper_menu"
+    name="Lap. Mutasi Helper"
+    parent="l10n_id_djbc_app.djbc_reporting_menu"
+    groups="base.group_system"
+    action="djbc_lap_mutasi_helper_action"/>
+</data>
+</openerp>
