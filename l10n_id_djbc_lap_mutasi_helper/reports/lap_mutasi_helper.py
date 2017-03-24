@@ -23,97 +23,99 @@ class LapMutasiHelper(models.Model):
                 ("djbc_custom", "=", True),
                 ("product_id.id", "=", helper.product_id.id),
                 ("state", "=", "done"),
-                ]
+            ]
             criteria1 = criteria + [
-                ("location_dest_id.id", "child_of" ,helper.warehouse_id.view_location_id.id),
+                ("location_dest_id.id", "child_of",
+                 helper.warehouse_id.view_location_id.id),
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", "<", date_start),
-                ]
+            ]
             for move in obj_move.search(criteria1):
                 helper.beginning_balance_qty += move.product_qty
             criteria2 = criteria + [
-                ("location_id.id", "child_of" ,helper.warehouse_id.view_location_id.id),
+                ("location_id.id", "child_of",
+                 helper.warehouse_id.view_location_id.id),
                 ("location_id.usage", "=", "internal"),
                 ("date", "<", date_start),
-                ]
+            ]
             for move in obj_move.search(criteria2):
                 helper.beginning_balance_qty -= move.product_qty
             criteria3 = criteria + [
-                ("location_dest_id.id", "child_of" ,helper.warehouse_id.view_location_id.id),
+                ("location_dest_id.id", "child_of",
+                 helper.warehouse_id.view_location_id.id),
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
-                ]
+            ]
             for move in obj_move.search(criteria3):
                 helper.stock_in_qty += move.product_qty
             criteria4 = criteria + [
-                ("location_id.id", "child_of" ,helper.warehouse_id.view_location_id.id),
+                ("location_id.id", "child_of",
+                 helper.warehouse_id.view_location_id.id),
                 ("location_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
-                ]
+            ]
             for move in obj_move.search(criteria4):
                 helper.stock_in_qty -= move.product_qty
             helper.ending_balance_qty = helper.beginning_balance_qty + \
                 helper.stock_in_qty - \
                 helper.stock_out_qty
 
-
     report_period_id = fields.Many2one(
         string="Reporting Period",
         comodel_name="l10n_id.djbc_report_period",
         readonly=True,
-        )
+    )
     date_start = fields.Date(
         string="Date Start",
         readonly=True,
-        )
+    )
     date_end = fields.Date(
         string="Date End",
         readonly=True,
-        )
+    )
     product_id = fields.Many2one(
         string="Product",
         comodel_name="product.product",
         readonly=True,
-        )
+    )
     uom_id = fields.Many2one(
         string="UoM",
         comodel_name="product.uom",
         readonly=True,
-        )
+    )
     djbc_rm = fields.Boolean(
         string="DJBC RM",
-        )
+    )
     djbc_fg = fields.Boolean(
         string="DJBC FG",
-        )
+    )
     djbc_wip = fields.Boolean(
         string="DJBC WIP",
-        )
+    )
     beginning_balance_qty = fields.Float(
         string="Beginning Balance Qty.",
         readonly=True,
         compute="_compute_all",
-        )
+    )
     stock_in_qty = fields.Float(
         string="Stock In Qty.",
         readonly=True,
-        )
+    )
     stock_out_qty = fields.Float(
         string="Stock Out Qty.",
         readonly=True,
-        )
+    )
     ending_balance_qty = fields.Float(
         string="Ending Balance Qty.",
         readonly=True,
-        )
+    )
     warehouse_id = fields.Many2one(
         string="Warehouse",
         comodel_name="stock.warehouse",
         readonly=True,
     )
-
 
     def _select(self):
         select_str = """
@@ -159,11 +161,10 @@ class LapMutasiHelper(models.Model):
     def _where(self):
         where_str = """
                 (
-                e.djbc_rm = TRUE OR 
-                e.djbc_fg = TRUE OR 
+                e.djbc_rm = TRUE OR
+                e.djbc_fg = TRUE OR
                 e.djbc_wip = TRUE
                 )
-
         """
         return where_str
 
