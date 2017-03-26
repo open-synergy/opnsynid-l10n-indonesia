@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_all_djbc_lap_penyelesaian_scrap,all user l10n_id.djbc_lap_penyelesaian_scrap,model_l10n_id_djbc_lap_penyelesaian_scrap,,1,0,0,0
