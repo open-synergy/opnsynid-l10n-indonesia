@@ -59,7 +59,7 @@ class LapMutasiHelper(models.Model):
             for move in obj_move.search(criteria4):
                 helper.stock_out_qty -= move.product_qty
             helper.ending_balance_qty = helper.beginning_balance_qty + \
-                helper.stock_in_qty - \
+                helper.stock_in_qty + \
                 helper.stock_out_qty
 
     report_period_id = fields.Many2one(
