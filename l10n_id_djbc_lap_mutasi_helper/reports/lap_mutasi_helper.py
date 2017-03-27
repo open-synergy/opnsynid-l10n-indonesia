@@ -29,6 +29,7 @@ class LapMutasiHelper(models.Model):
                  helper.warehouse_id.view_location_id.id),
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", "<", date_start),
+                ("location_id.usage", "!=", "internal"),
             ]
             for move in obj_move.search(criteria1):
                 helper.beginning_balance_qty += move.product_qty
@@ -37,6 +38,7 @@ class LapMutasiHelper(models.Model):
                  helper.warehouse_id.view_location_id.id),
                 ("location_id.usage", "=", "internal"),
                 ("date", "<", date_start),
+                ("location_dest_id.usage", "!=", "internal"),
             ]
             for move in obj_move.search(criteria2):
                 helper.beginning_balance_qty -= move.product_qty
@@ -46,6 +48,7 @@ class LapMutasiHelper(models.Model):
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
+                ("location_id.usage", "!=", "internal"),
             ]
             for move in obj_move.search(criteria3):
                 helper.stock_in_qty += move.product_qty
@@ -55,6 +58,7 @@ class LapMutasiHelper(models.Model):
                 ("location_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
+                ("location_dest_id.usage", "!=", "internal"),
             ]
             for move in obj_move.search(criteria4):
                 helper.stock_out_qty -= move.product_qty
