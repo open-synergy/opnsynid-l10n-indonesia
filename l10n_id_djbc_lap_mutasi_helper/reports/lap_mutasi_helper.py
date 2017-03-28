@@ -11,6 +11,7 @@ class LapMutasiHelper(models.Model):
     _name = "l10n_id.djbc_lap_mutasi_helper"
     _description = "DJBC Lap. Mutasi Helper"
     _auto = False
+    _order = "date_start asc"
 
     @api.depends(
         "report_period_id",
@@ -25,8 +26,8 @@ class LapMutasiHelper(models.Model):
             helper.stock_in_qty = 0.0
             helper.stock_out_qty = 0.0
             helper.ending_balance_qty = 0.0
-            date_start = helper.date_start + " 00:00:00"
-            date_end = helper.date_end + " 23:59:00"
+            date_start = helper.report_period_id.date_start + " 00:00:00"
+            date_end = helper.report_period_id.date_end + " 23:59:00"
             criteria = [
                 ("djbc_custom", "=", True),
                 ("product_id.id", "=", helper.product_id.id),
@@ -114,14 +115,17 @@ class LapMutasiHelper(models.Model):
     stock_in_qty = fields.Float(
         string="Stock In Qty.",
         readonly=True,
+        compute="_compute_all",
     )
     stock_out_qty = fields.Float(
         string="Stock Out Qty.",
         readonly=True,
+        compute="_compute_all",
     )
     ending_balance_qty = fields.Float(
         string="Ending Balance Qty.",
         readonly=True,
+        compute="_compute_all",
     )
     warehouse_id = fields.Many2one(
         string="Warehouse",
@@ -187,6 +191,7 @@ class LapMutasiHelper(models.Model):
             FROM ( %s )
             WHERE
             %s
+            ORDER BY b.date_start DESC
             )""" % (self._table, self._select(), self._from(), self._where()))
 
     @api.model
