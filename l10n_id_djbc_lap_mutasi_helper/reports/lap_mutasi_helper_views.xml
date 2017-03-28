@@ -26,6 +26,28 @@
     </field>
 </record>
 
+<record id="djbc_lap_mutasi_helper_view_search" model="ir.ui.view">
+    <field name="name">search l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="model">l10n_id.djbc_lap_mutasi_helper</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="report_period_id"/>
+            <field name="product_id"/>
+            <field name="warehouse_id"/>
+            <group name="filter_warehouse" string="Warehouse">
+            </group>
+            <group name="filter_period" string="Reporting Period">
+            </group>
+            <group name="filter_rm" string="R.M" invisible="context.get('hide_rm', False)">
+            </group>
+            <group name="filter_wip" string="W.I.P" invisible="context.get('hide_wip', False)">
+            </group>
+            <group name="filter_fg" string="F.G" invisible="context.get('hide_fg', False)">
+            </group>
+        </search>
+    </field>
+</record>
+
 <record id="djbc_lap_mutasi_helper_action" model="ir.actions.act_window">
     <field name="name">Lap. Mutasi Helper</field>
     <field name="type">ir.actions.act_window</field>
@@ -33,6 +55,7 @@
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
     <field name="context">{'hide_flag': False}</field>
+    <field name="search_view_id" ref="djbc_lap_mutasi_helper_view_search"/>
 </record>
 
 <menuitem

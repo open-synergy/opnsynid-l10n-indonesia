@@ -4,6 +4,7 @@
 
 from openerp import models, fields, api
 from openerp import tools
+from lxml import etree
 
 
 class LapMutasiHelper(models.Model):
@@ -11,12 +12,19 @@ class LapMutasiHelper(models.Model):
     _description = "DJBC Lap. Mutasi Helper"
     _auto = False
 
+    @api.depends(
+        "report_period_id",
+        "date_start", "date_end",
+        "product_id", "warehouse_id",
+        )
     @api.multi
     def _compute_all(self):
         obj_move = self.env["stock.move"]
         for helper in self:
             helper.beginning_balance_qty = 0.0
             helper.stock_in_qty = 0.0
+            helper.stock_out_qty = 0.0
+            helper.ending_balance_qty = 0.0
             date_start = helper.date_start + " 00:00:00"
             date_end = helper.date_end + " 23:59:00"
             criteria = [
@@ -61,9 +69,9 @@ class LapMutasiHelper(models.Model):
                 ("location_dest_id.usage", "!=", "internal"),
             ]
             for move in obj_move.search(criteria4):
-                helper.stock_out_qty -= move.product_qty
+                helper.stock_out_qty += move.product_qty
             helper.ending_balance_qty = helper.beginning_balance_qty + \
-                helper.stock_in_qty + \
+                helper.stock_in_qty - \
                 helper.stock_out_qty
 
     report_period_id = fields.Many2one(
@@ -180,3 +188,96 @@ class LapMutasiHelper(models.Model):
             WHERE
             %s
             )""" % (self._table, self._select(), self._from(), self._where()))
+
+    @api.model
+    def fields_view_get(self, view_id=None,
+                        view_type=False, toolbar=False,
+                        submenu=False):
+        res = super(LapMutasiHelper, self).fields_view_get(
+            view_id=view_id, view_type=view_type,
+            toolbar=toolbar, submenu=submenu)
+
+        doc = etree.XML(res["arch"])
+        obj_product = self.env["product.product"]
+        obj_period = self.env["l10n_id.djbc_report_period"]
+        obj_warehouse = self.env["stock.warehouse"]
+        rm_filter = doc.xpath("//group[@name='filter_rm']")
+        wip_filter = doc.xpath("//group[@name='filter_wip']")
+        fg_filter = doc.xpath("//group[@name='filter_fg']")
+        wh_filter = doc.xpath("//group[@name='filter_warehouse']")
+        period_filter = doc.xpath("//group[@name='filter_period']")
+
+
+        if view_type == "search" and wh_filter:
+            for warehouse in obj_warehouse.search([]):
+                filter_name = "filter_wh_%s" % (str(warehouse.id))
+                filter_string = "%s" % (str(warehouse.name))
+                fdomain = "[('warehouse_id.id', '=', %s)]" \
+                    % (str(warehouse.id))
+                xelement = etree.Element(
+                    "filter", {"name": filter_name,
+                               "string": filter_string,
+                               "domain": fdomain,
+                               })
+                wh_filter[0].insert(0, xelement)
+        if view_type == "search" and period_filter:
+            for period in obj_period.search([]):
+                filter_name = "filter_period_%s" % (str(period.id))
+                filter_string = "%s" % (str(period.name))
+                fdomain = "[('report_period_id.id', '=', %s)]" \
+                    % (str(period.id))
+                xelement = etree.Element(
+                    "filter", {"name": filter_name,
+                               "string": filter_string,
+                               "domain": fdomain,
+                               })
+                period_filter[0].insert(0, xelement)
+        if view_type == "search" and rm_filter:
+            criteria = [
+                ("djbc_rm", "=", True),
+            ]
+            for product in obj_product.search(criteria):
+                filter_name = "filter_rm_%s" % (str(product.id))
+                filter_string = "%s" % (str(product.name))
+                fdomain = "[('product_id.id', '=', %s)]" \
+                    % (str(product.id))
+                xelement = etree.Element(
+                    "filter", {"name": filter_name,
+                               "string": filter_string,
+                               "domain": fdomain,
+                               })
+                rm_filter[0].insert(0, xelement)
+        if view_type == "search" and wip_filter:
+            criteria = [
+                ("djbc_wip", "=", True),
+            ]
+            for product in obj_product.search(criteria):
+                filter_name = "filter_wip_%s" % (str(product.id))
+                filter_string = "%s" % (str(product.name))
+                fdomain = "[('product_id.id', '=', %s)]" \
+                    % (str(product.id))
+                xelement = etree.Element(
+                    "filter", {"name": filter_name,
+                               "string": filter_string,
+                               "domain": fdomain,
+                               })
+                wip_filter[0].insert(0, xelement)
+        if view_type == "search" and fg_filter:
+            criteria = [
+                ("djbc_fg", "=", True),
+            ]
+            for product in obj_product.search(criteria):
+                filter_name = "filter_fg_%s" % (str(product.id))
+                filter_string = "%s" % (str(product.name))
+                fdomain = "[('product_id.id', '=', %s)]" \
+                    % (str(product.id))
+                xelement = etree.Element(
+                    "filter", {"name": filter_name,
+                               "string": filter_string,
+                               "domain": fdomain,
+                               })
+                fg_filter[0].insert(0, xelement)
+
+        res["arch"] = etree.tostring(doc)
+
+        return res
