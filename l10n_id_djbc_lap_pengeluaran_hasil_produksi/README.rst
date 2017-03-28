@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===========================================================
-Indonesia - Laporan Pemasukan Bahan Baku for DJBC Reporting
-===========================================================
+=================================================================
+Indonesia - Laporan Pengeluaran Hasil Produksi for DJBC Reporting
+=================================================================
 
-Laporan Pemasukan Bahan Baku for Direktorat Jendral Bea & Cukai IT Inventory
+Laporan Pengeluaran Hasil Produksi for Direktorat Jendral Bea & Cukai IT Inventory
 
 
 Installation
@@ -18,7 +18,7 @@ To install this module, you need to:
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list
 4.  Go to menu *Setting -> Modules -> Local Modules*
-5.  Search For *Indonesia - Lap. Pemasukan Bahan Baku for DJBC Reporting*
+5.  Search For *Indonesia - Lap. Pengeluaran Hasil Produksi for DJBC Reporting*
 6.  Install the module
 
 Bug Tracker
