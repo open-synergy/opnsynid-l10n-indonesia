@@ -16,7 +16,7 @@ class LapMutasiHelper(models.Model):
         "report_period_id",
         "date_start", "date_end",
         "product_id", "warehouse_id",
-        )
+    )
     @api.multi
     def _compute_all(self):
         obj_move = self.env["stock.move"]
@@ -206,7 +206,6 @@ class LapMutasiHelper(models.Model):
         fg_filter = doc.xpath("//group[@name='filter_fg']")
         wh_filter = doc.xpath("//group[@name='filter_warehouse']")
         period_filter = doc.xpath("//group[@name='filter_period']")
-
 
         if view_type == "search" and wh_filter:
             for warehouse in obj_warehouse.search([]):
