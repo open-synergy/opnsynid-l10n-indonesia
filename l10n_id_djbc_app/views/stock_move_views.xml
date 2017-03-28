@@ -51,6 +51,7 @@
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
     <field name="domain">[('djbc_custom','=',True)]</field>
+    <field name="view_id" ref="stock.view_move_tree"/>
 </record>
 
 <menuitem
