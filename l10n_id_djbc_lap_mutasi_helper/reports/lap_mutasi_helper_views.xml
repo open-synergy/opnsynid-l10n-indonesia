@@ -8,7 +8,7 @@
     <field name="name">tree l10n_id.djbc_lap_mutasi_helper</field>
     <field name="model">l10n_id.djbc_lap_mutasi_helper</field>
     <field name="arch" type="xml">
-        <tree>
+        <tree create="false" edit="false" delete="false">
             <field name="report_period_id"/>
             <field name="date_start"/>
             <field name="date_end"/>
