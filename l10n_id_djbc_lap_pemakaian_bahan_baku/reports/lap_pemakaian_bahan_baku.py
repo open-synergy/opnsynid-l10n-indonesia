@@ -89,7 +89,8 @@ class LapPemakaianBahanBaku(models.Model):
         where_str = """
                 a.state = 'done' AND
                 a.djbc_custom = TRUE AND
-                d.djbc_lap_pemakaian_bahan_baku = TRUE
+                d.djbc_lap_pemakaian_bahan_baku = TRUE AND
+                c.djbc_rm = TRUE
         """
         return where_str
 
