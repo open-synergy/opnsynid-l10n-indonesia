@@ -144,7 +144,8 @@ class LapPemasukanBahanBaku(models.Model):
     def _where(self):
         where_str = """
                 a.state = 'done' AND
-                h.usage = 'supplier'
+                h.usage = 'supplier' AND
+                d.djbc_rm = TRUE
         """
         return where_str
 
