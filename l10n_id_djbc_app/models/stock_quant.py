@@ -22,3 +22,4 @@ class StockQuant(models.Model):
             force_location_from, force_location_to)
         if move.djbc_custom_document_id:
             quant.write({"djbc_custom": True})
+        return quant
