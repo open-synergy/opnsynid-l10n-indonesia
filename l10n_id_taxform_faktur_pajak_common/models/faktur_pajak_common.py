@@ -121,7 +121,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def _compute_jumlah_dpp(self):
         for fp in self:
-            fp.enofa_jumlah_dpp = fp.base
+            fp.enofa_jumlah_dpp = int(fp.base_company_currency)
 
     @api.depends(
         "ppn_amount",
@@ -129,7 +129,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def _compute_jumlah_ppn(self):
         for fp in self:
-            fp.enofa_jumlah_ppn = fp.ppn_amount
+            fp.enofa_jumlah_ppn = int(fp.ppn_amount)
 
     @api.depends(
         "ppnbm_amount",
@@ -137,7 +137,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def _compute_jumlah_ppnbm(self):
         for fp in self:
-            fp.enofa_jumlah_ppnbm = fp.ppnbm_amount
+            fp.enofa_jumlah_ppnbm = int(fp.ppnbm_amount)
 
     @api.depends(
         "date",
