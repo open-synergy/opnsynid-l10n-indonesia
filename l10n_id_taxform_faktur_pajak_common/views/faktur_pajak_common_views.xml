@@ -176,10 +176,14 @@
                             <field name="fp_direction"/>
                             <field name="allowed_transaction_type_ids" widget="many2many_tags"/>
                             <field name="allowed_additional_flag_ids" widget="many2many_tags"/>
+                            <field name="allowed_dpp_tax_code_ids" widget="many2many_tags"/>
+                            <field name="allowed_ppn_tax_code_ids" widget="many2many_tags"/>
+                            <field name="allowed_ppnbm_tax_code_ids" widget="many2many_tags"/>
                             <field name="allow_multiple_reference"/>
                             <field name="allow_reverse"/>
                             <field name="allow_substitute"/>
                             <field name="allow_creditable"/>
+                            <field name="all_reference_ids" widget="many2many_tags"/>
                         </group>
                     </page>
                 </notebook>

@@ -95,9 +95,11 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def _compute_tanggal_dokumen(self):
         for fp in self:
-            fp.enofa_tanggal_dokumen = datetime.strptime(
-                fp.date, "%Y-%m-%d").strftime(
-                    "%d/%m/%Y")
+            fp.enofa_tanggal_dokumen = "-"
+            if fp.date:
+                fp.enofa_tanggal_dokumen = datetime.strptime(
+                    fp.date, "%Y-%m-%d").strftime(
+                        "%d/%m/%Y")
 
     @api.depends(
         "taxform_period_id",
@@ -170,6 +172,30 @@ class FakturPajakCommon(models.AbstractModel):
 
     @api.depends(
         "type_id",
+        "transaction_type_id",
+    )
+    def _compute_tax_code(self):
+        obj_dpp_code = self.env["l10n_id.faktur_pajak_allowed_dpp_tax_code"]
+        obj_ppn_code = self.env["l10n_id.faktur_pajak_allowed_ppn_tax_code"]
+        obj_ppnbm_code = self.env[
+            "l10n_id.faktur_pajak_allowed_ppnbm_tax_code"]
+        for fp in self:
+            criteria = [
+                ("type_id", "=", fp.type_id.id),
+                ("transaction_type_id", "=", fp.transaction_type_id.id),
+            ]
+            dpp_codes = obj_dpp_code.search(criteria)
+            for dpp_code in dpp_codes:
+                fp.allowed_dpp_tax_code_ids += dpp_code.tax_code_ids
+            ppn_codes = obj_ppn_code.search(criteria)
+            for ppn_code in ppn_codes:
+                fp.allowed_ppn_tax_code_ids += ppn_code.tax_code_ids
+            ppnbm_codes = obj_ppnbm_code.search(criteria)
+            for ppnbm_code in ppnbm_codes:
+                fp.allowed_ppnbm_tax_code_ids += ppnbm_code.tax_code_ids
+
+    @api.depends(
+        "type_id",
     )
     def _compute_additional_flag(self):
         for fp in self:
@@ -191,6 +217,20 @@ class FakturPajakCommon(models.AbstractModel):
     def _compute_allow_multiple_reference(self):
         for fp in self:
             fp.allow_multiple_reference = fp.type_id.allow_multiple_reference
+
+    @api.depends(
+        "reference_id",
+        "reference_ids",
+        "allow_multiple_reference",
+    )
+    @api.multi
+    def _compute_all_reference(self):
+        for fp in self:
+            if fp.type_id.allow_multiple_reference:
+                fp.all_reference_ids = fp.reference_ids.ids
+            else:
+                fp.all_reference_ids = fp.reference_id and \
+                    [fp.reference_id.id] or False
 
     @api.depends(
         "type_id",
@@ -240,12 +280,17 @@ class FakturPajakCommon(models.AbstractModel):
         states={
             "draft": [("readonly", False)]},
     )
+
+    @api.model
+    def _default_company_currency(self):
+        return self.env.user.company_id.currency_id.id
+
     company_currency_id = fields.Many2one(
         string="Company Currency",
         comodel_name="res.currency",
-        store=True,
         required=True,
         readonly=True,
+        default=lambda self: self._default_company_currency(),
         states={
             "draft": [("readonly", False)]},
     )
@@ -428,23 +473,48 @@ class FakturPajakCommon(models.AbstractModel):
     )
     reference_id = fields.Many2one(
         string="Doc. Reference",
-        comodel_name="l10n_id.faktur_pajak_common",
+        comodel_name="account.move.line",
         readonly=True,
         states={
             "draft": [("readonly", False)]},
     )
     reference_ids = fields.Many2many(
         string="Doc. References",
-        comodel_name="l10n_id.faktur_pajak_common",
+        comodel_name="account.move.line",
         relation="rel_fp_dummy",
         readonly=True,
         states={
             "draft": [("readonly", False)]},
     )
+    all_reference_ids = fields.Many2many(
+        string="Doc. References",
+        comodel_name="account.move",
+        relation="rel_fp_all_dummy",
+        compute="_compute_all_reference",
+        store=True,
+    )
     allowed_transaction_type_ids = fields.Many2many(
         string="Allowed Transaction Type",
         comodel_name="l10n_id.faktur_pajak_transaction_type",
         compute="_compute_transaction_type",
+        store=False,
+    )
+    allowed_dpp_tax_code_ids = fields.Many2many(
+        string="Allowed DPP Tax Codes",
+        comodel_name="account.tax.code",
+        compute="_compute_tax_code",
+        store=False,
+    )
+    allowed_ppn_tax_code_ids = fields.Many2many(
+        string="Allowed PPn Tax Codes",
+        comodel_name="account.tax.code",
+        compute="_compute_tax_code",
+        store=False,
+    )
+    allowed_ppnbm_tax_code_ids = fields.Many2many(
+        string="Allowed PPnBm Tax Codes",
+        comodel_name="account.tax.code",
+        compute="_compute_tax_code",
         store=False,
     )
     allowed_additional_flag_ids = fields.Many2many(
@@ -651,6 +721,44 @@ class FakturPajakCommon(models.AbstractModel):
                 self.seller_branch_id = self.seller_partner_id
         else:
             self.seller_branch_id = False
+
+    @api.onchange(
+        "reference_ids",
+        "reference_id",
+    )
+    def onchange_all_reference(self):
+        obj_line = self.env["account.move.line"]
+        if self.fp_direction == "masukan":
+            partner_id = self.seller_partner_id and \
+                self.seller_partner_id.id or 0
+        else:
+            partner_id = self.buyer_partner_id and \
+                self.seller_buyer_id.id or 0
+        criteria = [
+            ("move_id", "in", self.all_reference_ids.ids),
+            ("tax_code_id", "in", self.allowed_dpp_tax_code_ids.ids),
+            ("partner_id", "=", partner_id),
+        ]
+        for line in obj_line.search(criteria):
+            if line.currency_id:
+                self.base += line.amount_currency
+            else:
+                self.base += line.tax_amount
+            self.base_company_currency += line.tax_amount
+        criteria = [
+            ("move_id", "in", self.all_reference_ids.ids),
+            ("tax_code_id", "in", self.allowed_ppn_tax_code_ids.ids),
+            ("partner_id", "=", partner_id),
+        ]
+        for line in obj_line.search(criteria):
+            self.ppn_amount += line.tax_amount
+        criteria = [
+            ("move_id", "in", self.all_reference_ids.ids),
+            ("tax_code_id", "in", self.allowed_ppnbm_tax_code_ids.ids),
+            ("partner_id", "=", partner_id),
+        ]
+        for line in obj_line.search(criteria):
+            self.ppnbm_amount += line.tax_amount
 
     @api.onchange("buyer_partner_id")
     def onchange_buyer(self):
