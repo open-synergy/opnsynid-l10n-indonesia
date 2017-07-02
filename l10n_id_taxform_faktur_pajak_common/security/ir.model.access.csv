@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fp_type_all,Faktur Pajak Type - All User,model_l10n_id_faktur_pajak_type,base.group_user,1,0,0,0
+access_fp_type_taxform_manager,Faktur Pajak Type - Taxform Manager,model_l10n_id_faktur_pajak_type,l10n_id_taxform.manager_group_taxform,1,1,0,0
+access_fp_transaction_type_all,Faktur Pajak Transaction Type - All User,model_l10n_id_faktur_pajak_transaction_type,base.group_user,1,0,0,0
+access_fp_transaction_type_taxform_manager,Faktur Pajak Transaction Type - Taxform Manager,model_l10n_id_faktur_pajak_transaction_type,l10n_id_taxform.manager_group_taxform,1,1,1,1
+access_fp_additional_flag_all,Faktur Pajak Additional Flag - All User,model_l10n_id_faktur_pajak_additional_flag,base.group_user,1,0,0,0
+access_fp_additional_flag_taxform_manager,Faktur Pajak Additional Flag - Taxform Manager,model_l10n_id_faktur_pajak_additional_flag,l10n_id_taxform.manager_group_taxform,1,1,1,1
+access_fp_allowed_dpp_all,Allowed DPP Tax Code - All User,model_l10n_id_faktur_pajak_allowed_dpp_tax_code,base.group_user,1,0,0,0
+access_fp_allowed_dpp_taxform_manager,Allowed DPP Tax Code - Taxform Manager,model_l10n_id_faktur_pajak_allowed_dpp_tax_code,l10n_id_taxform.manager_group_taxform,1,1,1,1
+access_fp_allowed_ppn_all,Allowed PPn Tax Code - All User,model_l10n_id_faktur_pajak_allowed_ppn_tax_code,base.group_user,1,0,0,0
+access_fp_allowed_ppn_taxform_manager,Allowed PPn Tax Code - Taxform Manager,model_l10n_id_faktur_pajak_allowed_ppn_tax_code,l10n_id_taxform.manager_group_taxform,1,1,1,1
+access_fp_allowed_ppnbm_all,Allowed PPnBm Tax Code - All User,model_l10n_id_faktur_pajak_allowed_ppnbm_tax_code,base.group_user,1,0,0,0
+access_fp_allowed_ppnbm_taxform_manager,Allowed PPnBm Tax Code - Taxform Manager,model_l10n_id_faktur_pajak_allowed_ppnbm_tax_code,l10n_id_taxform.manager_group_taxform,1,1,1,1
