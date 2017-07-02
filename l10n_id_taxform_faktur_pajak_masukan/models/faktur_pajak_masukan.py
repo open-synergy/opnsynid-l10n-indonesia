@@ -27,6 +27,15 @@ class FakturPajakMasukan(models.Model):
         column1="fp_masukan_id",
         column2="move_id",
         )
+    all_reference_ids = fields.Many2many(
+        string="Doc. References",
+        comodel_name="account.move",
+        relation="rel_fp_masukan_2_all_move",
+        compute="_compute_all_reference",
+        column1="fp_masukan_id",
+        column2="move_id",
+        store=True,
+    )
     reverse_id = fields.Many2one(
         string="Reverse From",
         comodel_name="l10n_id.faktur_pajak_masukan",
