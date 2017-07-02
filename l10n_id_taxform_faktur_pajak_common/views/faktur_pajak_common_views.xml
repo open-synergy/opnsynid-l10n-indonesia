@@ -159,6 +159,7 @@
                             <field name="enofa_jenis_transaksi"/>
                             <field name="enofa_fg_pengganti"/>
                             <field name="enofa_nomor_dokumen"/>
+                            <field name="enofa_tanggal_dokumen"/>
                             <field name="enofa_masa_pajak"/>
                             <field name="enofa_tahun_pajak"/>
                             <field name="enofa_npwp"/>
