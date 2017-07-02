@@ -118,7 +118,6 @@
                             domain="[('id','child_of',buyer_partner_id),('is_company','=',True)]"/>
                     </group>
                     <group name="group_main_3" string="Doc. Reference(s)" colspan="1" col="2">
-                        <field name="allow_multiple_reference"/>
                         <field name="reference_id"
                             attrs="{'invisible':[('allow_multiple_reference','=',True)]}"/>
                         <field name="reference_ids"
@@ -159,6 +158,7 @@
                             <field name="enofa_jenis_transaksi"/>
                             <field name="enofa_fg_pengganti"/>
                             <field name="enofa_nomor_dokumen"/>
+                            <field name="enofa_tanggal_dokumen"/>
                             <field name="enofa_masa_pajak"/>
                             <field name="enofa_tahun_pajak"/>
                             <field name="enofa_npwp"/>
@@ -176,6 +176,7 @@
                             <field name="fp_direction"/>
                             <field name="allowed_transaction_type_ids" widget="many2many_tags"/>
                             <field name="allowed_additional_flag_ids" widget="many2many_tags"/>
+                            <field name="allow_multiple_reference"/>
                             <field name="allow_reverse"/>
                             <field name="allow_substitute"/>
                             <field name="allow_creditable"/>
