@@ -25,6 +25,7 @@
                 <field name="name"/>
                 <field name="active"/>
                 <field name="description"/>
+                <field name="allow_multiple_reference"/>
                 <field name="allow_reverse"/>
                 <field name="allow_substitute"/>
                 <field name="allowed_transaction_type_ids"/>

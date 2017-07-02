@@ -85,3 +85,6 @@ class FakturPajakType(models.Model):
     allow_creditable = fields.Boolean(
         string="Allow to Creditable",
     )
+    allow_multiple_reference = fields.Boolean(
+        string="Allow Multiple Doc. References",
+    )

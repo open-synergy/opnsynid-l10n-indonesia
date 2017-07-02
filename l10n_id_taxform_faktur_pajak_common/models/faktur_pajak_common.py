@@ -188,6 +188,14 @@ class FakturPajakCommon(models.AbstractModel):
         "type_id",
     )
     @api.multi
+    def _compute_allow_multiple_reference(self):
+        for fp in self:
+            fp.allow_multiple_reference = fp.type_id.allow_multiple_reference
+
+    @api.depends(
+        "type_id",
+    )
+    @api.multi
     def _compute_allow_creditable(self):
         for fp in self:
             fp.allow_creditable = fp.type_id.allow_creditable
@@ -415,9 +423,8 @@ class FakturPajakCommon(models.AbstractModel):
     )
     allow_multiple_reference = fields.Boolean(
         string="Allow Multiple Doc. References",
-        readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        compute="_compute_allow_multiple_reference",
+        store=False,
     )
     reference_id = fields.Many2one(
         string="Doc. Reference",
