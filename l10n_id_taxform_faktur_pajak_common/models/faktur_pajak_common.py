@@ -226,7 +226,7 @@ class FakturPajakCommon(models.AbstractModel):
         for fp in self:
             fp.enofa_nomor_dokumen_balik = "-"
             if fp.reverse_id:
-                fp.enofa_nomor_dokumen_balik = fp.name
+                fp.enofa_nomor_dokumen_balik = fp.reverse_id.name
 
     @api.depends(
         "reverse_id",
