@@ -741,24 +741,24 @@ class FakturPajakCommon(models.AbstractModel):
         ]
         for line in obj_line.search(criteria):
             if line.currency_id:
-                self.base += line.amount_currency
+                self.base += abs(line.amount_currency)
             else:
-                self.base += line.tax_amount
-            self.base_company_currency += line.tax_amount
+                self.base += abs(line.tax_amount)
+            self.base_company_currency += abs(line.tax_amount)
         criteria = [
             ("move_id", "in", self.all_reference_ids.ids),
             ("tax_code_id", "in", self.allowed_ppn_tax_code_ids.ids),
             ("partner_id", "=", partner_id),
         ]
         for line in obj_line.search(criteria):
-            self.ppn_amount += line.tax_amount
+            self.ppn_amount += abs(line.tax_amount)
         criteria = [
             ("move_id", "in", self.all_reference_ids.ids),
             ("tax_code_id", "in", self.allowed_ppnbm_tax_code_ids.ids),
             ("partner_id", "=", partner_id),
         ]
         for line in obj_line.search(criteria):
-            self.ppnbm_amount += line.tax_amount
+            self.ppnbm_amount += abs(line.tax_amount)
 
     @api.onchange("buyer_partner_id")
     def onchange_buyer(self):
