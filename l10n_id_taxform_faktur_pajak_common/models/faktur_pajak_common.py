@@ -219,6 +219,28 @@ class FakturPajakCommon(models.AbstractModel):
             fp.allow_multiple_reference = fp.type_id.allow_multiple_reference
 
     @api.depends(
+        "reverse_id",
+    )
+    @api.multi
+    def _compute_nomor_dokumen_balik(self):
+        for fp in self:
+            fp.enofa_nomor_dokumen_balik = "-"
+            if fp.reverse_id:
+                fp.enofa_nomor_dokumen_balik = fp.name
+
+    @api.depends(
+        "reverse_id",
+    )
+    @api.multi
+    def _compute_tanggal_dokumen_balik(self):
+        for fp in self:
+            fp.enofa_tanggal_dokumen_balik = "-"
+            if fp.reverse_id:
+                fp.enofa_tanggal_dokumen_balik = datetime.strptime(
+                    fp.reverse_id.date, "%Y-%m-%d").strftime(
+                        "%d/%m/%Y")
+
+    @api.depends(
         "reference_id",
         "reference_ids",
         "allow_multiple_reference",
@@ -654,6 +676,16 @@ class FakturPajakCommon(models.AbstractModel):
     enofa_is_creditable = fields.Char(
         string="IS_CREDITABLE",
         compute="_compute_is_creditable",
+        store=False,
+    )
+    enofa_nomor_dokumen_balik = fields.Char(
+        string="-",
+        compute="_compute_nomor_dokumen_balik",
+        store=False,
+    )
+    enofa_tanggal_dokumen_balik = fields.Char(
+        string="-",
+        compute="_compute_tanggal_dokumen_balik",
         store=False,
     )
 
