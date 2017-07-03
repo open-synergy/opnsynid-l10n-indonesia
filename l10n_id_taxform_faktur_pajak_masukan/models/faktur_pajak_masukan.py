@@ -16,6 +16,12 @@ class FakturPajakMasukan(models.Model):
         return self.env.ref(
             "l10n_id_taxform_faktur_pajak_masukan.fp_type_fp_masukan")
 
+    enofa_nomor_dokumen = fields.Char(
+        string="NOMOR_FAKTUR",
+        )
+    enofa_tanggal_dokumen = fields.Char(
+        string="TANGGAL_FAKTUR",
+        )
     reference_id = fields.Many2one(
         string="Doc. Reference",
         comodel_name="account.move",
