@@ -30,7 +30,23 @@
     <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_form"/>
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data/>
+        <data>
+            <xpath expr="//group[@name='group_enofa']" position="inside">
+                <field name="enofa_jenis_transaksi"/>
+                <field name="enofa_fg_pengganti"/>
+                <field name="enofa_nomor_dokumen"/>
+                <field name="enofa_masa_pajak"/>
+                <field name="enofa_tahun_pajak"/>
+                <field name="enofa_tanggal_dokumen"/>
+                <field name="enofa_npwp"/>
+                <field name="enofa_nama"/>
+                <field name="enofa_alamat_lengkap"/>
+                <field name="enofa_jumlah_dpp"/>
+                <field name="enofa_jumlah_ppn"/>
+                <field name="enofa_jumlah_ppnbm"/>
+                <field name="enofa_is_creditable"/>
+            </xpath>
+        </data>
     </field>
 </record>
 
