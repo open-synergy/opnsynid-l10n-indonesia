@@ -55,9 +55,9 @@ class FakturPajakCommon(models.AbstractModel):
         for fp in self:
             fp.enofa_nama = "-"
             if fp.fp_direction == "keluaran":
-                self.enofa_nama = fp.seller_branch_id.name
-            elif fp.fp_direction == "masukan":
                 self.enofa_nama = fp.buyer_branch_id.name
+            elif fp.fp_direction == "masukan":
+                self.enofa_nama = fp.seller_branch_id.name
 
     @api.depends(
         "seller_branch_id",
@@ -69,9 +69,9 @@ class FakturPajakCommon(models.AbstractModel):
         for fp in self:
             fp.enofa_alamat_lengkap = "-"
             if fp.fp_direction == "keluaran":
-                self.enofa_alamat_lengkap = fp.seller_branch_id.enofa_address
-            elif fp.fp_direction == "masukan":
                 self.enofa_alamat_lengkap = fp.buyer_branch_id.enofa_address
+            elif fp.fp_direction == "masukan":
+                self.enofa_alamat_lengkap = fp.seller_branch_id.enofa_address
 
     @api.depends(
         "seller_branch_id",
@@ -84,10 +84,10 @@ class FakturPajakCommon(models.AbstractModel):
             fp.enofa_npwp = "000000000000000"
             if fp.fp_direction == "keluaran":
                 if fp.seller_branch_id.vat:
-                    self.enofa_npwp = fp.seller_branch_id.npwp
+                    self.enofa_npwp = fp.buyer_branch_id.npwp
             elif fp.fp_direction == "masukan":
                 if fp.buyer_branch_id.vat:
-                    self.enofa_npwp = fp.buyer_branch_id.npwp
+                    self.enofa_npwp = fp.seller_branch_id.npwp
 
     @api.depends(
         "date",
@@ -765,7 +765,7 @@ class FakturPajakCommon(models.AbstractModel):
                 self.seller_partner_id.id or 0
         else:
             partner_id = self.buyer_partner_id and \
-                self.seller_buyer_id.id or 0
+                self.buyer_partner_id.id or 0
         criteria = [
             ("move_id", "in", self.all_reference_ids.ids),
             ("tax_code_id", "in", self.allowed_dpp_tax_code_ids.ids),
