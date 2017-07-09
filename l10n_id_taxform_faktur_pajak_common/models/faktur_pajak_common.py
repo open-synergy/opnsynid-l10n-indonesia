@@ -150,7 +150,7 @@ class FakturPajakCommon(models.AbstractModel):
             fp.taxform_period_id = False
             if fp.date:
                 fp.taxform_period_id = self.env["l10n_id.tax_period"].\
-                    _find_period(self.date).id
+                    _find_period(fp.date).id
 
     @api.depends(
         "taxform_period_id",
