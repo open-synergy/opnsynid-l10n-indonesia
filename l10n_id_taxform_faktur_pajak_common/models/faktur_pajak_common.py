@@ -658,17 +658,17 @@ class FakturPajakCommon(models.AbstractModel):
         compute="_compute_alamat_lengkap",
         store=False,
     )
-    enofa_jumlah_dpp = fields.Char(
+    enofa_jumlah_dpp = fields.Integer(
         string="JUMLAH_DPP",
         compute="_compute_jumlah_dpp",
         store=False,
     )
-    enofa_jumlah_ppn = fields.Char(
+    enofa_jumlah_ppn = fields.Integer(
         string="JUMLAH_PPN",
         compute="_compute_jumlah_ppn",
         store=False,
     )
-    enofa_jumlah_ppnbm = fields.Char(
+    enofa_jumlah_ppnbm = fields.Integer(
         string="JUMLAH_DPP",
         compute="_compute_jumlah_ppnbm",
         store=False,
