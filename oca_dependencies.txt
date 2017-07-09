@@ -16,4 +16,6 @@ partner-contact https://github.com/OCA/partner-contact 8.0
 l10n-indonesia https://github.com/OCA/l10n-indonesia 8.0
 stock-logistics-transport https://github.com/OCA/stock-logistics-transport 8.0
 opnsynid-partner-contact https://github.com/open-synergy/opnsynid-partner-contact 8.0
+account-invoicing https://github.com/OCA/account-invoicing 8.0
+
 
