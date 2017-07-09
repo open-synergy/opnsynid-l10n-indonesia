@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="fp_type_fp_keluaran" forcecreate="True"  model="l10n_id.faktur_pajak_type">
+    <field name="name">Faktur Pajak Keluaran</field>
+    <field name="code">FK</field>
+    <field name="fp_direction">keluaran</field>
+    <field name="allow_creditable" eval="0"/>
+    <field name="allow_substitute" eval="1"/>
+    <field name="allow_multiple_reference" eval="1"/>
+    <field name="allowed_transaction_type_ids" eval="[(6, 0, [
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_01'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_02'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_03'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_04'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_06'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_07'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_08'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_transaction_type_09'),
+        ])]"/>
+    <field name="allowed_additional_flag_ids" eval="[(6,0, [
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_1'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_2'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_3'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_4'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_5'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_6'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_07_7'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_08_1'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_08_2'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_08_3'),
+        ref('l10n_id_taxform_faktur_pajak_common.fp_additional_flag_08_4'),
+        ])]"/>
+</record>
+</data>
+</openerp>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="faktur_pajak_keluaran_view_search" model="ir.ui.view">
+    <field name="name">Faktur Pajak Keluaran</field>
+    <field name="model">l10n_id.faktur_pajak_keluaran</field>
+    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_search"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="faktur_pajak_keluaran_view_tree" model="ir.ui.view">
+    <field name="name">Faktur Pajak Keluaran</field>
+    <field name="model">l10n_id.faktur_pajak_keluaran</field>
+    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="faktur_pajak_keluaran_view_form" model="ir.ui.view">
+    <field name="name">Faktur Pajak</field>
+    <field name="model">l10n_id.faktur_pajak_keluaran</field>
+    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="nomor_seri_id"
+                    domain="[('faktur_pajak_id','=',False),('branch_id','=',seller_branch_id)]"
+                    />
+            </xpath>
+            <xpath expr="//group[@name='group_main_4']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='fp_state']" position="after">
+                <field name="fp_payment"/>
+            </xpath>
+            <xpath expr="//field[@name='all_reference_ids']" position="after">
+                <field name="allowed_invoice_line_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//page[@name='page_note']" position="before">
+                <page string="Details" name="page_detail">
+                    <button name="button_load_invoice_line" 
+                        string="Load Invoice Line" 
+                        type="object"
+                        attrs="{'invisible':[('state','!=','draft')]}"
+                        />
+                    <field name="faktur_pajak_line_ids" 
+                        colspan="4" 
+                        nolabel="1" 
+                        context="{
+                            'default_currency_id':currency_id, 
+                            'default_company_currency_id':company_currency_id, 
+                            'default_date':date}">
+                        <tree>
+                            <field name="date"/>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="price_unit"/>
+                            <field name="quantity"/>
+                            <field name="subtotal"/>
+                            <field name="subtotal_company_currency"/>
+                            <field name="ppn_amount"/>
+                            <field name="ppnbm_amount"/>
+                        </tree>                         
+                        <form>
+                            <group name="grp_line_main" colspan="4" col="2">
+                                <group name="grp_line_1" colspan="1" col="2" string="DPP">
+                                    <field name="date"/>
+                                    <field name="invoice_line_id"
+                                        domain="[('id','in',parent.allowed_invoice_line_ids[0][2])]"/>
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <field name="currency_id" invisible="0"/>
+                                    <field name="company_currency_id" invisible="0"/>
+                                    <field name="price_unit" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                    <field name="quantity"/>
+                                    <field name="subtotal" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                    <field name="subtotal_company_currency" widget="monetary" options="{'currency_field':'company_currency_id'}"/>
+                                </group>
+                                <group name="grp_line_2" colspan="1" col="2">
+                                    <separator string="PPn Computation" colspan="2"/>
+                                    <field name="ppn_tax_id"
+                                        domain="[
+                                            ('base_code_id', 'in', parent.allowed_dpp_tax_code_ids[0][2]),
+                                            ('tax_code_id', 'in', parent.allowed_ppn_tax_code_ids[0][2])
+                                            ]"/>
+                                    <field name="ppn_amount" widget="monetary" options="{'currency_field':'company_currency_id'}"/>
+                                    <separator string="PPnBm Computation" colspan="2"/>
+                                    <field name="ppnbm_tax_id"
+                                        domain="[
+                                            ('base_code_id', 'in', parent.allowed_dpp_tax_code_ids[0][2]),
+                                            ('tax_code_id', 'in', parent.allowed_ppnbm_tax_code_ids[0][2])
+                                            ]"/>
+                                    <field name="ppnbm_amount" widget="monetary" options="{'currency_field':'company_currency_id'}"/>
+                                </group>
+                                <group name="grp_line_3" colspan="1" col="2" string="E-Nofa">
+                                    <field name="enofa_kode_objek"/>
+                                    <field name="enofa_nama"/>
+                                    <field name="enofa_harga_satuan"/>
+                                    <field name="enofa_jumlah_barang"/>
+                                    <field name="enofa_harga_total"/>
+                                    <field name="enofa_diskon"/>
+                                    <field name="enofa_dpp"/>
+                                    <field name="enofa_ppn"/>
+                                    <field name="enofa_tarif_ppnbm"/>
+                                    <field name="enofa_ppnbm"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+                <page string="Advance Payment" name="page_advance_line"
+                    attrs="{
+                        'invisible':[
+                            ('fp_payment','!=','1')]}">
+                    <separator string="Base" colspan="4"/>
+                    <field name="advance_move_line_ids" nolabel="1" colspan="4"
+                        domain="[('journal_id.type','in', ['cash','bank']),('account_id.type','=', 'other')]"
+                        />
+                    <separator string="PPn" colspan="4"/>
+                    <field name="advance_ppn_move_line_ids" nolabel="1" colspan="4"
+                        domain="[('journal_id.type','in', ['cash','bank']),('account_id.type','=', 'other')]"
+                        />
+                    <separator string="PPnBm" colspan="4"/>
+                    <field name="advance_ppnbm_move_line_ids" nolabel="1" colspan="4"
+                        domain="[('journal_id.type','in', ['cash','bank']),('account_id.type','=', 'other')]"
+                        />
+                </page>
+                <page string="Advance Payment FK"
+                    attrs="{
+                        'invisible':[
+                            ('fp_payment','!=','2')]}">
+                    <field name="advance_payment_fp_ids" colspan="4" nolabel="1"/>
+                </page>
+            </xpath>
+            <xpath expr="//group[@name='group_enofa']" position="inside">
+                <field name="enofa_jenis_transaksi"/>
+                <field name="enofa_fg_pengganti"/>
+                <field name="enofa_nomor_dokumen"/>
+                <field name="enofa_masa_pajak"/>
+                <field name="enofa_tahun_pajak"/>
+                <field name="enofa_tanggal_dokumen"/>
+                <field name="enofa_npwp"/>
+                <field name="enofa_nama"/>
+                <field name="enofa_alamat_lengkap"/>
+                <field name="enofa_jumlah_dpp"/>
+                <field name="enofa_jumlah_ppn"/>
+                <field name="enofa_jumlah_ppnbm"/>
+                <field name="enofa_id_keterangan_tambahan"/>
+                <field name="enofa_fg_uang_muka"/>
+                <field name="enofa_uang_muka_dpp"/>
+                <field name="enofa_uang_muka_ppn"/>
+                <field name="enofa_uang_muka_ppnbm"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="faktur_pajak_keluaran_action" model="ir.actions.act_window">
+    <field name="name">Faktur Pajak Keluaran</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.faktur_pajak_keluaran</field>
+    <field name="search_view_id" ref="faktur_pajak_keluaran_view_search"/>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="faktur_pajak_keluaran_menu"
+    name="Faktur Pajak Keluaran"
+    parent="l10n_id_taxform_faktur_pajak_common.taxform_faktur_pajak_menu"
+    groups="l10n_id_taxform.user_group_taxform"
+    action="faktur_pajak_keluaran_action"
+    sequence="2"
+    />
+</data>
+</openerp>

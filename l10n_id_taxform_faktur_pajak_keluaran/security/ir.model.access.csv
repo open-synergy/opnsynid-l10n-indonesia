@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fp_keluaran_all,Faktur Pajak Keluaran - All User,model_l10n_id_faktur_pajak_keluaran,base.group_user,1,0,0,0
+access_fp_keluaran_taxform_user,Faktur Pajak Keluaran - Taxform User,model_l10n_id_faktur_pajak_keluaran,l10n_id_taxform.user_group_taxform,1,1,1,1
+access_fp_line_all,Faktur Pajak Line - All User,model_l10n_id_faktur_pajak_line,base.group_user,1,0,0,0
+access_fp_line_taxform_user,Faktur Pajak Line - Taxform User,model_l10n_id_faktur_pajak_line,l10n_id_taxform.user_group_taxform,1,1,1,1
+access_nomor_seri_fp_all,Nomor Seri FP - All User,model_l10n_id_nomor_seri_faktur_pajak,base.group_user,1,0,0,0
+access_nomor_seri_fp_taxform_manager,Nomor Seri FP - Taxform Manager,model_l10n_id_nomor_seri_faktur_pajak,l10n_id_taxform.manager_group_taxform,1,1,1,1
