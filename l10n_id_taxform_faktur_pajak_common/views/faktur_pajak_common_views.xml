@@ -49,12 +49,10 @@
             <field name="buyer_partner_id"/>
             <field name="buyer_branch_id"/>
             <field name="type_id" invisible="1"/>
-            <field name="taxform_period_id"/>
-            <field name="taxform_year_id"/>
             <field name="transaction_type_id"/>
-            <field name="base_company_currency"/>
-            <field name="ppn_amount"/>
-            <field name="ppnbm_amount"/>
+            <field name="enofa_jumlah_dpp" string="Base"/>
+            <field name="enofa_jumlah_ppn" string="PPN"/>
+            <field name="enofa_jumlah_ppnbm" string="PPnBM"/>
             <field name="state"/>
         </tree>
     </field>
