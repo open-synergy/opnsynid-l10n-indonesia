@@ -84,10 +84,10 @@ class FakturPajakCommon(models.AbstractModel):
             fp.enofa_npwp = "000000000000000"
             if fp.fp_direction == "keluaran":
                 if fp.seller_branch_id.vat:
-                    fp.enofa_npwp = fp.buyer_branch_id.npwp
+                    fp.enofa_npwp = fp.buyer_branch_id.vat
             elif fp.fp_direction == "masukan":
                 if fp.buyer_branch_id.vat:
-                    fp.enofa_npwp = fp.seller_branch_id.npwp
+                    fp.enofa_npwp = fp.seller_branch_id.vat
 
     @api.depends(
         "date",
