@@ -6,6 +6,7 @@
 from openerp import models, fields, api
 import openerp.addons.decimal_precision as dp
 from datetime import datetime
+import re
 
 
 class FakturPajakCommon(models.AbstractModel):
@@ -84,10 +85,16 @@ class FakturPajakCommon(models.AbstractModel):
             fp.enofa_npwp = "000000000000000"
             if fp.fp_direction == "keluaran":
                 if fp.seller_branch_id.vat:
-                    fp.enofa_npwp = fp.buyer_branch_id.vat
+                    npwp = fp.seller_branch_id.vat
+                    self.enofa_npwp = ""
+                    for s in re.findall(r"\d+", npwp):
+                        self.enofa_npwp += s
             elif fp.fp_direction == "masukan":
                 if fp.buyer_branch_id.vat:
-                    fp.enofa_npwp = fp.seller_branch_id.vat
+                    npwp = fp.buyer_branch_id.vat
+                    self.enofa_npwp = ""
+                    for s in re.findall(r"\d+", npwp):
+                        self.enofa_npwp += s
 
     @api.depends(
         "date",
