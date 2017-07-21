@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record model="l10n_id.daftar_bukti_potong_pph_type" id="daftar_bukti_potong_pph_type_d113205">
+            <field name="name">Daftar Bukti Potong PPh 23/26</field>
+            <field name="code">D.1.1.32.05</field>
+            <field name="active" eval="1"/>
+        </record>
+    </data>
+</openerp>
