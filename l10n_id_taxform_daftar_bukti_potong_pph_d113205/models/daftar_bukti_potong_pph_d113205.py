@@ -49,12 +49,3 @@ class DaftarBuktiPotongPPhD113205(models.Model):
             ],
         }
     )
-
-    @api.model
-    def search(self, args, offset=0, limit=None, order=None):
-        type_id = self.env.ref(
-            "l10n_id_taxform_daftar_bukti_potong_pph_d113205."
-            "daftar_bukti_potong_pph_type_d113205")
-        args.append(("type_id", "=", type_id.id))
-        return super(DaftarBuktiPotongPPhD113205, self).\
-            search(args, offset, limit, order)

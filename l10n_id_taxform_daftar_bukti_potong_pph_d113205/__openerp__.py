@@ -16,8 +16,8 @@
         "l10n_id_taxform_bukti_potong_pph_f113308",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "data/daftar_bukti_potong_pph_type_datas.xml",
+        "security/ir.model.access.csv",
         "views/daftar_bukti_potong_pph_d113205_views.xml",
     ],
 }
