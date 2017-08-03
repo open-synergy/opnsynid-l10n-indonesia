@@ -5,14 +5,14 @@
 <openerp>
     <data>
         <record model="l10n_id.bukti_potong_pph_type" id="bukti_potong_pph_type_f113311_out">
-            <field name="name">Bukti Potong PPh 4(2) Atas Penghasilan Dari Persewaan Tanah Dan/Atau Bangunan - Out</field>
+            <field name="name">Bukti Potong PPh 4(2) Atas Penghasilan Dari Transaksi Penjualan Saham Yang Diperdagangkan di Bursa Efek - Out</field>
             <field name="code">f.1.1.33.11 - Out</field>
             <field name="direction">out</field>
             <field name="active" eval="1"/>
         </record>
         
         <record model="l10n_id.bukti_potong_pph_type" id="bukti_potong_pph_type_f113311_in">
-            <field name="name">Bukti Potong PPh 4(2) Atas Penghasilan Dari Persewaan Tanah Dan/Atau Bangunan - In</field>
+            <field name="name">Bukti Potong PPh 4(2) Atas Penghasilan Dari Transaksi Penjualan Saham Yang Diperdagangkan di Bursa Efek - In</field>
             <field name="code">f.1.1.33.11 - In</field>
             <field name="direction">in</field>
             <field name="active" eval="1"/>
