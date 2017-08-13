@@ -80,9 +80,44 @@
           <field name="report_type">asset</field>
         </record>
 
+        <record model="account.account.type" id="accountType_ayatSilangKasBank">
+        <field name="name">Ayat Silang Kas/Bank</field>
+          <field name="code">CROSS.01</field>
+          <field name="close_method">balance</field>
+          <field name="report_type">asset</field>
+        </record>
+
+        <record model="account.account.type" id="accountType_ayatSilangPersediaan">
+        <field name="name">Ayat Silang Persediaan</field>
+          <field name="code">CROSS.02</field>
+          <field name="close_method">balance</field>
+          <field name="report_type">asset</field>
+        </record>
+
         <record model="account.account.type" id="accountType_kas">
           <field name="name">Kas</field>
           <field name="code">KAS</field>
+          <field name="close_method">balance</field>
+          <field name="report_type">asset</field>
+        </record>
+
+        <record model="account.account.type" id="accountType_kasKecil">
+          <field name="name">Kas Kecil</field>
+          <field name="code">KK</field>
+          <field name="close_method">balance</field>
+          <field name="report_type">asset</field>
+        </record>
+
+        <record model="account.account.type" id="accountType_kasBesar">
+          <field name="name">Kas Besar</field>
+          <field name="code">KB</field>
+          <field name="close_method">balance</field>
+          <field name="report_type">asset</field>
+        </record>
+
+        <record model="account.account.type" id="accountType_kasKasir">
+          <field name="name">Kas Kasir</field>
+          <field name="code">KK</field>
           <field name="close_method">balance</field>
           <field name="report_type">asset</field>
         </record>
