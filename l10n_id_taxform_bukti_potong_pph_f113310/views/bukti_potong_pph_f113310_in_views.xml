@@ -42,7 +42,7 @@
 </record>
 
 <record id="bukti_potong_pph_f113310_in_action" model="ir.actions.act_window">
-    <field name="name">Bukti Potong PPh 4 Ayat 1 (f.1.33.04) In</field>
+    <field name="name">Bukti Potong PPh 4 Ayat 1 (f.1.33.10) In</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">l10n_id.bukti_potong_pph_f113310_in</field>
     <field name="view_type">form</field>
