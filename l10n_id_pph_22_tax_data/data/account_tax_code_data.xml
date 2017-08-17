@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="tax_code_template_22" model="account.tax.code.template">
+    <field name="name">PPh 22</field>
+    <field name="code">22</field>
+    <field name="sign" eval="1"/>
+</record>
+
+<record id="tax_code_template_22_01" model="account.tax.code.template">
+    <field name="name">PPh 22 - Final</field>
+    <field name="code">22.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22"/>
+</record>
+
+<record id="tax_code_template_22_01_01" model="account.tax.code.template">
+    <field name="name">DPP - Beban</field>
+    <field name="code">22.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01"/>
+</record>
+
+<record id="tax_code_template_22_01_02" model="account.tax.code.template">
+    <field name="name">DPP - Hutang</field>
+    <field name="code">22.01.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01"/>
+</record>
+
+<record id="tax_code_template_22_01_03" model="account.tax.code.template">
+    <field name="name">PPh - Beban</field>
+    <field name="code">22.01.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01"/>
+</record>
+
+<record id="tax_code_template_22_01_04" model="account.tax.code.template">
+    <field name="name">PPh - Hutang</field>
+    <field name="code">22.01.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01"/>
+</record>
+
+<record id="tax_code_template_22_02" model="account.tax.code.template">
+    <field name="name">PPh 22 - Tidak Final</field>
+    <field name="code">22.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22"/>
+</record>
+
+<record id="tax_code_template_22_02_01" model="account.tax.code.template">
+    <field name="name">DPP - U.M</field>
+    <field name="code">22.02.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02" model="account.tax.code.template">
+    <field name="name">DPP - Hutang</field>
+    <field name="code">22.02.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02"/>    
+</record>
+
+<record id="tax_code_template_22_02_03" model="account.tax.code.template">
+    <field name="name">PPh - U.M.</field>
+    <field name="code">22.02.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="3"/>
+    <field name="parent_id" eval="tax_code_template_22_02"/>    
+</record>
+
+<record id="tax_code_template_22_02_04" model="account.tax.code.template">
+    <field name="name">PPh - Hutang</field>
+    <field name="code">22.02.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="4"/>
+    <field name="parent_id" eval="tax_code_template_22_02"/>    
+</record>
+
+<!-- Final; DPP Beban -->
+<record id="tax_code_template_22_01_01_01" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.01.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_01"/>
+</record>
+
+<record id="tax_code_template_22_01_01_01_01" model="account.tax.code.template">
+    <field name="name">SPBU/Agen/Penyalur</field>
+    <field name="code">22.01.01.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_01_01"/>
+</record>
+
+<!-- Final; DPP Hutang -->
+<record id="tax_code_template_22_01_02_01" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.01.02.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_02"/>
+</record>
+
+<record id="tax_code_template_22_01_02_01_01" model="account.tax.code.template">
+    <field name="name">SPBU/Agen/Penyalur</field>
+    <field name="code">22.01.02.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_02_01"/>
+</record>
+
+<!-- Final; PPh Beban -->
+<record id="tax_code_template_22_01_03_01" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.01.03.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_03"/>
+</record>
+
+<record id="tax_code_template_22_01_03_01_01" model="account.tax.code.template">
+    <field name="name">SPBU/Agen/Penyalur</field>
+    <field name="code">22.01.03.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_03_01"/>
+</record>
+
+<!-- Final; PPh Hutang -->
+<record id="tax_code_template_22_01_04_01" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.01.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_04"/>
+</record>
+
+<record id="tax_code_template_22_01_04_01_01" model="account.tax.code.template">
+    <field name="name">SPBU/Agen/Penyalur</field>
+    <field name="code">22.01.04.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_01_04_01"/>
+</record>
+
+<!-- DPP U.M. Tidak Final -->
+<record id="tax_code_template_22_02_01_01" model="account.tax.code.template">
+    <field name="name">Badan Usaha Industri/Eksportir</field>
+    <field name="code">22.02.01.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_02" model="account.tax.code.template">
+    <field name="name">Penjualan Barang yang tergolong Sangat Mewah</field>
+    <field name="code">22.02.01.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_03" model="account.tax.code.template">
+    <field name="name">Penjualan Barang Oleh Bendaharawan/Badan Tertentu Yang Ditunjuk</field>
+    <field name="code">22.02.01.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="3"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_04" model="account.tax.code.template">
+    <field name="name">Nilai Import Bank Devisa/Ditjen Bea dan Cukai</field>
+    <field name="code">22.02.01.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="4"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_04_01" model="account.tax.code.template">
+    <field name="name">API</field>
+    <field name="code">22.02.01.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01_04"/>
+</record>
+
+<record id="tax_code_template_22_02_01_04_02" model="account.tax.code.template">
+    <field name="name">Non API</field>
+    <field name="code">22.02.01.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01_04"/>
+</record>
+
+<record id="tax_code_template_22_02_01_05" model="account.tax.code.template">
+    <field name="name">Hasil Lelang (Ditjen Bea dan Cukai)</field>
+    <field name="code">22.02.01.05</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="5"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_06" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.02.01.06</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="6"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01"/>
+</record>
+
+<record id="tax_code_template_22_02_01_06_01" model="account.tax.code.template">
+    <field name="name">Pihak Lain</field>
+    <field name="code">22.02.01.06.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_01_06"/>
+</record>
+
+<!-- DPP Hutang Tidak Final -->
+<record id="tax_code_template_22_02_02_01" model="account.tax.code.template">
+    <field name="name">Badan Usaha Industri/Eksportir</field>
+    <field name="code">22.02.02.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_02" model="account.tax.code.template">
+    <field name="name">Penjualan Barang yang tergolong Sangat Mewah</field>
+    <field name="code">22.02.02.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_03" model="account.tax.code.template">
+    <field name="name">Penjualan Barang Oleh Bendaharawan/Badan Tertentu Yang Ditunjuk</field>
+    <field name="code">22.02.02.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="3"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_04" model="account.tax.code.template">
+    <field name="name">Nilai Import Bank Devisa/Ditjen Bea dan Cukai</field>
+    <field name="code">22.02.02.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="4"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_04_01" model="account.tax.code.template">
+    <field name="name">API</field>
+    <field name="code">22.02.02.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_02_04_02" model="account.tax.code.template">
+    <field name="name">Non API</field>
+    <field name="code">22.02.02.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_02_05" model="account.tax.code.template">
+    <field name="name">Hasil Lelang (Ditjen Bea dan Cukai)</field>
+    <field name="code">22.02.02.05</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="5"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_06" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.02.02.06</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="6"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02"/>
+</record>
+
+<record id="tax_code_template_22_02_02_06_01" model="account.tax.code.template">
+    <field name="name">Pihak Lain</field>
+    <field name="code">22.02.02.06.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_02_06"/>
+</record>
+
+<!-- PPh U.M. Tidak Final -->
+<record id="tax_code_template_22_02_03_01" model="account.tax.code.template">
+    <field name="name">Badan Usaha Industri/Eksportir</field>
+    <field name="code">22.02.03.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_02" model="account.tax.code.template">
+    <field name="name">Penjualan Barang yang tergolong Sangat Mewah</field>
+    <field name="code">22.02.03.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_03" model="account.tax.code.template">
+    <field name="name">Penjualan Barang Oleh Bendaharawan/Badan Tertentu Yang Ditunjuk</field>
+    <field name="code">22.02.03.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="3"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_04" model="account.tax.code.template">
+    <field name="name">Nilai Import Bank Devisa/Ditjen Bea dan Cukai</field>
+    <field name="code">22.02.03.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="4"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_04_01" model="account.tax.code.template">
+    <field name="name">API</field>
+    <field name="code">22.02.03.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03_04"/>
+</record>
+
+<record id="tax_code_template_22_02_03_04_02" model="account.tax.code.template">
+    <field name="name">Non API</field>
+    <field name="code">22.02.03.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03_04"/>
+</record>
+
+<record id="tax_code_template_22_02_03_05" model="account.tax.code.template">
+    <field name="name">Hasil Lelang (Ditjen Bea dan Cukai)</field>
+    <field name="code">22.02.03.05</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="5"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_06" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.02.02.06</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="6"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03"/>
+</record>
+
+<record id="tax_code_template_22_02_03_06_01" model="account.tax.code.template">
+    <field name="name">Pihak Lain</field>
+    <field name="code">22.02.03.06.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_03_06"/>
+</record>
+
+<!-- PPh Hutang Tidak Final -->
+<record id="tax_code_template_22_02_04_01" model="account.tax.code.template">
+    <field name="name">Badan Usaha Industri/Eksportir</field>
+    <field name="code">22.02.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_02" model="account.tax.code.template">
+    <field name="name">Penjualan Barang yang tergolong Sangat Mewah</field>
+    <field name="code">22.02.04.02</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_03" model="account.tax.code.template">
+    <field name="name">Penjualan Barang Oleh Bendaharawan/Badan Tertentu Yang Ditunjuk</field>
+    <field name="code">22.02.04.03</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="3"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_04" model="account.tax.code.template">
+    <field name="name">Nilai Import Bank Devisa/Ditjen Bea dan Cukai</field>
+    <field name="code">22.02.04.04</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="4"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_04_01" model="account.tax.code.template">
+    <field name="name">API</field>
+    <field name="code">22.02.04.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_04_02" model="account.tax.code.template">
+    <field name="name">Non API</field>
+    <field name="code">22.02.04.04.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="2"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_05" model="account.tax.code.template">
+    <field name="name">Hasil Lelang (Ditjen Bea dan Cukai)</field>
+    <field name="code">22.02.04.05</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="5"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_06" model="account.tax.code.template">
+    <field name="name">Penjualan hasil migas yang dilakukan oleh Pertamina dan badan usaha selain Pertamina</field>
+    <field name="code">22.02.04.06</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="6"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04"/>
+</record>
+
+<record id="tax_code_template_22_02_04_06_01" model="account.tax.code.template">
+    <field name="name">Pihak Lain</field>
+    <field name="code">22.02.04.06.01</field>
+    <field name="sign" eval="1"/>
+    <field name="sequence" eval="1"/>
+    <field name="parent_id" eval="tax_code_template_22_02_04_06"/>
+</record>
+
+
+</data>
+</openerp>
