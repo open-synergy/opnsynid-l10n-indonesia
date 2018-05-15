@@ -12,16 +12,9 @@ class DateRangeSelector(models.TransientModel):
     _inherit = "l10n_id.date_range_selector"
 
     @api.multi
-    def action_mutasi_bahan_baku_penolong(self):
+    def action_mutasi_reject_scrap(self):
         self.ensure_one()
         waction = self.env.ref(
-            "l10n_id_djbc_kb_lap_mutasi_bahan_baku_penolong.djbc_kb_lap_mutasi_bahan_baku_penolong_action")
-        result = waction.read()[0]
-        context = {
-            "date_start": self.date_start,
-            "date_end": self.date_end,
-            }
-        result.update({"context": context})
-        return result
-
+            "l10n_id_djbc_kb_lap_mutasi_reject_scrap.djbc_kb_lap_mutasi_reject_scrap_action")
+        return waction.read()[0]
 

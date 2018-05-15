@@ -21,5 +21,77 @@
     <field name="type">view</field>
     <field name="parent_id" ref="product_categ_kb_root"/>
 </record>
+
+<record id="product_categ_kb_barang_modal" model="product.category">
+    <field name="name">Barang Modal</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_peralatan_modal" model="product.category">
+    <field name="name">Peralatan Untuk Pembangunan, Perluasan, atau Konstruksi KB</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_barang_modal"/>
+</record>
+
+<record id="product_categ_kb_mesin" model="product.category">
+    <field name="name">Mesin</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_barang_modal"/>
+</record>
+
+<record id="product_categ_kb_cetakan" model="product.category">
+    <field name="name">Cetakan Moulding</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_barang_modal"/>
+</record>
+
+<record id="product_categ_kb_sparepart" model="product.category">
+    <field name="name">Sparepart</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_barang_modal"/>
+</record>
+
+<record id="product_categ_kb_peralatan_kantor" model="product.category">
+    <field name="name">Peralatan Kantor</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_barang_contoh" model="product.category">
+    <field name="name">Barang Contoh</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_wip" model="product.category">
+    <field name="name">Barang WIP</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_hasil_produksi" model="product.category">
+    <field name="name">Hasil Produksi</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_scrap" model="product.category">
+    <field name="name">Scrap/Waste</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_pengemas" model="product.category">
+    <field name="name">Pengemas &amp; Alat Bantu Pengemas</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_konsumsi" model="product.category">
+    <field name="name">Barang Untuk Konsumsi</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
 </data>
 </openerp>

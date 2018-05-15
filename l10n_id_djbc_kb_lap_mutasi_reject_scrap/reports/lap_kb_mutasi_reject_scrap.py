@@ -6,14 +6,14 @@ from openerp import models, fields, api
 from openerp import tools
 
 
-class LapKbMutasiBahanBakuPenolong(models.Model):
-    _name = "l10n_id.djbc_kb_lap_mutasi_bahan_baku_penolong"
+class LapKbMutasiRejectScrap(models.Model):
+    _name = "l10n_id.djbc_kb_lap_mutasi_reject_scrap"
     _inherit = "l10n_id.djbc_kb_lap_mutasi_common"
-    _description = "Laporan Mutasi Bahan Baku/Penolong Untuk Kawasan Berikat"
+    _description = "Laporan Mutasi Reject/Scrap Untuk Kawasan Berikat"
     _auto = False
 
     def _join(self):
-        _super = super(LapKbMutasiBahanBakuPenolong, self)
+        _super = super(LapKbMutasiRejectScrap, self)
         join_str = _super._join() + """
         JOIN product_categ_rel AS c ON
             b.id = c.product_id
@@ -24,8 +24,7 @@ class LapKbMutasiBahanBakuPenolong(models.Model):
             FROM ir_model_data AS e1
             WHERE 
                 e1.module = 'l10n_id_djbc_kb_lap_common' AND
-                (e1.name = 'product_categ_kb_bahan_baku' OR
-                e1.name = 'product_categ_kb_bahan_penolong')
+                e1.name = 'product_categ_kb_scrap'
             ) as e ON
             d.id = e.res_id
         """

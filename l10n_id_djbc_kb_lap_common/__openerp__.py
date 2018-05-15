@@ -17,5 +17,6 @@
         "menu.xml",
         "wizards/date_range_selector_views.xml",
         "reports/lap_kb_mutasi_common_views.xml",
+        "views/stock_picking_type_views.xml",
     ],
 }
