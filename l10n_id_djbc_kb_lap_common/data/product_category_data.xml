@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="product_categ_kb_root" model="product.category">
+    <field name="name">Kawasan Berikat</field>
+    <field name="type">view</field>
+</record>
+
+<record id="product_categ_kb_bahan_baku" model="product.category">
+    <field name="name">Bahan Baku</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+
+<record id="product_categ_kb_bahan_penolong" model="product.category">
+    <field name="name">Bahan Penolong</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kb_root"/>
+</record>
+</data>
+</openerp>
