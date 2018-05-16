@@ -4,6 +4,8 @@
 
 from openerp import models, fields, api
 from openerp import tools
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class LapKbMutasiCommon(models.AbstractModel):
@@ -23,16 +25,25 @@ class LapKbMutasiCommon(models.AbstractModel):
         return str_select
 
     @api.multi
-    def _qty_where(self, date_start, date_end, movement_type="in", scrap=False):
+    def _qty_where(self, date_start, date_end, movement_type="in", scrap=False, adjustment=False):
         self.ensure_one()
         str_where = """
         WHERE
             a.product_id = %s AND
             b.djbc_kb_movement_type = '%s' AND
             b.djbc_kb_scrap %s AND
+            b.djbc_kb_adjustment %s AND
+            a.state = 'done' AND
+        """ % (self.product_id.id, movement_type, scrap and 'IS TRUE' or 'IS FALSE', adjustment and 'IS TRUE' or 'IS FALSE')
+        if date_start:
+            str_where += """
             a.date >= '%s' AND
             a.date <= '%s'
-        """ % (self.product_id.id, movement_type, scrap and 'IS NOT NULL'or 'IS NULL', date_start, date_end)
+            """ % (date_start, date_end)
+        else:
+            str_where += """
+            a.date < '%s'
+            """ % (date_end)
         return str_where
 
     @api.multi
@@ -45,7 +56,7 @@ class LapKbMutasiCommon(models.AbstractModel):
         self.ensure_one()
         str_select = """
         SELECT
-            a.product_uom_qty AS qty
+            a.product_qty AS qty
         """
         return str_select
 
@@ -57,33 +68,55 @@ class LapKbMutasiCommon(models.AbstractModel):
         date_end = self._context.get("date_end", False)
 
         for lap in self:
-            lap.saldo_awal = lap.pemasukan = lap.pengeluaran = \
-                lap.penyesuaian = lap.saldo_buku = lap.stock_opname = \
-                lap.selisih = 0.0
-            lap.pemasukan = lap._get_qty(
-                date_start, date_end, "in", False)
-            lap.keterangan = "sesuai"
+            saldo_awal = pemasukan = pengeluaran = \
+                penyesuaian = saldo_akhir = stock_opname = \
+                selisih = 0.0
+            saldo_awal_pemasukan = lap._get_qty(
+                    False, date_start, "in", False, False)
+            saldo_awal_pengeluaran = lap._get_qty(
+                    False, date_start, "out", False, False)
+            saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
+            pemasukan = lap._get_qty(
+                date_start, date_end, "in", False, False)
+            pengeluaran = lap._get_qty(
+                date_start, date_end, "out", False, False)
+            penyesuaian_in = lap._get_qty(date_start, date_end, "in", False, True)
+            penyesuaian_out = lap._get_qty(date_start, date_end, "out", False, True)
+            penyesuaian = penyesuaian_in - penyesuaian_out
+            saldo_akhir = saldo_awal + pemasukan - pengeluaran + penyesuaian
+            selisih = saldo_akhir - stock_opname
+
+            if stock_opname == saldo_akhir:
+                keterangan = "sesuai"
+            elif saldo_akhir > stock_opname:
+                keterangan = "lebih"
+            else:
+                keterangan = "kurang"
+
+            lap.saldo_awal = saldo_awal
+            lap.stock_opname = stock_opname
+            lap.pemasukan = pemasukan
+            lap.pengeluaran = pengeluaran
+            lap.saldo_akhir = saldo_akhir
+            lap.penyesuaian = penyesuaian
+            lap.selisih = selisih
+            lap.keterangan = keterangan
 
     @api.multi
-    def _get_qty(self, date_start, date_end, movement_type, scrap):
+    def _get_qty(self, date_start, date_end, movement_type, scrap, adjustment):
         self.ensure_one()
         result = 0.0
         str_sql = """
         %s
         %s
         %s
-        """ % (self._qty_select(), self._qty_from(), self._qty_where(date_start, date_end, movement_type, scrap))
+        """ % (self._qty_select(), self._qty_from(), self._qty_where(date_start, date_end, movement_type, scrap, adjustment))
+        _logger.warning(str_sql)
         self.env.cr.execute(str_sql)
-        for row in self.env.cr.dictfetchall():
+        a = self.env.cr.dictfetchall()
+        for row in a:
             result += row["qty"]
         return result
-
-
-
-
-
-
-
 
     kode_barang = fields.Char(
         string="Kode Barang",

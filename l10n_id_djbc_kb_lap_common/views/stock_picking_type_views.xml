@@ -10,6 +10,7 @@
             <group name="djbc_kb" colspan="4" col="2" string="DJBC's KB Configuration">
                 <field name="djbc_kb_movement_type"/>
                 <field name="djbc_kb_scrap"/>
+                <field name="djbc_kb_adjustment"/>
             </group>
         </xpath>
     </field>
