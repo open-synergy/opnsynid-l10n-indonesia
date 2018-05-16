@@ -11,6 +11,7 @@
     "installable": True,
     "depends": [
         "l10n_id_djbc_app",
+        "product_m2mcategories",
     ],
     "data": [
         "data/product_category_data.xml",
