@@ -11,12 +11,6 @@
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//button[@special='cancel']" position="before">
-                        <button name="action_lap_pemasukan"
-                            type="object"
-                            string="Print"
-                            class="oe_hightlight"/>
-                    </xpath>
                 </data>
             </field>
         </record>

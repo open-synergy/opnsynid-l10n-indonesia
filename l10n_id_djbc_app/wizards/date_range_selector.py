@@ -37,10 +37,14 @@ class DateRangeSelector(models.AbstractModel):
         required=True,
     )
     output_format = fields.Selection(
-        string='Output Format',
+        string="Output Format",
         required=True,
-        selection=[('screen', 'On-Screen')],
-        default='screen',
+        selection=[
+            ("screen", "On-Screen"),
+            ("ods", "ODS"),
+            ("xls", "XLS")
+        ],
+        default="screen",
     )
 
     @api.constrains(
@@ -51,3 +55,34 @@ class DateRangeSelector(models.AbstractModel):
         if self.date_start and self.date_end:
             if self.date_start > self.date_end:
                 raise UserError(strWarning)
+
+    @api.multi
+    def action_print_sreen(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+
+    @api.multi
+    def action_print_ods(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+
+    @api.multi
+    def action_print_xls(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+
+    @api.multi
+    def action_print(self):
+        self.ensure_one()
+
+        if self.output_format == "screen":
+            self.action_print_sreen()
+        elif self.output_format == "ods":
+            self.action_print_ods()
+        elif self.output_format == "xls":
+            self.action_print_xls()
+        else:
+            raise UserError("No Output Format Selected")
