@@ -4,10 +4,10 @@
 
 <openerp>
     <data>
-        <record id="date_range_selector_view_pemasukan_form" model="ir.ui.view">
-            <field name="name">l10n_id.date_range_selector form</field>
-            <field name="model">l10n_id.date_range_selector</field>
-            <field name="inherit_id" ref="l10n_id_djbc_kb_lap_common.date_range_selector_view_form"/>
+        <record id="kb_lap_pemasukan_wizard_view_form" model="ir.ui.view">
+            <field name="name">l10n_id.kb_lap_pemasukan_wizard form</field>
+            <field name="model">l10n_id.kb_lap_pemasukan_wizard</field>
+            <field name="inherit_id" ref="l10n_id_djbc_app.date_range_selector_view_form"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
@@ -21,12 +21,12 @@
             </field>
         </record>
         
-        <record id="date_range_selector_action" model="ir.actions.act_window">
+        <record id="kb_lap_pemasukan_wizard_action" model="ir.actions.act_window">
             <field name="name">Pemasukan Barang</field>
-            <field name="res_model">l10n_id.date_range_selector</field>
+            <field name="res_model">l10n_id.kb_lap_pemasukan_wizard</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="date_range_selector_view_pemasukan_form"/>
+            <field name="view_id" ref="kb_lap_pemasukan_wizard_view_form"/>
             <field name="target">new</field>
         </record>
 
@@ -34,7 +34,7 @@
             id="kb_lap_pemasukan_barang_menu"
             name="Pemasukan Barang"
             parent="l10n_id_djbc_kb_lap_common.djbc_reporting_kb_menu"
-            action="date_range_selector_action"
+            action="kb_lap_pemasukan_wizard_action"
             sequence="5"
         />
     </data>

@@ -5,14 +5,13 @@
 from openerp import api, models
 
 
-class DateRangeSelector(models.TransientModel):
+class KBLapPemasukanWizard(models.TransientModel):
+    _name = "l10n_id.kb_lap_pemasukan_wizard"
     _inherit = "l10n_id.date_range_selector"
 
     @api.multi
     def action_lap_pemasukan(self):
         self.ensure_one()
-        datas = {}
-        datas['form'] = self.read()[0]
 
         if self.output_format == "screen":
             waction = self.env.ref(
@@ -24,15 +23,3 @@ class DateRangeSelector(models.TransientModel):
             ]
             waction.domain = criteria
             return waction.read()[0]
-        elif self.output_format == "ods":
-            return {
-                'type': 'ir.actions.report.xml',
-                'report_name': "aeroo_reportLapPemasukanOds",
-                'datas': datas,
-            }
-        else:
-            return {
-                'type': 'ir.actions.report.xml',
-                'report_name': "aeroo_reportLapPemasukanXls",
-                'datas': datas,
-            }
