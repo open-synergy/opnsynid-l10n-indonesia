@@ -22,3 +22,7 @@ class KBLapPemasukanWizard(models.TransientModel):
         waction.domain = criteria
         waction.update({"target": "new"})
         return waction.read()[0]
+
+    @api.multi
+    def action_print(self):
+        return super(KBLapPemasukanWizard, self).action_print()
