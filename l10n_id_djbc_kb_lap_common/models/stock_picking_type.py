@@ -23,4 +23,3 @@ class StockPickingType(models.Model):
         string="DJBC's KB Adjustment?",
         default=False,
         )
-
