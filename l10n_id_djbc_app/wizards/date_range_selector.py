@@ -61,18 +61,15 @@ class DateRangeSelector(models.AbstractModel):
         raise UserError(
             "This feature hasn't been implemented yet")
 
-
     @api.multi
     def action_print_ods(self):
         raise UserError(
             "This feature hasn't been implemented yet")
 
-
     @api.multi
     def action_print_xls(self):
         raise UserError(
             "This feature hasn't been implemented yet")
-
 
     @api.multi
     def action_print(self):
