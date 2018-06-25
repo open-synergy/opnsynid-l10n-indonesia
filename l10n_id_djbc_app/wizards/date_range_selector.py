@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 OpenSynergy Indonesia
+# Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -8,7 +8,7 @@ from openerp.tools.translate import _
 from openerp.exceptions import Warning as UserError
 
 
-class DateRangeSelector(models.TransientModel):
+class DateRangeSelector(models.AbstractModel):
     _name = "l10n_id.date_range_selector"
     _description = "Date Range Selector"
 
@@ -37,14 +37,14 @@ class DateRangeSelector(models.TransientModel):
         required=True,
     )
     output_format = fields.Selection(
-        string='Output Format',
+        string="Output Format",
         required=True,
         selection=[
-            ('screen', 'On-Screen'),
-            ('xls', 'XLS'),
-            ('ods', 'ODS')
+            ("screen", "On-Screen"),
+            ("ods", "ODS"),
+            ("xls", "XLS")
         ],
-        default='ods',
+        default="screen",
     )
 
     @api.constrains(
@@ -57,21 +57,31 @@ class DateRangeSelector(models.TransientModel):
                 raise UserError(strWarning)
 
     @api.multi
+    def action_print_sreen(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+    @api.multi
+    def action_print_ods(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+    @api.multi
+    def action_print_xls(self):
+        raise UserError(
+            "This feature hasn't been implemented yet")
+
+    @api.multi
     def action_print(self):
         self.ensure_one()
 
-        datas = {}
-        output_format = ''
+        if self.output_format == "screen":
+            result = self.action_print_sreen()
+        elif self.output_format == "ods":
+            result = self.action_print_ods()
+        elif self.output_format == "xls":
+            result = self.action_print_xls()
+        else:
+            raise UserError("No Output Format Selected")
 
-        datas['form'] = self.read()[0]
-
-        if self.output_format == 'xls':
-            output_format = 'stock_card_xls'
-        elif self.output_format == 'ods':
-            output_format = 'stock_card_ods'
-
-        return {
-            'type': 'ir.actions.report.xml',
-            'report_name': output_format,
-            'datas': datas,
-        }
+        return result

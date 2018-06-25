@@ -28,26 +28,25 @@ class ResConfig(models.TransientModel):
     module_l10n_id_djbc_bc24 = fields.Boolean(
         string="Manage BC 3.0",
     )
-    #KITE
+    # KITE
     module_l10n_id_djbc_lap_mutasi_bahan_baku = fields.Boolean(
         string="Lap. Mutasi Bahan Baku",
     )
     module_l10n_id_djbc_lap_mutasi_hasil_produksi = fields.Boolean(
         string="Lap. Mutasi Hasil Produksi",
-    )    
+    )
     module_l10n_id_djbc_lap_pemakaian_bahan_baku = fields.Boolean(
         string="Lap. Pemakaian Bahan Baku",
-    )    
+    )
     module_l10n_id_djbc_lap_pemasukan_bahan_baku = fields.Boolean(
         string="Lap. Pemasukan Bahan Baku",
-    )    
+    )
     module_l10n_id_djbc_lap_pemasukan_hasil_produksi = fields.Boolean(
         string="Lap. Pemasukan Hasil Produksi",
-    )    
+    )
     module_l10n_id_djbc_lap_pengeluaran_hasil_produksi = fields.Boolean(
         string="Lap. Pengeluaran Hasil Produksi",
-    )       
+    )
     module_l10n_id_djbc_lap_penyelesaian_scrap = fields.Boolean(
         string="Lap. Penyelesaian Scrap",
-    )           
-          
+    )

@@ -2,10 +2,7 @@
 # Copyright 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from datetime import datetime
-from openerp import api, models, fields
-from openerp.tools.translate import _
-from openerp.exceptions import Warning as UserError
+from openerp import api, models
 
 
 class DateRangeSelector(models.TransientModel):
@@ -15,6 +12,6 @@ class DateRangeSelector(models.TransientModel):
     def action_mutasi_barang_jadi(self):
         self.ensure_one()
         waction = self.env.ref(
-            "l10n_id_djbc_kb_lap_mutasi_barang_jadi.djbc_kb_lap_mutasi_barang_jadi_action")
+            "l10n_id_djbc_kb_lap_mutasi_barang_jadi."
+            "djbc_kb_lap_mutasi_barang_jadi_action")
         return waction.read()[0]
-
