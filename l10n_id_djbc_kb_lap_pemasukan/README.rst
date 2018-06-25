@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================================================================
-Indonesia - Lap.  Pemasukan for DJBC's Kawasan Berikat Reporting
-========================================================================
+===============================================================
+Indonesia - Lap. Pemasukan for DJBC's Kawasan Berikat Reporting
+===============================================================
 
 
 
@@ -17,7 +17,7 @@ To install this module, you need to:
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list
 4.  Go to menu *Setting -> Modules -> Local Modules*
-5.  Search For *Indonesia - Lap.  Pemasukan for DJBC's Kawasan Berikat Reporting*
+5.  Search For *Indonesia - Lap. Pemasukan for DJBC's Kawasan Berikat Reporting*
 6.  Install the module
 
 Bug Tracker
