@@ -2,8 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
-from openerp import tools
+from openerp import models
 
 
 class LapKbMutasiRejectScrap(models.Model):
@@ -22,7 +21,7 @@ class LapKbMutasiRejectScrap(models.Model):
         JOIN (
             SELECT res_id
             FROM ir_model_data AS e1
-            WHERE 
+            WHERE
                 e1.module = 'l10n_id_djbc_kb_lap_common' AND
                 e1.name = 'product_categ_kb_scrap'
             ) as e ON
