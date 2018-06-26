@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="date_range_selector_view_form" model="ir.ui.view">
+    <field name="name">l10n_id.date_range_selector form</field>
+    <field name="model">l10n_id.date_range_selector</field>
+    <field name="inherit_id" ref="l10n_id_djbc_kb_lap_common.date_range_selector_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//button[@special='cancel']" position="before">
+                <button name="action_mutasi_reject_scrap"
+                    type="object"
+                    string="Print"
+                    class="oe_hightlight"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="date_range_selector_action" model="ir.actions.act_window">
+    <field name="name">Mutasi Reject/Scrap</field>
+    <field name="res_model">l10n_id.date_range_selector</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="date_range_selector_view_form"/>
+    <field name="target">new</field>
+</record>
+
+<menuitem
+    id="kb_lap_mutasi_reject_scrap_menu"
+    name="Mutasi Reject/Scrap"
+    parent="l10n_id_djbc_kb_lap_common.djbc_reporting_kb_menu"
+    action="date_range_selector_action"
+    sequence="4"
+/>
+</data>
+</openerp>
