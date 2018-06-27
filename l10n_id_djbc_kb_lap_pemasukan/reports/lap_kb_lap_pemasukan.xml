@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="djbc_lap_pemasukan_common_view_tree" model="ir.ui.view">
+            <field name="name">l10n_id.djbc_kb_lap_mutasi_common Tree</field>
+            <field name="model">l10n_id.djbc_kb_lap_pemasukan</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="jenis_dokumen"/>
+                    <field name="no_dokumen"/>
+                    <field name="tgl_dokumen"/>                        
+                    <field name="no_penerimaan"/>            
+                    <field name="tgl_penerimaan"/>            
+                    <field name="pengirim"/>            
+                    <field name="kode_barang"/>            
+                    <field name="nama_barang"/>            
+                    <field name="jumlah"/>            
+                    <field name="satuan"/>            
+                    <field name="nilai"/> 
+                    <field name="warehouse_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="djbc_kb_lap_pemasukan_action" model="ir.actions.act_window">
+            <field name="name">Lap. Pemasukan Barang</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">l10n_id.djbc_kb_lap_pemasukan</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="djbc_lap_pemasukan_common_view_tree"/>
+        </record>
+
+    </data>
+</openerp>
