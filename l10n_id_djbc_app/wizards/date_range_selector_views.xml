@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="date_range_selector_view_form" model="ir.ui.view">
+    <field name="name">l10n_id.date_range_selector form</field>
+    <field name="model">l10n_id.date_range_selector</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="company_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="warehouse_ids" widget="many2many_tags"/>
+                <field name="output_format"/>
+            </group>
+            <footer>
+                <button name="action_print"
+                    type="object"
+                    string="Print"
+                    class="oe_hightlight"/>
+                <button special="cancel"
+                        string="Cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+</data>
+</openerp>
