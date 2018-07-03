@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_all_djbc_kb_lap_mutasi_mesin_peralatan,all user l10n_id.djbc_kb_lap_mutasi_mesin_peralatan,model_l10n_id_djbc_kb_lap_mutasi_mesin_peralatan,,1,0,0,0
