@@ -59,17 +59,17 @@ class DateRangeSelector(models.AbstractModel):
     @api.multi
     def action_print_sreen(self):
         raise UserError(
-            "This feature hasn't been implemented yet")
+            _("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print_ods(self):
         raise UserError(
-            "This feature hasn't been implemented yet")
+            _("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print_xls(self):
         raise UserError(
-            "This feature hasn't been implemented yet")
+            _("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print(self):
@@ -82,6 +82,6 @@ class DateRangeSelector(models.AbstractModel):
         elif self.output_format == "xls":
             result = self.action_print_xls()
         else:
-            raise UserError("No Output Format Selected")
+            raise UserError(_("No Output Format Selected"))
 
         return result
