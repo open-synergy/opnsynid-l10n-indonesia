@@ -114,6 +114,7 @@ class LapKbMutasiCommon(models.AbstractModel):
     def _get_qty(self, date_start, date_end, movement_type, scrap, adjustment):
         self.ensure_one()
         result = 0.0
+        # pylint: disable=locally-disabled, sql-injection
         str_sql = """
         %s
         %s
@@ -232,6 +233,7 @@ class LapKbMutasiCommon(models.AbstractModel):
 
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
+        # pylint: disable=locally-disabled, sql-injection
         cr.execute("""CREATE or REPLACE VIEW %s as (
             %s
             FROM %s
