@@ -8,7 +8,8 @@ Partner Identification SIM Indonesia
 
 This module provide a SIM number to partner.
 References for data category:
-	*. https://id.wikipedia.org/wiki/Surat_Izin_Mengemudi
+
+    * https://id.wikipedia.org/wiki/Surat_Izin_Mengemudi
 
 Installation
 ============
