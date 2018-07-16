@@ -116,6 +116,7 @@ class LapKbLapPemasukan(models.Model):
 
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
+        # pylint: disable=locally-disabled, sql-injection
         cr.execute("""CREATE or REPLACE VIEW %s as (
             %s
             %s
