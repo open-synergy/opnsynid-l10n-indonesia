@@ -7,8 +7,6 @@
     "author": "OpenSynergy Indonesia",
     "website": "https://opensynergy-indonesia.com",
     "category": "Localization",
-    "description": """
-    """,
     "depends": [
         "account",
     ],

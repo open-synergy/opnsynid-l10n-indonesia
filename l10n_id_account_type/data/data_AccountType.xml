@@ -312,13 +312,6 @@
           <field name="report_type">liability</field>
         </record>
 
-        <record model="account.account.type" id="accountType_utangDagang">
-          <field name="name">Utang Dagang</field>
-          <field name="code">UTANG.DAGANG</field>
-          <field name="close_method">unreconciled</field>
-          <field name="report_type">liability</field>
-        </record>
-
         <record model="account.account.type" id="accountType_modalSaham">
           <field name="name">Modal Saham</field>
           <field name="code">MODAL.SAHAM</field>
