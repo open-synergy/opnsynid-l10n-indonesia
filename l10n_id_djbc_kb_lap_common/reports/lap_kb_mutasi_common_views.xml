@@ -20,6 +20,7 @@
             <field name="saldo_akhir"/>            
             <field name="selisih"/>            
             <field name="keterangan"/>            
+            <field name="warehouse_id"/>
         </tree>
     </field>
 </record>
