@@ -33,12 +33,14 @@ class LapKbMutasiCommon(models.AbstractModel):
         str_where = """
         WHERE
             a.product_id = %s AND
+            b.warehouse_id = %s AND
             b.djbc_kb_movement_type = '%s' AND
             b.djbc_kb_scrap %s AND
             b.djbc_kb_adjustment %s AND
             a.state = 'done' AND
         """ % (
             self.product_id.id,
+            self.warehouse_id.id,
             movement_type,
             scrap and 'IS TRUE' or 'IS FALSE',
             adjustment and 'IS TRUE' or 'IS FALSE'
@@ -203,13 +205,18 @@ class LapKbMutasiCommon(models.AbstractModel):
             ("lebih", "Selisih Lebih"),
             ],
         )
+    warehouse_id = fields.Many2one(
+        string="Warehouse",
+        comodel_name="stock.warehouse",
+        )
 
     def _select(self):
         select_str = """
-             SELECT a.id as id,
+             SELECT row_number() OVER() as id,
                     a.default_code AS kode_barang,
                     a.id AS product_id,
-                    b.uom_id AS uom_id
+                    b.uom_id AS uom_id,
+                    stock_warehouse.id AS warehouse_id
         """
         return select_str
 
@@ -226,6 +233,7 @@ class LapKbMutasiCommon(models.AbstractModel):
 
     def _join(self):
         join_str = """
+        CROSS JOIN stock_warehouse
         JOIN product_template AS b
             ON a.product_tmpl_id = b.id
         """
