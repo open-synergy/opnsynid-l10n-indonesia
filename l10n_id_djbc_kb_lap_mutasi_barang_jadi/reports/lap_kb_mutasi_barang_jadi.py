@@ -23,7 +23,7 @@ class LapKbMutasiBarangJadi(models.Model):
             FROM ir_model_data AS e1
             WHERE
                 e1.module = 'l10n_id_djbc_kb_lap_common' AND
-                e1.name = 'product_categ_kb_barang_jadi'
+                e1.name = 'product_categ_kb_hasil_produksi'
             ) as e ON
             d.id = e.res_id
         """
