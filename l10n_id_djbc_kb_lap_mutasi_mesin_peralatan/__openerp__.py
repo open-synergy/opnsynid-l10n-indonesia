@@ -4,7 +4,7 @@
 {
     "name": "Indonesia - Lap.  Mutasi Mesin Peralatan "
             "for DJBC's Kawasan Berikat Reporting",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
