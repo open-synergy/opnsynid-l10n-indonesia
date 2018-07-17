@@ -22,4 +22,11 @@ class KBLapMutasiRejectScrapWizard(models.TransientModel):
         waction = self.env.ref(
             "l10n_id_djbc_kb_lap_mutasi_reject_scrap."
             "djbc_kb_lap_mutasi_reject_scrap_action")
-        return waction.read()[0]
+        context = {
+            "date_start": self.date_start,
+            "date_end": self.date_end,
+            }
+        domain = [("warehouse_id", "in", self.warehouse_ids.ids)]
+        result = waction.read()[0]
+        result.update({"context":context, "domain": domain})
+        return result
