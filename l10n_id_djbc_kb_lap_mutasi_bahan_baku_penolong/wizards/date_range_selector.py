@@ -22,4 +22,11 @@ class KBLapMutasiBahanBakuWizard(models.TransientModel):
         waction = self.env.ref(
             "l10n_id_djbc_kb_lap_mutasi_bahan_baku_penolong."
             "djbc_kb_lap_mutasi_bahan_baku_penolong_action")
-        return waction.read()[0]
+        context = {
+            "date_start": self.date_start,
+            "date_end": self.date_end,
+            }
+        domain = [("warehouse_id", "in", self.warehouse_ids.ids)]
+        result = waction.read()[0]
+        result.update({"context":context, "domain": domain})
+        return result
