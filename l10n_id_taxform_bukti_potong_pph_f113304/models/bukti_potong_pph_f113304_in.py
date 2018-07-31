@@ -22,10 +22,11 @@ class BuktiPotongPPhF113304In(models.Model):
     )
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None):
+    def search(self, args, offset=0, limit=None, order=None, count=False):
         type_id = self.env.ref(
             "l10n_id_taxform_bukti_potong_pph_f113304."
             "bukti_potong_pph_type_f113304_in")
         args.append(("type_id", "=", type_id.id))
-        return super(BuktiPotongPPhF113304In, self).\
-            search(args, offset, limit, order)
+        return super(BuktiPotongPPhF113304In, self).search(
+            args=args, offset=offset, limit=limit,
+            order=order, count=count)
