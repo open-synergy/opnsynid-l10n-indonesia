@@ -4,8 +4,6 @@
 
 from openerp import models, fields, api
 from openerp import tools
-import logging
-_logger = logging.getLogger(__name__)
 
 
 class LapKbMutasiCommon(models.AbstractModel):
@@ -74,6 +72,7 @@ class LapKbMutasiCommon(models.AbstractModel):
     def _compute_qty(self):
         date_start = self._context.get("date_start", False)
         date_end = self._context.get("date_end", False)
+        obj_inv_line = self.env["stock.inventory.line"]
 
         for lap in self:
             saldo_awal = pemasukan = pengeluaran = \
@@ -88,11 +87,22 @@ class LapKbMutasiCommon(models.AbstractModel):
                 date_start, date_end, "in", False, False)
             pengeluaran = lap._get_qty(
                 date_start, date_end, "out", False, False)
-            penyesuaian_in = \
-                lap._get_qty(date_start, date_end, "in", False, True)
-            penyesuaian_out = \
-                lap._get_qty(date_start, date_end, "out", False, True)
-            penyesuaian = penyesuaian_in - penyesuaian_out
+
+            # Adjustment
+            view_root_id = lap.warehouse_id.view_location_id.id
+            criteria = [
+                ("inventory_id.date", ">=", date_start),
+                ("inventory_id.date", "<=", date_end),
+                ("inventory_id.state", "=", "done"),
+                ("inventory_id.djbc", "=", True),
+                ("inventory_id.location_id.id", "child_of", view_root_id),
+                ("product_id", "=", lap.product_id.id),
+            ]
+            for inv_line in obj_inv_line.search(criteria):
+                stock_opname += inv_line.product_qty
+                penyesuaian += (inv_line.product_qty -
+                                inv_line.theoretical_qty)
+
             saldo_akhir = saldo_awal + pemasukan - pengeluaran + penyesuaian
             selisih = saldo_akhir - stock_opname
 
@@ -132,7 +142,6 @@ class LapKbMutasiCommon(models.AbstractModel):
                 adjustment
             )
         )
-        _logger.warning(str_sql)
         self.env.cr.execute(str_sql)
         a = self.env.cr.dictfetchall()
         for row in a:
@@ -142,59 +151,59 @@ class LapKbMutasiCommon(models.AbstractModel):
     kode_barang = fields.Char(
         string="Kode Barang",
         readonly=True,
-        )
+    )
     product_id = fields.Many2one(
         string="Nama Barang",
         comodel_name="product.product",
         readonly=True,
-        )
+    )
     uom_id = fields.Many2one(
         string="Satuan",
         comodel_name="product.uom",
         readonly=True,
-        )
+    )
     saldo_awal = fields.Float(
         string="Saldo Awal",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     pemasukan = fields.Float(
         string="Pemasukan",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     pengeluaran = fields.Float(
         string="Pengeluaran",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     penyesuaian = fields.Float(
         string="Penyesuaian",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     stock_opname = fields.Float(
         string="Stock Opname",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     saldo_akhir = fields.Float(
         string="Saldo Buku",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     selisih = fields.Float(
         string="Selisih",
         readonly=True,
         compute="_compute_qty",
         store=False,
-        )
+    )
     keterangan = fields.Selection(
         string="Ket",
         compute="_compute_qty",
@@ -203,12 +212,12 @@ class LapKbMutasiCommon(models.AbstractModel):
             ("sesuai", "Sesuai"),
             ("kurang", "Selisih Kurang"),
             ("lebih", "Selisih Lebih"),
-            ],
-        )
+        ],
+    )
     warehouse_id = fields.Many2one(
         string="Warehouse",
         comodel_name="stock.warehouse",
-        )
+    )
 
     def _select(self):
         select_str = """

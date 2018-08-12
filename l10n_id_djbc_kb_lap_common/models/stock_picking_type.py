@@ -13,13 +13,13 @@ class StockPickingType(models.Model):
         selection=[
             ("in", "In"),
             ("out", "Out"),
-            ],
-        )
+        ],
+    )
     djbc_kb_scrap = fields.Boolean(
         string="DJBC's KB Scrap?",
         default=False,
-        )
+    )
     djbc_kb_adjustment = fields.Boolean(
         string="DJBC's KB Adjustment?",
         default=False,
-        )
+    )
