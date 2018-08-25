@@ -34,14 +34,12 @@ class LapKbMutasiCommon(models.AbstractModel):
             b.warehouse_id = %s AND
             b.djbc_kb_movement_type = '%s' AND
             b.djbc_kb_scrap %s AND
-            b.djbc_kb_adjustment %s AND
             a.state = 'done' AND
         """ % (
             self.product_id.id,
             self.warehouse_id.id,
             movement_type,
             scrap and 'IS TRUE' or 'IS FALSE',
-            adjustment and 'IS TRUE' or 'IS FALSE'
         )
         if date_start:
             str_where += """
@@ -52,6 +50,11 @@ class LapKbMutasiCommon(models.AbstractModel):
             str_where += """
             a.date < '%s'
             """ % (date_end)
+        if adjustment:
+            str_where += """
+             AND a.inventory_id != %s
+            """ % (adjustment)
+
         return str_where
 
     @api.multi
@@ -73,35 +76,46 @@ class LapKbMutasiCommon(models.AbstractModel):
         date_start = self._context.get("date_start", False)
         date_end = self._context.get("date_end", False)
         obj_inv_line = self.env["stock.inventory.line"]
+        obj_inv = self.env["stock.inventory"]
 
         for lap in self:
             saldo_awal = pemasukan = pengeluaran = \
                 penyesuaian = saldo_akhir = stock_opname = \
                 selisih = 0.0
-            saldo_awal_pemasukan = lap._get_qty(
-                False, date_start, "in", False, False)
-            saldo_awal_pengeluaran = lap._get_qty(
-                False, date_start, "out", False, False)
-            saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
-            pemasukan = lap._get_qty(
-                date_start, date_end, "in", False, False)
-            pengeluaran = lap._get_qty(
-                date_start, date_end, "out", False, False)
 
             # Adjustment
+            inv = False
             view_root_id = lap.warehouse_id.view_location_id.id
-            criteria = [
-                ("inventory_id.date", ">=", date_start),
-                ("inventory_id.date", "<=", date_end),
-                ("inventory_id.state", "=", "done"),
-                ("inventory_id.djbc", "=", True),
-                ("inventory_id.location_id.id", "child_of", view_root_id),
-                ("product_id", "=", lap.product_id.id),
+            criteria1 = [
+                ("date", ">=", date_start),
+                ("date", "<=", date_end),
+                ("state", "=", "done"),
+                ("djbc", "=", True),
+                ("location_id.id", "child_of", view_root_id),
             ]
-            for inv_line in obj_inv_line.search(criteria):
-                stock_opname += inv_line.product_qty
-                penyesuaian += (inv_line.product_qty -
-                                inv_line.theoretical_qty)
+            invs = obj_inv.search(criteria1, order="date desc", limit=1)
+            if invs:
+                inv = invs[0]
+
+            saldo_awal_pemasukan = lap._get_qty(
+                False, date_start, "in", False, inv.id)
+            saldo_awal_pengeluaran = lap._get_qty(
+                False, date_start, "out", False, inv.id)
+            saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
+            pemasukan = lap._get_qty(
+                date_start, date_end, "in", False, inv.id)
+            pengeluaran = lap._get_qty(
+                date_start, date_end, "out", False, inv.id)
+
+            if inv:
+                criteria = [
+                    ("inventory_id", "=", inv.id),
+                    ("product_id", "=", lap.product_id.id),
+                ]
+                for inv_line in obj_inv_line.search(criteria):
+                    stock_opname += inv_line.product_qty
+                    penyesuaian += (inv_line.product_qty -
+                                    inv_line.theoretical_qty)
 
             saldo_akhir = saldo_awal + pemasukan - pengeluaran + penyesuaian
             selisih = saldo_akhir - stock_opname
