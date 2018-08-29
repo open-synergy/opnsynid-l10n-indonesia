@@ -98,7 +98,7 @@ class LapKbLapPemasukan(models.Model):
 
     def _join(self):
         join_str = """
-            JOIN stock_picking AS B ON A.picking_id=B.id
+            LEFT JOIN stock_picking AS B ON A.picking_id=B.id
             JOIN l10n_id_djbc_custom_document AS C
                 ON A.djbc_custom_document_id=C.id
             JOIN product_product AS D ON A.product_id=D.id
