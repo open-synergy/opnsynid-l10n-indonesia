@@ -4,7 +4,7 @@
 {
     "name": "Indonesia - Lap. Pengeluaran "
             "for DJBC's Kawasan Berikat Reporting",
-    "version": "8.0.1.2.0",
+    "version": "8.0.1.2.1",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
