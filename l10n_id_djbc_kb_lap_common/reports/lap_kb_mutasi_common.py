@@ -52,7 +52,8 @@ class LapKbMutasiCommon(models.AbstractModel):
             """ % (date_end)
         if adjustment:
             str_where += """
-             AND a.inventory_id != %s
+             AND (a.inventory_id != %s OR 
+             a.inventory_id IS NULL)
             """ % (adjustment)
 
         return str_where
