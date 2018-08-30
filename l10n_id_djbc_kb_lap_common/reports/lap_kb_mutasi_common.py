@@ -98,9 +98,9 @@ class LapKbMutasiCommon(models.AbstractModel):
                 inv = invs[0]
 
             saldo_awal_pemasukan = lap._get_qty(
-                False, date_start, "in", False, inv and inv.id or False)
+                False, date_start, "in", False, False)
             saldo_awal_pengeluaran = lap._get_qty(
-                False, date_start, "out", False, inv and inv.id or False)
+                False, date_start, "out", False, False)
             saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
             pemasukan = lap._get_qty(
                 date_start, date_end, "in", False, inv and inv.id or False)
