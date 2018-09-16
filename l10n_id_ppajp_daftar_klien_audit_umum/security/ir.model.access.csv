@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_all_ppajp_daftar_klien_audit_umum,all user l10n_id.ppajp_daftar_klien_audit_umum,model_l10n_id_ppajp_daftar_klien_audit_umum,,1,0,0,0
