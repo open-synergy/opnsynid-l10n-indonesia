@@ -25,8 +25,8 @@ class KBLapMutasiBarangJadiWizard(models.TransientModel):
         context = {
             "date_start": self.date_start,
             "date_end": self.date_end,
-            }
+        }
         domain = [("warehouse_id", "in", self.warehouse_ids.ids)]
         result = waction.read()[0]
-        result.update({"context":context, "domain": domain})
+        result.update({"context": context, "domain": domain})
         return result
