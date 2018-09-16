@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================================
+=========================================
 Indonesia - Form 2.6.1 for DJBC Reporting
-=======================================
+=========================================
 
 Form BC 2.6.1 for Direktorat Jendral Bea & Cukai IT Inventory
 
