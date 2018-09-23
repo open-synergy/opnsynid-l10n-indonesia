@@ -4,16 +4,18 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Indonesia - PPAJP KAP",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com/",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "depends": [
         "accountant_app",
+        "date_range_calendar_data",
     ],
     "data": [
         "menu.xml",
+        "wizards/common_report_wizard_views.xml",
         "views/accountant_config_setting_views.xml",
     ],
 }
