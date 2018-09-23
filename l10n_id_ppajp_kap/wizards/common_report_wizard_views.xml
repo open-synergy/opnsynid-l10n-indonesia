@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="common_report_wizard_view_form" model="ir.ui.view">
+    <field name="name">l10n_id.ppajp_common_report_wizard form</field>
+    <field name="model">l10n_id.ppajp_common_report_wizard</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="year_id"
+                    domain="[('type_id','=',%(date_range_calendar_data.date_range_type_yearly_calendar)d)]"
+                    />
+                <field name="output_format"/>
+            </group>
+            <footer>
+                <button name="action_print"
+                    type="object"
+                    string="Print"
+                    icon="gtk-print"
+                    class="oe_highlight"/>
+                <button special="cancel"
+                        string="Cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+</data>
+</openerp>
