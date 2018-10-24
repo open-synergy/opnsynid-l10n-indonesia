@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem 
+		    id="djbc_reporting_plb_menu"
+		    name="Pusat Logistik Berikat"
+		    sequence="1"
+		    parent="l10n_id_djbc_app.djbc_reporting_menu"
+		    />
+	</data>
+</openerp>
