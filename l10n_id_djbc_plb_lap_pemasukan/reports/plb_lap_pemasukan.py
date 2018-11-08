@@ -28,12 +28,12 @@ class LapPlbLapPemasukan(models.Model):
         string="Nomor Penerimaan"
     )
 
-    tgl_penerimaan = fields.Char(
+    tgl_penerimaan = fields.Datetime(
         string="Tanggal Penerimaan"
     )
 
-    pengirim = fields.Many2one(
-        string="Pengirim Barang",
+    penerima = fields.Many2one(
+        string="Penerima Barang",
         comodel_name="res.partner"
     )
 
@@ -72,7 +72,7 @@ class LapPlbLapPemasukan(models.Model):
                 C.date as tgl_dokumen,
                 B.name as no_penerimaan,
                 A.date as tgl_penerimaan,
-                B.partner_id as pengirim,
+                B.partner_id as penerima,
                 D.default_code as kode_barang,
                 A.product_id as nama_barang,
                 A.product_qty as jumlah,
@@ -90,9 +90,7 @@ class LapPlbLapPemasukan(models.Model):
 
     def _where(self):
         where_str = """
-            WHERE E.djbc_plb_movement_type='in' AND
-                  E.djbc_plb_scrap IS FALSE AND
-                  E.djbc_plb_adjustment IS FALSE
+            WHERE E.djbc_plb_movement_type='in'
         """
         return where_str
 
