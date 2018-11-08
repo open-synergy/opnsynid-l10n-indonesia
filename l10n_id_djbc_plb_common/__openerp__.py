@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Indonesia - Common Feature for Pusat Logistik Berikat",
-    "version": "8.0.1.4.3",
+    "version": "8.0.1.1.1",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",

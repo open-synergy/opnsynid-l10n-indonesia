@@ -9,8 +9,6 @@
                 <xpath expr="//group[last()]" position="after">
                     <group name="djbc_plb" colspan="4" col="2" string="DJBC's PLB Configuration">
                         <field name="djbc_plb_movement_type"/>
-                        <field name="djbc_plb_scrap"/>
-                        <field name="djbc_plb_adjustment"/>
                     </group>
                 </xpath>
             </field>
