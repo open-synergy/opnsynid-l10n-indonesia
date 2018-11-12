@@ -15,3 +15,11 @@ class StockPickingType(models.Model):
             ("out", "Out"),
         ],
     )
+    djbc_plb_scrap = fields.Boolean(
+        string="DJBC's PLB Scrap?",
+        default=False,
+    )
+    djbc_plb_adjustment = fields.Boolean(
+        string="DJBC's PLB Adjustment?",
+        default=False,
+    )
