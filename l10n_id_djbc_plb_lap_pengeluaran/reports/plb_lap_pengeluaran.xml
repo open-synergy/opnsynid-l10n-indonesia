@@ -12,15 +12,15 @@
             <field name="jenis_dokumen"/>
             <field name="no_dokumen"/>
             <field name="tgl_dokumen"/>                        
-            <field name="no_pengiriman"/>            
-            <field name="tgl_pengiriman"/>            
-            <field name="pengirim"/>            
+            <field name="no_pengeluaran"/>            
+            <field name="tgl_pengeluaran"/>            
+            <field name="penerima"/>
+            <field name="pemilik_barang"/>           
             <field name="kode_barang"/>            
             <field name="nama_barang"/>            
             <field name="jumlah"/>            
             <field name="satuan"/>            
             <field name="nilai"/> 
-            <field name="warehouse_id"/>
         </tree>
     </field>
 </record>
@@ -32,17 +32,17 @@
         <search>
             <field name="jenis_dokumen"/>
             <field name="no_dokumen"/>
-            <field name="no_pengiriman"/>            
-            <field name="pengirim"/>            
+            <field name="no_pengeluaran"/>            
+            <field name="penerima"/>
+            <field name="pemilik_barang"/>            
             <field name="kode_barang"/>            
             <field name="nama_barang"/>            
             <field name="warehouse_id"/>
             <group string="Group By">
                 <filter name="grp_jenis_dokumen" string="Jenis Dokumen" context="{'group_by':'jenis_dokumen'}"/>
                 <filter name="grp_no_dokumen" string="No. Dokumen" context="{'group_by':'no_dokumen'}"/>
-                <filter name="grp_no_pengiriman" string="No. Penerimaan" context="{'group_by':'no_pengiriman'}"/>
-                <filter name="grp_pengirim" string="Pengirim" context="{'group_by':'pengirim'}"/>
-                <filter name="grp_warehouse_id" string="Warehouse" context="{'group_by':'warehouse_id'}"/>
+                <filter name="grp_no_pengeluaran" string="No. Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
+                <filter name="grp_penerima" string="Pembeli/Penerima" context="{'group_by':'penerima'}"/>
             </group>
         </search>
     </field>
