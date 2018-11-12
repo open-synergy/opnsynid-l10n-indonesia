@@ -32,8 +32,8 @@ class LapPlbLapPemasukan(models.Model):
         string="Tanggal Penerimaan"
     )
 
-    penerima = fields.Many2one(
-        string="Penerima Barang",
+    pengirim = fields.Many2one(
+        string="Pemasok/Pengirim",
         comodel_name="res.partner"
     )
 
@@ -64,6 +64,11 @@ class LapPlbLapPemasukan(models.Model):
         comodel_name="stock.warehouse"
     )
 
+    pemilik_barang = fields.Many2one(
+        string="Pemilik Barang",
+        comodel_name="res.partner"
+    )
+
     def _select(self):
         select_str = """
             SELECT  a.id as id,
@@ -72,13 +77,14 @@ class LapPlbLapPemasukan(models.Model):
                 C.date as tgl_dokumen,
                 B.name as no_penerimaan,
                 A.date as tgl_penerimaan,
-                B.partner_id as penerima,
+                B.partner_id as pengirim,
                 D.default_code as kode_barang,
                 A.product_id as nama_barang,
                 A.product_qty as jumlah,
                 A.product_uom as satuan,
                 F.nilai as nilai,
-                E.warehouse_id AS warehouse_id
+                E.warehouse_id AS warehouse_id,
+                A.restrict_partner_id AS pemilik_barang
         """
         return select_str
 
@@ -90,7 +96,9 @@ class LapPlbLapPemasukan(models.Model):
 
     def _where(self):
         where_str = """
-            WHERE E.djbc_plb_movement_type='in'
+            WHERE E.djbc_plb_movement_type='in'AND
+                  E.djbc_plb_scrap IS FALSE AND
+                  E.djbc_plb_adjustment IS FALSE
         """
         return where_str
 
