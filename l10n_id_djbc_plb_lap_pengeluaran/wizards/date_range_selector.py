@@ -5,7 +5,7 @@
 from openerp import api, models, fields
 
 
-class PLBLapPemasukanWizard(models.TransientModel):
+class PLBLapPengeluaranWizard(models.TransientModel):
     _name = "l10n_id.plb_lap_pengeluaran_wizard"
     _inherit = ["l10n_id.date_range_selector"]
 
@@ -17,14 +17,20 @@ class PLBLapPemasukanWizard(models.TransientModel):
         column2="warehouse_id"
     )
 
+    partner_id = fields.Many2one(
+        string="Pemilik Barang",
+        comodel_name="res.partner",
+        required=True
+    )
+
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
             "l10n_id_djbc_plb_lap_pengeluaran.djbc_plb_lap_pengeluaran_action")
         criteria = [
-            ("tgl_pengiriman", ">=", self.date_start),
-            ("tgl_pengiriman", "<=", self.date_end),
-            ("warehouse_id", "in", self.warehouse_ids.ids)
+            ("tgl_pengeluaran", ">=", self.date_start),
+            ("tgl_pengeluaran", "<=", self.date_end),
+            ("pemilik_barang", "=", self.partner_id.id)
         ]
         waction.domain = criteria
         return waction.read()[0]

@@ -24,16 +24,16 @@ class LapPlbLapPengeluaran(models.Model):
         string="Tanggal Dokumen"
     )
 
-    no_pengiriman = fields.Char(
-        string="Nomor Pengiriman"
+    no_pengeluaran = fields.Char(
+        string="Nomor Pengeluaran"
     )
 
-    tgl_pengiriman = fields.Datetime(
-        string="Tanggal Pengiriman"
+    tgl_pengeluaran = fields.Datetime(
+        string="Tanggal Pengeluaran"
     )
 
-    pengirim = fields.Many2one(
-        string="Pengirim Barang",
+    penerima = fields.Many2one(
+        string="Pembeli/Penerima",
         comodel_name="res.partner"
     )
 
@@ -64,21 +64,27 @@ class LapPlbLapPengeluaran(models.Model):
         comodel_name="stock.warehouse"
     )
 
+    pemilik_barang = fields.Many2one(
+        string="Pemilik Barang",
+        comodel_name="res.partner"
+    )
+
     def _select(self):
         select_str = """
             SELECT  a.id as id,
                 C.type_id as jenis_dokumen,
                 C.name as no_dokumen,
                 C.date as tgl_dokumen,
-                B.name as no_pengiriman,
-                A.date as tgl_pengiriman,
-                B.partner_id as pengirim,
+                B.name as no_pengeluaran,
+                A.date as tgl_pengeluaran,
+                B.partner_id as penerima,
                 D.default_code as kode_barang,
                 A.product_id as nama_barang,
                 A.product_qty as jumlah,
                 A.product_uom as satuan,
                 F.nilai as nilai,
-                E.warehouse_id AS warehouse_id
+                E.warehouse_id AS warehouse_id,
+                A.restrict_partner_id AS pemilik_barang
         """
         return select_str
 
@@ -90,7 +96,9 @@ class LapPlbLapPengeluaran(models.Model):
 
     def _where(self):
         where_str = """
-            WHERE E.djbc_plb_movement_type='out'
+            WHERE E.djbc_plb_movement_type='out'AND
+                  E.djbc_plb_scrap IS FALSE AND
+                  E.djbc_plb_adjustment IS FALSE
         """
         return where_str
 
