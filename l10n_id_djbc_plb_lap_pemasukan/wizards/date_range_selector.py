@@ -17,6 +17,12 @@ class PLBLapPemasukanWizard(models.TransientModel):
         column2="warehouse_id"
     )
 
+    partner_id = fields.Many2one(
+        string="Pemilik Barang",
+        comodel_name="res.partner",
+        required=True
+    )
+
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
@@ -24,7 +30,7 @@ class PLBLapPemasukanWizard(models.TransientModel):
         criteria = [
             ("tgl_penerimaan", ">=", self.date_start),
             ("tgl_penerimaan", "<=", self.date_end),
-            ("warehouse_id", "in", self.warehouse_ids.ids)
+            ("pemilik_barang", "=", self.partner_id.id)
         ]
         waction.domain = criteria
         return waction.read()[0]

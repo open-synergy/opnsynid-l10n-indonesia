@@ -14,13 +14,13 @@
             <field name="tgl_dokumen"/>                        
             <field name="no_penerimaan"/>            
             <field name="tgl_penerimaan"/>            
-            <field name="penerima"/>            
+            <field name="pengirim"/>            
+            <field name="pemilik_barang"/>
             <field name="kode_barang"/>            
             <field name="nama_barang"/>            
             <field name="jumlah"/>            
             <field name="satuan"/>            
             <field name="nilai"/> 
-            <field name="warehouse_id"/>
         </tree>
     </field>
 </record>
@@ -33,7 +33,8 @@
             <field name="jenis_dokumen"/>
             <field name="no_dokumen"/>
             <field name="no_penerimaan"/>            
-            <field name="penerima"/>            
+            <field name="pengirim"/>
+            <field name="pemilik_barang"/>            
             <field name="kode_barang"/>            
             <field name="nama_barang"/>            
             <field name="warehouse_id"/>
@@ -41,8 +42,7 @@
                 <filter name="grp_jenis_dokumen" string="Jenis Dokumen" context="{'group_by':'jenis_dokumen'}"/>
                 <filter name="grp_no_dokumen" string="No. Dokumen" context="{'group_by':'no_dokumen'}"/>
                 <filter name="grp_no_penerimaan" string="No. Penerimaan" context="{'group_by':'no_penerimaan'}"/>
-                <filter name="grp_penerima" string="Penerima" context="{'group_by':'penerima'}"/>
-                <filter name="grp_warehouse_id" string="Warehouse" context="{'group_by':'warehouse_id'}"/>
+                <filter name="grp_pengirim" string="Pemasok/Pengirim" context="{'group_by':'pengirim'}"/>
             </group>
         </search>
     </field>
