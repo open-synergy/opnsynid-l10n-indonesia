@@ -84,7 +84,7 @@ class LapPlbLapPengeluaran(models.Model):
                 A.product_uom as satuan,
                 F.nilai as nilai,
                 E.warehouse_id AS warehouse_id,
-                A.restrict_partner_id AS pemilik_barang
+                B.owner_id AS pemilik_barang
         """
         return select_str
 
