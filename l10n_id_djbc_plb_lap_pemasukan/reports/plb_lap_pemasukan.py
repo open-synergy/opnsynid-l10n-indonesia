@@ -33,7 +33,7 @@ class LapPlbLapPemasukan(models.Model):
     )
 
     pengirim = fields.Many2one(
-        string="Pemasok/Pengirim",
+        string="Pembeli/Penerima",
         comodel_name="res.partner"
     )
 

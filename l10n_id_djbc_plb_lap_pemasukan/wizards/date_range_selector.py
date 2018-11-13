@@ -20,7 +20,7 @@ class PLBLapPemasukanWizard(models.TransientModel):
     partner_id = fields.Many2one(
         string="Pemilik Barang",
         comodel_name="res.partner",
-        required=True
+        required=False,
     )
 
     @api.multi
@@ -30,7 +30,7 @@ class PLBLapPemasukanWizard(models.TransientModel):
         criteria = [
             ("tgl_penerimaan", ">=", self.date_start),
             ("tgl_penerimaan", "<=", self.date_end),
-            ("pemilik_barang", "=", self.partner_id.id)
+            ("warehouse_id", "in", self.warehouse_ids.ids)
         ]
         waction.domain = criteria
         return waction.read()[0]

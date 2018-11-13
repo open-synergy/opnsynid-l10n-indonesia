@@ -11,16 +11,10 @@
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//field[@name='warehouse_ids']" position="attributes">
-                        <attribute name="required">False</attribute>
-                    </xpath>
-                    <xpath expr="//field[@name='warehouse_ids']" position="replace">
-                        <field name="partner_id"/>
-                    </xpath>
                 </data>
             </field>
         </record>
-        
+
         <record id="plb_lap_pemasukan_wizard_action" model="ir.actions.act_window">
             <field name="name">Pemasukan Barang</field>
             <field name="res_model">l10n_id.plb_lap_pemasukan_wizard</field>
