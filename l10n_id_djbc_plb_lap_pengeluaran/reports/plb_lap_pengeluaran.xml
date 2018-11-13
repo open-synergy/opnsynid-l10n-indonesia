@@ -11,16 +11,17 @@
         <tree create="false" edit="false" delete="false">
             <field name="jenis_dokumen"/>
             <field name="no_dokumen"/>
-            <field name="tgl_dokumen"/>                        
-            <field name="no_pengeluaran"/>            
-            <field name="tgl_pengeluaran"/>            
+            <field name="tgl_dokumen"/>
+            <field name="no_pengeluaran"/>
+            <field name="tgl_pengeluaran"/>
             <field name="penerima"/>
-            <field name="pemilik_barang"/>           
-            <field name="kode_barang"/>            
-            <field name="nama_barang"/>            
-            <field name="jumlah"/>            
-            <field name="satuan"/>            
-            <field name="nilai"/> 
+            <field name="pemilik_barang"/>
+            <field name="warehouse_id"/>
+            <field name="kode_barang"/>
+            <field name="nama_barang"/>
+            <field name="jumlah"/>
+            <field name="satuan"/>
+            <field name="nilai"/>
         </tree>
     </field>
 </record>
@@ -32,17 +33,19 @@
         <search>
             <field name="jenis_dokumen"/>
             <field name="no_dokumen"/>
-            <field name="no_pengeluaran"/>            
+            <field name="no_pengeluaran"/>
             <field name="penerima"/>
-            <field name="pemilik_barang"/>            
-            <field name="kode_barang"/>            
-            <field name="nama_barang"/>            
+            <field name="pemilik_barang"/>
+            <field name="kode_barang"/>
+            <field name="nama_barang"/>
             <field name="warehouse_id"/>
             <group string="Group By">
                 <filter name="grp_jenis_dokumen" string="Jenis Dokumen" context="{'group_by':'jenis_dokumen'}"/>
                 <filter name="grp_no_dokumen" string="No. Dokumen" context="{'group_by':'no_dokumen'}"/>
                 <filter name="grp_no_pengeluaran" string="No. Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
                 <filter name="grp_penerima" string="Pembeli/Penerima" context="{'group_by':'penerima'}"/>
+                <filter name="grp_pemilik" string="Pemilik" context="{'group_by':'pemilik_barang'}"/>
+                <filter name="grp_warehouse" string="Warehouse" context="{'group_by':'warehouse_id'}"/>                
             </group>
         </search>
     </field>
