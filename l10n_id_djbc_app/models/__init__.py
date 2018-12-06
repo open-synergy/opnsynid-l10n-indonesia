@@ -10,3 +10,4 @@ from . import stock_quant
 from . import product_template
 from . import stock_picking_type
 from . import stock_picking
+from . import stock_production_lot
