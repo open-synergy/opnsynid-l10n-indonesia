@@ -11,6 +11,7 @@
                 <field name="djbc_kb_movement_type"/>
                 <field name="djbc_kb_scrap"/>
                 <field name="djbc_kb_adjustment"/>
+                <field name="djbc_kb_required_doc"/>
             </group>
         </xpath>
     </field>
