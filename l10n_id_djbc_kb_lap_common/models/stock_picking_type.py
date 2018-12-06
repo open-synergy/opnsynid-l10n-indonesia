@@ -23,3 +23,6 @@ class StockPickingType(models.Model):
         string="DJBC's KB Adjustment?",
         default=False,
     )
+    djbc_kb_required_doc = fields.Boolean(
+        string="Required DJBC Doc",
+    )

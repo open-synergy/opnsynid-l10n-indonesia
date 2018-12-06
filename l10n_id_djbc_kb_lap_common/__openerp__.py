@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Indonesia - Common Feature for Kawasan Berikat Reporting",
-    "version": "8.0.1.4.3",
+    "version": "8.0.1.5.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
