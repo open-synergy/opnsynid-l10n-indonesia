@@ -11,8 +11,9 @@
     <field name="arch" type="xml">
         <xpath expr="//group[@name='quants_grp']" position="before">
             <group name="grp_djbc" string="DJBC Info" colspan="4">
-                <field name="djbc_custom_document_id" domain="[('type_id', 'in', parent.all_allowed_document_type_ids[0][2])]"/>
-                <field name="djbc_custom"/>                
+                <field name="all_allowed_document_type_ids" invisible="1"/>
+                <field name="djbc_custom_document_id" domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"/>
+                <field name="djbc_custom"/>
             </group>
         </xpath>
     </field>
@@ -25,8 +26,9 @@
     <field name="arch" type="xml">
         <xpath expr="//group[@name='quants_grp']" position="before">
             <group name="grp_djbc" string="DJBC Info" colspan="4">
-                <field name="djbc_custom_document_id" domain="[('type_id', 'in', parent.all_allowed_document_type_ids[0][2])]"/>
-                <field name="djbc_custom"/>                
+                <field name="all_allowed_document_type_ids" invisible="1"/>
+                <field name="djbc_custom_document_id" domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"/>
+                <field name="djbc_custom"/>
             </group>
         </xpath>
     </field>
@@ -39,7 +41,7 @@
     <field name="arch" type="xml">
         <xpath expr="//field[@name='picking_type_id']" position="after">
             <field name="djbc_custom_document_id"/>
-            <field name="djbc_custom"/>            
+            <field name="djbc_custom"/>
         </xpath>
     </field>
 </record>
