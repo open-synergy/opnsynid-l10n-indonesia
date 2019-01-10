@@ -11,7 +11,8 @@ class StockMove(models.Model):
 
     @api.constrains("state", "djbc_custom_document_id", "picking_type_id")
     def _check_djbc_document(self):
-        if self.state == "done" and \
-                self.picking_type_id.djbc_kb_required_doc and \
-                not self.djbc_custom_document_id:
-            raise UserError(_("Need DJBC KB Doc"))
+        for move in self:
+            if move.state == "done" and \
+                    move.picking_type_id.djbc_kb_required_doc and \
+                    not move.djbc_custom_document_id:
+                raise UserError(_("Need DJBC KB Doc"))
