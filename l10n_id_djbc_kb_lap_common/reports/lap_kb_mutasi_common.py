@@ -252,6 +252,7 @@ class LapKbMutasiCommon(models.AbstractModel):
 
     def _where(self):
         where_str = """
+        WHERE b.djbc_kb_ok = TRUE
         """
         return where_str
 

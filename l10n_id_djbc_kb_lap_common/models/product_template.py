@@ -23,5 +23,5 @@ class ProductTemplate(models.Model):
     djbc_kb_ok = fields.Boolean(
         string="Can be Used for DJBC KB",
         compute="_compute_djbc_ok",
-        store=False,
+        store=True,
     )
