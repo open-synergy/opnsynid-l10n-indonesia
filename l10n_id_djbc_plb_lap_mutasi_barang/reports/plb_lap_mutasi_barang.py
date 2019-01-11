@@ -252,6 +252,7 @@ class LapPlbLapMutasiBarang(models.Model):
 
     def _where(self):
         where_str = """
+        WHERE b.djbc_plb_ok = TRUE
         """
         return where_str
 
