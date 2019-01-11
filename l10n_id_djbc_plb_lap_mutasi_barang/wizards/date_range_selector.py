@@ -20,7 +20,8 @@ class PLBLapMutasiBarangWizard(models.TransientModel):
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
-            "l10n_id_djbc_plb_lap_mutasi_barang.djbc_plb_lap_mutasi_barang_action")
+            "l10n_id_djbc_plb_lap_mutasi_barang."
+            "djbc_plb_lap_mutasi_barang_action")
         context = {
             "date_start": self.date_start,
             "date_end": self.date_end,
