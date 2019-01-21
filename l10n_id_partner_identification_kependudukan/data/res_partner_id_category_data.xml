@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<record model="res.partner.id_category" id="partner_identification_ktp">
+    <field name="name">e-KTP</field>
+    <field name="code">ektp</field>
+</record>
+
+<record model="res.partner.id_category" id="partner_identification_kk">
+    <field name="name">Kartu Keluarga</field>
+    <field name="code">kk</field>
+</record>
+</data>
+</openerp>
