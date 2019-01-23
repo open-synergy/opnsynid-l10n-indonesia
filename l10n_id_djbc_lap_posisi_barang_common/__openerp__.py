@@ -5,7 +5,7 @@
 {
     "name": "Indonesia - Common Feature Laporan Posisi "
             "Barang",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.2.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",

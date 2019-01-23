@@ -51,13 +51,18 @@ class LapPosisiBarangHelperOutCommon(models.AbstractModel):
              SELECT row_number() OVER() as id,
                     a.move_id AS move_id,
                     c.type_id AS document_type_id,
+                    g.name AS document_type_name,
                     c.id AS document_id,
+                    c.name AS document_name,
                     c.date AS document_date,
                     d.date_done AS picking_date,
                     e.default_code AS product_code,
                     a.lot_id AS lot_id,
+                    i.name AS lot_name,
                     a.product_id AS product_id,
-                    a.product_uom_id AS uom_id,
+                    f.name AS product_name,
+                    f.uom_id AS uom_id,
+                    h.name AS uom_name,
                     a.product_qty AS quantity,
                     a.cost AS cost
 
@@ -87,6 +92,12 @@ class LapPosisiBarangHelperOutCommon(models.AbstractModel):
             ON a.product_id = e.id
         JOIN product_template AS f
             ON e.product_tmpl_id = f.id
+        JOIN l10n_id_djbc_document_type AS g
+            ON c.type_id = g.id
+        JOIN product_uom AS h
+            ON f.uom_id = h.id
+        JOIN stock_production_lot AS i
+            ON a.lot_id = i.id
 
         """
         return join_str
