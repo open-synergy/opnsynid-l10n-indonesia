@@ -72,51 +72,54 @@ class LapPlbLapPemasukan(models.Model):
     def _select(self):
         select_str = """
             SELECT  a.id as id,
-                C.type_id as jenis_dokumen,
-                C.name as no_dokumen,
-                C.date as tgl_dokumen,
-                B.name as no_penerimaan,
-                A.date as tgl_penerimaan,
-                B.partner_id as pengirim,
-                D.default_code as kode_barang,
-                A.product_id as nama_barang,
-                A.product_qty as jumlah,
-                A.product_uom as satuan,
-                F.nilai as nilai,
-                E.warehouse_id AS warehouse_id,
-                B.owner_id AS pemilik_barang
+                c.type_id as jenis_dokumen,
+                c.name as no_dokumen,
+                c.date as tgl_dokumen,
+                b.name as no_penerimaan,
+                a.date as tgl_penerimaan,
+                b.partner_id as pengirim,
+                d.default_code as kode_barang,
+                a.product_id as nama_barang,
+                a.product_qty as jumlah,
+                a.product_uom as satuan,
+                (CASE
+                    WHEN g.price_subtotal IS NOT NULL
+                        THEN g.price_subtotal
+                    ELSE 0.0
+                END) AS nilai,
+                e.warehouse_id AS warehouse_id,
+                b.owner_id AS pemilik_barang
         """
         return select_str
 
     def _from(self):
         from_str = """
-            FROM stock_move AS A
+            FROM stock_move AS a
         """
         return from_str
 
     def _where(self):
         where_str = """
-            WHERE E.djbc_plb_movement_type='in'AND
-                  E.djbc_plb_scrap IS FALSE AND
-                  E.djbc_plb_adjustment IS FALSE
+            WHERE e.djbc_plb_movement_type='in'AND
+                  e.djbc_plb_scrap IS FALSE AND
+                  e.djbc_plb_adjustment IS FALSE
         """
         return where_str
 
     def _join(self):
         join_str = """
-            LEFT JOIN stock_picking AS B ON A.picking_id=B.id
-            JOIN l10n_id_djbc_custom_document AS C
-                ON A.djbc_custom_document_id=C.id
-            JOIN product_product AS D ON A.product_id=D.id
-            JOIN stock_picking_type AS E ON A.picking_type_id=E.id
-            JOIN
-            (
-                SELECT F1.move_id,
-                SUM(G1.qty*G1.cost) AS nilai
-                FROM stock_quant_move_rel AS F1
-                JOIN stock_quant AS G1 ON F1.quant_id=G1.id
-                GROUP BY F1.move_id
-            ) AS F ON F.move_id=A.id
+            LEFT JOIN stock_picking AS b ON
+                a.picking_id = b.id
+            JOIN l10n_id_djbc_custom_document AS c ON
+                a.djbc_custom_document_id = c.id
+            JOIN product_product AS d ON
+                a.product_id = d.id
+            JOIN stock_picking_type AS e ON
+                a.picking_type_id = e.id
+            LEFT JOIN account_invoice_line_stock_move_rel AS f ON
+                a.id = f.stock_move_id
+            LEFT JOIN account_invoice_line AS g ON
+                f.account_invoice_line_id = g.id
         """
         return join_str
 
