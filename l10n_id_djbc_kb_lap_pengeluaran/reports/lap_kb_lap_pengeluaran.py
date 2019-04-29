@@ -25,11 +25,11 @@ class LapKbLapPengeluaran(models.Model):
     )
 
     no_penerimaan = fields.Char(
-        string="Nomor Penerimaan"
+        string="Nomor Pengeluaran"
     )
 
     tgl_penerimaan = fields.Char(
-        string="Tanggal Penerimaan"
+        string="Tanggal Pengeluaran"
     )
 
     pengirim = fields.Many2one(
