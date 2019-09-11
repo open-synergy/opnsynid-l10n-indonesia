@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="product_categ_kite_root" model="product.category">
+    <field name="name">KITE</field>
+    <field name="type">view</field>
+</record>
+
+<record id="product_categ_kite_bahan_baku" model="product.category">
+    <field name="name">Bahan Baku</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_bahan_penolong" model="product.category">
+    <field name="name">Bahan Penolong</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_barang_modal" model="product.category">
+    <field name="name">Barang Modal</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+</record>
+
+<record id="product_categ_kite_peralatan_modal" model="product.category">
+    <field name="name">Peralatan Untuk Pembangunan, Perluasan, atau Konstruksi KITE</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_barang_modal"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_mesin" model="product.category">
+    <field name="name">Mesin</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_barang_modal"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_cetakan" model="product.category">
+    <field name="name">Cetakan Moulding</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_barang_modal"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_sparepart" model="product.category">
+    <field name="name">Sparepart</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_barang_modal"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_peralatan_kantor" model="product.category">
+    <field name="name">Peralatan Kantor</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_barang_contoh" model="product.category">
+    <field name="name">Barang Contoh</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_wip" model="product.category">
+    <field name="name">Barang WIP</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_hasil_produksi" model="product.category">
+    <field name="name">Hasil Produksi</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_scrap" model="product.category">
+    <field name="name">Scrap/Waste</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_pengemas" model="product.category">
+    <field name="name">Pengemas &amp; Alat Bantu Pengemas</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+
+<record id="product_categ_kite_konsumsi" model="product.category">
+    <field name="name">Barang Untuk Konsumsi</field>
+    <field name="type">view</field>
+    <field name="parent_id" ref="product_categ_kite_root"/>
+    <field name="djbc_kite_ok" eval="1"/>
+</record>
+</data>
+</openerp>
