@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="l10n_id_djbc_kite_movement_type_view_search" model="ir.ui.view">
+    <field name="name">l10n_id.djbc_kite_movement_type.form</field>
+    <field name="model">l10n_id.djbc_kite_movement_type</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>
+        </search>
+    </field>
+</record>
+
+<record id="l10n_id_djbc_kite_movement_type_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.djbc_kite_movement_type.tree</field>
+    <field name="model">l10n_id.djbc_kite_movement_type</field>
+    <field name="arch" type="xml">
+        <tree create="false">
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="l10n_id_djbc_kite_movement_type_view_form" model="ir.ui.view">
+    <field name="name">l10n_id.djbc_kite_movement_type.form</field>
+    <field name="model">l10n_id.djbc_kite_movement_type</field>
+    <field name="arch" type="xml">
+        <form create="false">
+            <group name="group_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+                <field name="note"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="l10n_id_djbc_kite_movement_type_action" model="ir.actions.act_window">
+    <field name="name">KITE Movement Type</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.djbc_kite_movement_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="l10n_id_djbc_kite_movement_type_menu"
+    name="KITE Movement Type"
+    parent="l10n_id_djbc_app.djbc_configuration_menu"
+    action="l10n_id_djbc_kite_movement_type_action"
+    sequence="1"
+    />
+
+</data>
+</openerp>

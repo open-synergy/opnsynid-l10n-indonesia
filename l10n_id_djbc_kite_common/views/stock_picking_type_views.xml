@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<record id="stock_picking_type_view_form" model="ir.ui.view">
+    <field name="name">stock.picking.type.djbc.kite.form</field>
+    <field name="model">stock.picking.type</field>
+    <field name="inherit_id" ref="stock.view_picking_type_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//group[last()]" position="after">
+            <group name="djbc_kite" colspan="4" col="2" string="DJBC's KITE Configuration">
+                <field name="djbc_kite_movement_type_id"/>
+                <field name="djbc_kite_scrap"/>
+            </group>
+        </xpath>
+    </field>
+</record>
+</data>
+</openerp>
