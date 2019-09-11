@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="lap_kite_pemasukan_bahan_baku_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemasukan_bahan_baku.tree</field>
+    <field name="model">l10n_id.lap_kite_pemasukan_bahan_baku</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+            <field name="jenis_dokumen"/>
+            <field name="no_dokumen"/>
+            <field name="tgl_dokumen"/>
+            <field name="no_seri_barang"/>
+            <field name="no_penerimaan"/>
+            <field name="tgl_penerimaan"/>
+            <field name="kode_barang"/>
+            <field name="nama_barang"/>
+            <field name="satuan"/>
+            <field name="jumlah"/>
+            <field name="mata_uang"/>
+            <field name="nilai"/>
+            <field name="gudang"/>
+            <field name="penerima_subkontrak"/>
+            <field name="negara_asal_barang"/>
+        </tree>
+    </field>
+</record>
+
+<record id="lap_kite_pemasukan_bahan_baku_search" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemasukan_bahan_baku.search</field>
+    <field name="model">l10n_id.lap_kite_pemasukan_bahan_baku</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="jenis_dokumen"/>
+            <field name="no_dokumen"/>
+            <field name="no_penerimaan"/>
+            <field name="penerima_subkontrak"/>
+            <field name="kode_barang"/>
+            <field name="nama_barang"/>
+            <field name="gudang"/>
+            <group string="Group By">
+                <filter name="grp_jenis_dokumen" string="Jenis Dokumen" context="{'group_by':'jenis_dokumen'}"/>
+                <filter name="grp_no_dokumen" string="No. Dokumen" context="{'group_by':'no_dokumen'}"/>
+                <filter name="grp_no_penerimaan" string="No. Penerimaan" context="{'group_by':'no_penerimaan'}"/>
+                <filter name="grp_pengirim" string="Pengirim" context="{'group_by':'pengirim'}"/>
+                <filter name="grp_gudang" string="Gudang" context="{'group_by':'gudang'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="lap_kite_pemasukan_bahan_baku_action" model="ir.actions.act_window">
+    <field name="name">Lap. Pemasukan Bahan Baku</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.lap_kite_pemasukan_bahan_baku</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="lap_kite_pemasukan_bahan_baku_view_tree"/>
+    <field name="search_view_id" ref="lap_kite_pemasukan_bahan_baku_search"/>
+    <field name="target">current</field>
+</record>
+
+    </data>
+</openerp>

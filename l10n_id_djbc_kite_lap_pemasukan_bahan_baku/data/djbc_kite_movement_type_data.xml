@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="djbc_kite_movement_type_pemasukan_bahan_baku" model="l10n_id.djbc_kite_movement_type">
+    <field name="name">Pemasukan Bahan Baku</field>
+    <field name="code">KITE-PMBB</field>
+    <field name="active" eval="1"/>
+</record>
+</data>
+</openerp>
