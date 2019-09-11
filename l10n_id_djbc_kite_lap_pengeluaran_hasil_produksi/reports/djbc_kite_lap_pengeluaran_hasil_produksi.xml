@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="lap_kite_pengeluaran_hasil_produksi_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pengeluaran_hasil_produksi.tree</field>
+    <field name="model">l10n_id.lap_kite_pengeluaran_hasil_produksi</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+          <field name="no_peb"/>
+          <field name="tgl_peb"/>
+          <field name="no_pengeluaran"/>
+          <field name="tgl_pengeluaran"/>
+          <field name="penerima"/>
+          <field name="negara_tujuan"/>
+          <field name="kode_barang"/>
+          <field name="nama_barang"/>
+          <field name="satuan"/>
+          <field name="jumlah"/>
+          <field name="mata_uang"/>
+          <field name="nilai"/>
+        </tree>
+    </field>
+</record>
+
+<record id="lap_kite_pengeluaran_hasil_produksi_view_search" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pengeluaran_hasil_produksi.search</field>
+    <field name="model">l10n_id.lap_kite_pengeluaran_hasil_produksi</field>
+    <field name="arch" type="xml">
+        <search>
+          <field name="no_peb"/>
+          <field name="tgl_peb"/>
+          <field name="no_pengeluaran"/>
+          <field name="tgl_pengeluaran"/>
+          <field name="mata_uang"/>
+          <field name="penerima"/>
+          <field name="negara_tujuan"/>
+          <group name="group0" string="Group By..">
+              <filter name="filter_no_peb" string="Nomor PEB" context="{'group_by':'no_peb'}"/>
+              <filter name="filter_no_pengeluaran" string="Nomor Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
+              <filter name="filter_mata_uang" string="Mata Uang" context="{'group_by':'mata_uang'}"/>
+              <filter name="filter_penerima" string="Penerima" context="{'group_by':'penerima'}"/>
+              <filter name="filter_negara_tujuan" string="Negara Tujuan" context="{'group_by':'negara_tujuan'}"/>
+              <separator/>
+              <filter name="filter_tgl_peb_day" string="Tanggal PEB Per Hari" context="{'group_by':'tgl_peb:day'}"/>
+              <filter name="filter_tgl_peb_week" string="Tanggal PEB Per Minggu" context="{'group_by':'tgl_peb:week'}"/>
+              <filter name="filter_tgl_peb_month" string="Tanggal PEB Per Bulan" context="{'group_by':'tgl_peb:month'}"/>
+              <filter name="filter_tgl_peb_year" string="Tanggal PEB Per Tahun" context="{'group_by':'tgl_peb:year'}"/>
+              <separator/>
+              <filter name="filter_tgl_pengeluaran_day" string="Tanggal Pengeluaran Per Hari" context="{'group_by':'tgl_pengeluaran:day'}"/>
+              <filter name="filter_tgl_pengeluaran_week" string="Tanggal Pengeluaran Per Minggu" context="{'group_by':'tgl_pengeluaran:week'}"/>
+              <filter name="filter_tgl_pengeluaran_month" string="Tanggal Pengeluaran Per Bulan" context="{'group_by':'tgl_pengeluaran:month'}"/>
+              <filter name="filter_tgl_pengeluaran_year" string="Tanggal Pengeluaran Per Tahun" context="{'group_by':'tgl_pengeluaran:year'}"/>
+          </group>
+        </search>
+    </field>
+</record>
+
+<record id="lap_kite_pengeluaran_hasil_produksi_action" model="ir.actions.act_window">
+    <field name="name">Lap. Pengeluaran Hasil Produksi</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.lap_kite_pengeluaran_hasil_produksi</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="lap_kite_pengeluaran_hasil_produksi_view_tree"/>
+    <field name="search_view_id" ref="lap_kite_pengeluaran_hasil_produksi_view_search"/>
+    <field name="target">current</field>
+</record>
+
+    </data>
+</openerp>
