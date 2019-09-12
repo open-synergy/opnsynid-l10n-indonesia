@@ -11,6 +11,7 @@
     "installable": True,
     "depends": [
         "l10n_id_djbc_kite_common",
+        "stock_transport_multi_address",
         "purchase",
     ],
     "data": [
