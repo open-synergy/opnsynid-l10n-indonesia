@@ -3,14 +3,15 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Indonesia - Laporan Pemasukan Bahan Baku for KITE",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "l10n_id_djbc_kite_common"
+        "l10n_id_djbc_kite_common",
+        "purchase",
     ],
     "data": [
         "data/djbc_kite_movement_type_data.xml",
