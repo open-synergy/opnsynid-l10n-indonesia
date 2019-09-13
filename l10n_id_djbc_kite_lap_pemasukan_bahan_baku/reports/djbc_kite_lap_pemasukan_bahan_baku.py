@@ -112,6 +112,7 @@ class LapKitePemasukanBahanBaku(models.Model):
         where_str = """
             WHERE
                 a.state = 'done' AND
+                a.djbc_custom IS TRUE AND
                 e.djbc_kite_scrap IS FALSE AND
                 e.djbc_kite_movement_type_id=%s
         """ % (movement_type_id)
