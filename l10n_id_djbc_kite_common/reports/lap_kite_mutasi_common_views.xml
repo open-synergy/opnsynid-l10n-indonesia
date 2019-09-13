@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2017 OpenSynergy Indonesia
+<!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
 <data>
-<record id="djbc_lap_kb_mutasi_common_view_tree" model="ir.ui.view">
-    <field name="name">tree l10n_id.djbc_kb_lap_mutasi_common</field>
-    <field name="model">l10n_id.djbc_kb_lap_mutasi_common</field>
+<record id="djbc_kite_lap_mutasi_common_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.djbc_kite_lap_mutasi_common.tree</field>
+    <field name="model">l10n_id.djbc_kite_lap_mutasi_common</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
             <field name="kode_barang"/>
@@ -15,8 +15,6 @@
             <field name="saldo_awal"/>
             <field name="pemasukan"/>
             <field name="pengeluaran"/>
-            <field name="penyesuaian"/>
-            <field name="stock_opname"/>
             <field name="saldo_akhir"/>
             <field name="selisih"/>
             <field name="keterangan"/>
@@ -25,9 +23,9 @@
     </field>
 </record>
 
-<record id="djbc_lap_kb_mutasi_common_view_search" model="ir.ui.view">
-    <field name="name">search l10n_id.djbc_kb_lap_mutasi_common</field>
-    <field name="model">l10n_id.djbc_kb_lap_mutasi_common</field>
+<record id="djbc_kite_lap_mutasi_common_view_search" model="ir.ui.view">
+    <field name="name">l10n_id.djbc_kite_lap_mutasi_common.search</field>
+    <field name="model">l10n_id.djbc_kite_lap_mutasi_common</field>
     <field name="arch" type="xml">
         <search>
         </search>
