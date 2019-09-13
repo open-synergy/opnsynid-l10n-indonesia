@@ -16,7 +16,7 @@
         </record>
 
         <record id="kite_pemasukan_hasil_produksi_wizard_action" model="ir.actions.act_window">
-            <field name="name">Pemasukan Bahan Baku</field>
+            <field name="name">Pemasukan Hasil Produksi</field>
             <field name="res_model">l10n_id.kite_pemasukan_hasil_produksi_wizard</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
