@@ -24,23 +24,31 @@ class LapKiteMutasiCommon(models.AbstractModel):
 
     @api.multi
     def _qty_where(
-        self, date_start, date_end, movement_type="in",
-        scrap=False, adjustment=False
+        self, date_start, date_end,
+        code, scrap=False, adjustment=False
     ):
         self.ensure_one()
         str_where = """
         WHERE
             a.product_id = %s AND
             b.warehouse_id = %s AND
-            b.djbc_kb_movement_type = '%s' AND
-            b.djbc_kb_scrap %s AND
+            b.djbc_kite_scrap %s AND
+            a.djbc_custom IS TRUE AND
             a.state = 'done' AND
         """ % (
             self.product_id.id,
             self.warehouse_id.id,
-            movement_type,
             scrap and 'IS TRUE' or 'IS FALSE',
         )
+        if code == "incoming":
+            str_where += """
+            b.code = 'incoming' AND
+            """
+        if code == "outgoing":
+            str_where += """
+            b.code = 'outgoing' AND
+            """
+
         if date_start:
             str_where += """
             a.date >= '%s' AND
@@ -91,7 +99,6 @@ class LapKiteMutasiCommon(models.AbstractModel):
                 ("date", ">=", date_start),
                 ("date", "<=", date_end),
                 ("state", "=", "done"),
-                ("djbc", "=", True),
                 ("location_id.id", "child_of", view_root_id),
             ]
             invs = obj_inv.search(criteria1, order="date desc", limit=1)
@@ -99,14 +106,24 @@ class LapKiteMutasiCommon(models.AbstractModel):
                 inv = invs[0]
 
             saldo_awal_pemasukan = lap._get_qty(
-                False, date_start, "in", False, False)
+                False, date_start, "incoming", False, False)
             saldo_awal_pengeluaran = lap._get_qty(
-                False, date_start, "out", False, False)
+                False, date_start, "outgoing", False, False)
             saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
             pemasukan = lap._get_qty(
-                date_start, date_end, "in", False, inv and inv.id or False)
+                date_start,
+                date_end,
+                "incoming",
+                False,
+                inv and inv.id or False
+            )
             pengeluaran = lap._get_qty(
-                date_start, date_end, "out", False, inv and inv.id or False)
+                date_start,
+                date_end,
+                "outgoing",
+                False,
+                inv and inv.id or False
+            )
 
             if inv:
                 criteria = [
@@ -138,7 +155,7 @@ class LapKiteMutasiCommon(models.AbstractModel):
             lap.keterangan = keterangan
 
     @api.multi
-    def _get_qty(self, date_start, date_end, movement_type, scrap, adjustment):
+    def _get_qty(self, date_start, date_end, code, scrap, adjustment):
         self.ensure_one()
         result = 0.0
         # pylint: disable=locally-disabled, sql-injection
@@ -152,7 +169,7 @@ class LapKiteMutasiCommon(models.AbstractModel):
             self._qty_where(
                 date_start,
                 date_end,
-                movement_type,
+                code,
                 scrap,
                 adjustment
             )
@@ -252,7 +269,7 @@ class LapKiteMutasiCommon(models.AbstractModel):
 
     def _where(self):
         where_str = """
-        WHERE b.djbc_kb_ok = TRUE
+        WHERE b.djbc_kite_ok = TRUE
         """
         return where_str
 
