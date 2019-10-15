@@ -6,9 +6,9 @@ from openerp import models, fields
 from openerp import tools
 
 
-class LapKitePemasukanHasilProduksi(models.Model):
-    _name = "l10n_id.lap_kite_pemasukan_hasil_produksi"
-    _description = "Laporan Pemasukan Hasil Produksi Untuk KITE"
+class LapKitePemasukanHasilProduksiSubkon(models.Model):
+    _name = "l10n_id.lap_kite_pemasukan_hasil_produksi_subkon"
+    _description = "Laporan Pemasukan Hasil Produksi Subkontrak KITE"
     _auto = False
 
     no_penerimaan = fields.Many2one(
@@ -45,7 +45,7 @@ class LapKitePemasukanHasilProduksi(models.Model):
             FROM  ir_model_data
             WHERE
             module = 'l10n_id_djbc_kite_lap_pemasukan_hasil_produksi' AND
-            name = 'djbc_kite_movement_type_pemasukan_hasil_produksi'
+            name = 'djbc_kite_movement_type_pemasukan_hasil_produksi_subkon'
         """
         cr.execute(query)
         movement_type = cr.fetchone()
@@ -62,8 +62,8 @@ class LapKitePemasukanHasilProduksi(models.Model):
                     c.name AS nama_barang,
                     b.default_code AS kode_barang,
                     a.product_uom AS satuan,
-                    a.product_uom_qty AS jumlah_produksi,
-                    0.0 AS jumlah_disubkontrakkan,
+                    0.0 AS jumlah_produksi,
+                    a.product_uom_qty AS jumlah_disubkontrakkan,
                     d.warehouse_id AS gudang
         """
         return select_str

@@ -4,9 +4,9 @@
 
 <openerp>
 <data>
-<record id="lap_kite_pemasukan_hasil_produksi_view_tree" model="ir.ui.view">
-    <field name="name">l10n_id.lap_kite_pemasukan_hasil_produksi.tree</field>
-    <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi</field>
+<record id="lap_kite_pemasukan_hasil_produksi_union_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemasukan_hasil_produksi_union.tree</field>
+    <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
           <field name="no_penerimaan"/>
@@ -20,9 +20,9 @@
     </field>
 </record>
 
-<record id="lap_kite_pemasukan_hasil_produksi_search" model="ir.ui.view">
-    <field name="name">l10n_id.lap_kite_pemasukan_hasil_produksi.search</field>
-    <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi</field>
+<record id="lap_kite_pemasukan_hasil_produksi_union_search" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemasukan_hasil_produksi_union.search</field>
+    <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="arch" type="xml">
       <search>
           <field name="no_penerimaan"/>
@@ -41,14 +41,14 @@
     </field>
 </record>
 
-<record id="lap_kite_pemasukan_hasil_produksi_action" model="ir.actions.act_window">
-    <field name="name">Lap. Pemasukan Bahan Baku</field>
+<record id="lap_kite_pemasukan_hasil_produksi_union_action" model="ir.actions.act_window">
+    <field name="name">Lap. Pemasukan Hasil Produksi</field>
     <field name="type">ir.actions.act_window</field>
-    <field name="res_model">l10n_id.lap_kite_pemasukan_hasil_produksi</field>
+    <field name="res_model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="lap_kite_pemasukan_hasil_produksi_view_tree"/>
-    <field name="search_view_id" ref="lap_kite_pemasukan_hasil_produksi_search"/>
+    <field name="view_id" ref="lap_kite_pemasukan_hasil_produksi_union_view_tree"/>
+    <field name="search_view_id" ref="lap_kite_pemasukan_hasil_produksi_union_search"/>
     <field name="target">current</field>
 </record>
 
