@@ -9,5 +9,10 @@
     <field name="code">KITE-PMKBB</field>
     <field name="active" eval="1"/>
 </record>
+<record id="djbc_kite_movement_type_pemakaian_bahan_baku_subkontrak" model="l10n_id.djbc_kite_movement_type">
+    <field name="name">Pemakaian Bahan Baku Subkontrak</field>
+    <field name="code">KITE-PMKBB-SUB</field>
+    <field name="active" eval="1"/>
+</record>
 </data>
 </openerp>

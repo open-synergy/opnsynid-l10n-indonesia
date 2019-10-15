@@ -4,9 +4,9 @@
 
 <openerp>
 <data>
-<record id="lap_kite_pemakaian_bahan_baku_view_tree" model="ir.ui.view">
-    <field name="name">l10n_id.lap_kite_pemakaian_bahan_baku.tree</field>
-    <field name="model">l10n_id.lap_kite_pemakaian_bahan_baku</field>
+<record id="lap_kite_pemakaian_bahan_baku_union_view_tree" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemakaian_bahan_baku_union.tree</field>
+    <field name="model">l10n_id.lap_kite_pemakaian_bahan_baku_union</field>
     <field name="arch" type="xml">
         <tree>
           <field name="no_pengeluaran"/>
@@ -21,9 +21,9 @@
     </field>
 </record>
 
-<record id="lap_kite_pemakaian_bahan_baku_view_search" model="ir.ui.view">
-    <field name="name">l10n_id.lap_kite_pemakaian_bahan_baku.search</field>
-    <field name="model">l10n_id.lap_kite_pemakaian_bahan_baku</field>
+<record id="lap_kite_pemakaian_bahan_baku_union_view_search" model="ir.ui.view">
+    <field name="name">l10n_id.lap_kite_pemakaian_bahan_baku_union.search</field>
+    <field name="model">l10n_id.lap_kite_pemakaian_bahan_baku_union</field>
     <field name="arch" type="xml">
         <search>
             <field name="no_pengeluaran"/>
@@ -31,6 +31,8 @@
             <field name="kode_barang"/>
             <field name="nama_barang"/>
             <field name="penerima_subkontrak"/>
+            <filter name="dengan_subkontrak" string="Dengan Subkontrak" domain="[('jumlah_digunakan','=', 0)]"/>
+            <filter name="tanpa_subkontrak" string="Tanpa Subkontrak" domain="[('jumlah_disubkontrakkan', '=', 0)]"/>
             <group name="group0" string="Group By..">
                 <filter name="filter_picking" string="No Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
                 <filter name="filter_subcontract" string="Penerima Subkontrak" context="{'group_by':'penerima_subkontrak'}"/>
@@ -45,14 +47,14 @@
 </record>
 
 
-<record id="lap_kite_pemakaian_bahan_baku_action" model="ir.actions.act_window">
+<record id="lap_kite_pemakaian_bahan_baku_union_action" model="ir.actions.act_window">
     <field name="name">Lap. Pemakaian Bahan Baku</field>
     <field name="type">ir.actions.act_window</field>
-    <field name="res_model">l10n_id.lap_kite_pemakaian_bahan_baku</field>
+    <field name="res_model">l10n_id.lap_kite_pemakaian_bahan_baku_union</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="lap_kite_pemakaian_bahan_baku_view_tree"/>
-    <field name="search_view_id" ref="lap_kite_pemakaian_bahan_baku_view_search"/>
+    <field name="view_id" ref="lap_kite_pemakaian_bahan_baku_union_view_tree"/>
+    <field name="search_view_id" ref="lap_kite_pemakaian_bahan_baku_union_view_search"/>
     <field name="target">current</field>
 </record>
 </data>
