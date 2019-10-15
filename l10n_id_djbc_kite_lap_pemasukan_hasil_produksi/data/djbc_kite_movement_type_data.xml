@@ -9,5 +9,10 @@
     <field name="code">KITE-PMHP</field>
     <field name="active" eval="1"/>
 </record>
+<record id="djbc_kite_movement_type_pemasukan_hasil_produksi_subkon" model="l10n_id.djbc_kite_movement_type">
+    <field name="name">Pemasukan Hasil Produksi Subkontrak</field>
+    <field name="code">KITE-PMHP-SUB</field>
+    <field name="active" eval="1"/>
+</record>
 </data>
 </openerp>

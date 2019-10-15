@@ -23,7 +23,7 @@ class KitePemasukanHasilProduksiWizard(models.TransientModel):
     def action_print_sreen(self):
         waction = self.env.ref(
             "l10n_id_djbc_kite_lap_pemasukan_hasil_produksi."
-            "lap_kite_pemasukan_hasil_produksi_action")
+            "lap_kite_pemasukan_hasil_produksi_union_action")
         criteria = [
             ("tgl_penerimaan", ">=", self.date_start),
             ("tgl_penerimaan", "<=", self.date_end),
