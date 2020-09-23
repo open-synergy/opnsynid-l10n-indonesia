@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields
@@ -59,6 +60,10 @@ class LapPlbLapPengeluaran(models.Model):
         string="Nilai"
     )
 
+    nilai_so = fields.Float(
+        string="Nilai SO"
+    )
+
     warehouse_id = fields.Many2one(
         string="Warehouse",
         comodel_name="stock.warehouse"
@@ -88,6 +93,11 @@ class LapPlbLapPengeluaran(models.Model):
                         THEN g.price_subtotal
                     ELSE 0.0
                 END) AS nilai,
+                (CASE
+                    WHEN h.price_unit IS NOT NULL
+                        THEN h.price_unit * a.product_uom_qty
+                    ELSE 0.0
+                END) AS nilai_so,
                 e.warehouse_id AS warehouse_id,
                 b.owner_id AS pemilik_barang
         """
@@ -104,7 +114,8 @@ class LapPlbLapPengeluaran(models.Model):
             WHERE
                 e.djbc_plb_movement_type='out'
                 AND e.djbc_plb_scrap IS FALSE
-                AND e.djbc_plb_adjustment IS FALSE
+                AND e.djbc_plb_adjustment IS FALSE AND
+                b.state = 'done'
         """
         return where_str
 
@@ -122,6 +133,14 @@ class LapPlbLapPengeluaran(models.Model):
                 a.id = f.stock_move_id
             LEFT JOIN account_invoice_line AS g ON
                 f.account_invoice_line_id = g.id
+            LEFT JOIN (
+                SELECT h1.id,
+                    h2.price_unit
+                FROM procurement_order AS h1
+                LEFT JOIN sale_order_line AS h2 ON
+                    h1.sale_line_id = h2.id
+            ) AS h ON
+                a.procurement_id = h.id
         """
         return join_str
 
