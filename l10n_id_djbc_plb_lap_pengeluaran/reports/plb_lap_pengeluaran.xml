@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 
 <openerp>
 <data>
@@ -22,6 +23,7 @@
             <field name="jumlah"/>
             <field name="satuan"/>
             <field name="nilai"/>
+            <field name="nilai_so"/>
         </tree>
     </field>
 </record>
@@ -45,7 +47,7 @@
                 <filter name="grp_no_pengeluaran" string="No. Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
                 <filter name="grp_penerima" string="Pembeli/Penerima" context="{'group_by':'penerima'}"/>
                 <filter name="grp_pemilik" string="Pemilik" context="{'group_by':'pemilik_barang'}"/>
-                <filter name="grp_warehouse" string="Warehouse" context="{'group_by':'warehouse_id'}"/>                
+                <filter name="grp_warehouse" string="Warehouse" context="{'group_by':'warehouse_id'}"/>
             </group>
         </search>
     </field>
