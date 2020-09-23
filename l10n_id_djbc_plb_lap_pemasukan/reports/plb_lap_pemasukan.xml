@@ -22,6 +22,7 @@
             <field name="jumlah"/>
             <field name="satuan"/>
             <field name="nilai"/>
+            <field name="nilai_po"/>
         </tree>
     </field>
 </record>

@@ -59,6 +59,10 @@ class LapPlbLapPemasukan(models.Model):
         string="Nilai"
     )
 
+    nilai_po = fields.Float(
+        string="Nilai PO"
+    )
+
     warehouse_id = fields.Many2one(
         string="Warehouse",
         comodel_name="stock.warehouse"
@@ -87,6 +91,11 @@ class LapPlbLapPemasukan(models.Model):
                         THEN g.price_subtotal
                     ELSE 0.0
                 END) AS nilai,
+                (CASE
+                    WHEN h.price_unit IS NOT NULL
+                        THEN h.price_unit * a.product_uom_qty
+                    ELSE 0.0
+                END) AS nilai_po,
                 e.warehouse_id AS warehouse_id,
                 b.owner_id AS pemilik_barang
         """
@@ -102,7 +111,9 @@ class LapPlbLapPemasukan(models.Model):
         where_str = """
             WHERE e.djbc_plb_movement_type='in'AND
                   e.djbc_plb_scrap IS FALSE AND
-                  e.djbc_plb_adjustment IS FALSE
+                  e.djbc_plb_adjustment IS FALSE AND
+                  b.state = 'done'
+
         """
         return where_str
 
@@ -120,6 +131,10 @@ class LapPlbLapPemasukan(models.Model):
                 a.id = f.stock_move_id
             LEFT JOIN account_invoice_line AS g ON
                 f.account_invoice_line_id = g.id
+            LEFT JOIN purchase_order_line AS h ON
+                a.purchase_line_id = h.id
+            LEFT JOIN account_invoice AS i ON
+                g.invoice_id = i.id
         """
         return join_str
 

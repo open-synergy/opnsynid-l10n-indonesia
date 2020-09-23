@@ -5,7 +5,7 @@
 {
     "name": "Indonesia - Lap. Pemasukan for DJBC's "
             "Pusat Logistik Berikat",
-    "version": "8.0.1.5.0",
+    "version": "8.0.2.0.0",
     "category": "localization",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,6 +14,7 @@
     "depends": [
         "l10n_id_djbc_plb_common",
         "stock_picking_invoice_link",
+        "purchase",
     ],
     "data": [
         "security/ir.model.access.csv",
