@@ -20,5 +20,5 @@ opnsynid-partner-contact https://github.com/open-synergy/opnsynid-partner-contac
 account-invoicing https://github.com/OCA/account-invoicing 8.0
 opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools 8.0
 opnsynid-vertical-accountant https://github.com/open-synergy/opnsynid-vertical-accountant 8.0
-server-tools https://github.com/open-synergy/server-tools 8.0-dev
+server-tools https://github.com/oca/server-tools 8.0
 stock-logistics-workflow https://github.com/OCA/stock-logistics-workflow 8.0
