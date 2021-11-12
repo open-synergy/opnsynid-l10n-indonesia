@@ -21,12 +21,14 @@
     <field name="model">l10n_id.djbc_custom_document</field>
     <field name="arch" type="xml">
         <form>
+            <header />
             <sheet>
                 <group name="group_main_1" colspan="4" col="2">
                     <field name="name"/>
                     <field name="date"/>
                     <field name="type_id" widget="selection" invisible="context.get('hide_type', False)"/>
                 </group>
+                <notebook />
             </sheet>
         </form>
     </field>
