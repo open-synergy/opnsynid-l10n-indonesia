@@ -2,16 +2,14 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     @api.multi
-    @api.depends(
-        "categ_ids"
-    )
+    @api.depends("categ_ids")
     def _compute_djbc_ok(self):
         for template in self:
             djbc_ok = False

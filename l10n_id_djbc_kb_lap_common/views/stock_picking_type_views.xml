@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
 <data>
 <record id="stock_picking_type_view_form" model="ir.ui.view">
     <field name="name">Stock Picking Type Form</field>
     <field name="model">stock.picking.type</field>
-    <field name="inherit_id" ref="stock.view_picking_type_form"/>
+    <field name="inherit_id" ref="stock.view_picking_type_form" />
     <field name="arch" type="xml">
         <xpath expr="//group[last()]" position="after">
             <group name="djbc_kb" colspan="4" col="2" string="DJBC's KB Configuration">
-                <field name="djbc_kb_movement_type"/>
-                <field name="djbc_kb_scrap"/>
-                <field name="djbc_kb_adjustment"/>
-                <field name="djbc_kb_required_doc"/>
+                <field name="djbc_kb_movement_type" />
+                <field name="djbc_kb_scrap" />
+                <field name="djbc_kb_adjustment" />
+                <field name="djbc_kb_required_doc" />
             </group>
         </xpath>
     </field>

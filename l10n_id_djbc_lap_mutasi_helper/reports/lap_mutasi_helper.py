@@ -2,9 +2,8 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
-from openerp import tools
 from lxml import etree
+from openerp import api, fields, models, tools
 
 
 class LapMutasiHelper(models.Model):
@@ -15,8 +14,10 @@ class LapMutasiHelper(models.Model):
 
     @api.depends(
         "report_period_id",
-        "date_start", "date_end",
-        "product_id", "warehouse_id",
+        "date_start",
+        "date_end",
+        "product_id",
+        "warehouse_id",
     )
     @api.multi
     def _compute_all(self):
@@ -34,8 +35,11 @@ class LapMutasiHelper(models.Model):
                 ("state", "=", "done"),
             ]
             criteria1 = criteria + [
-                ("location_dest_id.id", "child_of",
-                 helper.warehouse_id.view_location_id.id),
+                (
+                    "location_dest_id.id",
+                    "child_of",
+                    helper.warehouse_id.view_location_id.id,
+                ),
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", "<", date_start),
                 ("location_id.usage", "!=", "internal"),
@@ -43,8 +47,7 @@ class LapMutasiHelper(models.Model):
             for move in obj_move.search(criteria1):
                 helper.beginning_balance_qty += move.product_qty
             criteria2 = criteria + [
-                ("location_id.id", "child_of",
-                 helper.warehouse_id.view_location_id.id),
+                ("location_id.id", "child_of", helper.warehouse_id.view_location_id.id),
                 ("location_id.usage", "=", "internal"),
                 ("date", "<", date_start),
                 ("location_dest_id.usage", "!=", "internal"),
@@ -52,8 +55,11 @@ class LapMutasiHelper(models.Model):
             for move in obj_move.search(criteria2):
                 helper.beginning_balance_qty -= move.product_qty
             criteria3 = criteria + [
-                ("location_dest_id.id", "child_of",
-                 helper.warehouse_id.view_location_id.id),
+                (
+                    "location_dest_id.id",
+                    "child_of",
+                    helper.warehouse_id.view_location_id.id,
+                ),
                 ("location_dest_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
@@ -62,8 +68,7 @@ class LapMutasiHelper(models.Model):
             for move in obj_move.search(criteria3):
                 helper.stock_in_qty += move.product_qty
             criteria4 = criteria + [
-                ("location_id.id", "child_of",
-                 helper.warehouse_id.view_location_id.id),
+                ("location_id.id", "child_of", helper.warehouse_id.view_location_id.id),
                 ("location_id.usage", "=", "internal"),
                 ("date", ">", date_start),
                 ("date", "<", date_end),
@@ -71,9 +76,11 @@ class LapMutasiHelper(models.Model):
             ]
             for move in obj_move.search(criteria4):
                 helper.stock_out_qty += move.product_qty
-            helper.ending_balance_qty = helper.beginning_balance_qty + \
-                helper.stock_in_qty - \
-                helper.stock_out_qty
+            helper.ending_balance_qty = (
+                helper.beginning_balance_qty
+                + helper.stock_in_qty
+                - helper.stock_out_qty
+            )
 
     report_period_id = fields.Many2one(
         string="Reporting Period",
@@ -187,21 +194,24 @@ class LapMutasiHelper(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             FROM ( %s )
             WHERE
             %s
             ORDER BY b.date_start DESC
-            )""" % (self._table, self._select(), self._from(), self._where()))
+            )"""
+            % (self._table, self._select(), self._from(), self._where())
+        )
 
     @api.model
-    def fields_view_get(self, view_id=None,
-                        view_type=False, toolbar=False,
-                        submenu=False):
+    def fields_view_get(
+        self, view_id=None, view_type=False, toolbar=False, submenu=False
+    ):
         res = super(LapMutasiHelper, self).fields_view_get(
-            view_id=view_id, view_type=view_type,
-            toolbar=toolbar, submenu=submenu)
+            view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
+        )
 
         doc = etree.XML(res["arch"])
         obj_product = self.env["product.product"]
@@ -217,25 +227,29 @@ class LapMutasiHelper(models.Model):
             for warehouse in obj_warehouse.search([]):
                 filter_name = "filter_wh_%s" % (str(warehouse.id))
                 filter_string = "%s" % (str(warehouse.name))
-                fdomain = "[('warehouse_id.id', '=', %s)]" \
-                    % (str(warehouse.id))
+                fdomain = "[('warehouse_id.id', '=', %s)]" % (str(warehouse.id))
                 xelement = etree.Element(
-                    "filter", {"name": filter_name,
-                               "string": filter_string,
-                               "domain": fdomain,
-                               })
+                    "filter",
+                    {
+                        "name": filter_name,
+                        "string": filter_string,
+                        "domain": fdomain,
+                    },
+                )
                 wh_filter[0].insert(0, xelement)
         if view_type == "search" and period_filter:
             for period in obj_period.search([]):
                 filter_name = "filter_period_%s" % (str(period.id))
                 filter_string = "%s" % (str(period.name))
-                fdomain = "[('report_period_id.id', '=', %s)]" \
-                    % (str(period.id))
+                fdomain = "[('report_period_id.id', '=', %s)]" % (str(period.id))
                 xelement = etree.Element(
-                    "filter", {"name": filter_name,
-                               "string": filter_string,
-                               "domain": fdomain,
-                               })
+                    "filter",
+                    {
+                        "name": filter_name,
+                        "string": filter_string,
+                        "domain": fdomain,
+                    },
+                )
                 period_filter[0].insert(0, xelement)
         if view_type == "search" and rm_filter:
             criteria = [
@@ -244,13 +258,15 @@ class LapMutasiHelper(models.Model):
             for product in obj_product.search(criteria):
                 filter_name = "filter_rm_%s" % (str(product.id))
                 filter_string = "%s" % (str(product.name))
-                fdomain = "[('product_id.id', '=', %s)]" \
-                    % (str(product.id))
+                fdomain = "[('product_id.id', '=', %s)]" % (str(product.id))
                 xelement = etree.Element(
-                    "filter", {"name": filter_name,
-                               "string": filter_string,
-                               "domain": fdomain,
-                               })
+                    "filter",
+                    {
+                        "name": filter_name,
+                        "string": filter_string,
+                        "domain": fdomain,
+                    },
+                )
                 rm_filter[0].insert(0, xelement)
         if view_type == "search" and wip_filter:
             criteria = [
@@ -259,13 +275,15 @@ class LapMutasiHelper(models.Model):
             for product in obj_product.search(criteria):
                 filter_name = "filter_wip_%s" % (str(product.id))
                 filter_string = "%s" % (str(product.name))
-                fdomain = "[('product_id.id', '=', %s)]" \
-                    % (str(product.id))
+                fdomain = "[('product_id.id', '=', %s)]" % (str(product.id))
                 xelement = etree.Element(
-                    "filter", {"name": filter_name,
-                               "string": filter_string,
-                               "domain": fdomain,
-                               })
+                    "filter",
+                    {
+                        "name": filter_name,
+                        "string": filter_string,
+                        "domain": fdomain,
+                    },
+                )
                 wip_filter[0].insert(0, xelement)
         if view_type == "search" and fg_filter:
             criteria = [
@@ -274,13 +292,15 @@ class LapMutasiHelper(models.Model):
             for product in obj_product.search(criteria):
                 filter_name = "filter_fg_%s" % (str(product.id))
                 filter_string = "%s" % (str(product.name))
-                fdomain = "[('product_id.id', '=', %s)]" \
-                    % (str(product.id))
+                fdomain = "[('product_id.id', '=', %s)]" % (str(product.id))
                 xelement = etree.Element(
-                    "filter", {"name": filter_name,
-                               "string": filter_string,
-                               "domain": fdomain,
-                               })
+                    "filter",
+                    {
+                        "name": filter_name,
+                        "string": filter_string,
+                        "domain": fdomain,
+                    },
+                )
                 fg_filter[0].insert(0, xelement)
 
         res["arch"] = etree.tostring(doc)

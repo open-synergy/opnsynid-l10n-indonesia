@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="product_template_view_form" model="ir.ui.view">
     <field name="name">Product Template Form</field>
     <field name="model">product.template</field>
-    <field name="inherit_id" ref="product.product_template_form_view"/>
+    <field name="inherit_id" ref="product.product_template_form_view" />
     <field name="arch" type="xml">
         <xpath expr="//field[@name='active']" position="after">
-            <field name="djbc_rm"/>                
-            <field name="djbc_fg"/>                
-            <field name="djbc_wip"/>                
+            <field name="djbc_rm" />
+            <field name="djbc_fg" />
+            <field name="djbc_wip" />
         </xpath>
     </field>
 </record>

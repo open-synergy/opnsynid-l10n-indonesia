@@ -2,32 +2,31 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, models, fields
+from openerp import api, fields, models
 
 
 class KitePemasukanHasilProduksiWizard(models.TransientModel):
     _name = "l10n_id.kite_pemasukan_hasil_produksi_wizard"
-    _inherit = [
-        "l10n_id.date_range_selector"
-    ]
+    _inherit = ["l10n_id.date_range_selector"]
 
     warehouse_ids = fields.Many2many(
         string="Warehouse",
         comodel_name="stock.warehouse",
         relation="rel_kite_pemasukan_produksi_2_warehouse",
         column1="wizard_id",
-        column2="warehouse_id"
+        column2="warehouse_id",
     )
 
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
             "l10n_id_djbc_kite_lap_pemasukan_hasil_produksi."
-            "lap_kite_pemasukan_hasil_produksi_union_action")
+            "lap_kite_pemasukan_hasil_produksi_union_action"
+        )
         criteria = [
             ("tgl_penerimaan", ">=", self.date_start),
             ("tgl_penerimaan", "<=", self.date_end),
-            ("gudang", "in", self.warehouse_ids.ids)
+            ("gudang", "in", self.warehouse_ids.ids),
         ]
         waction.domain = criteria
         return waction.read()[0]

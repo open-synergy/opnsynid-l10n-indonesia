@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -15,8 +15,7 @@ class FakturPajakKeluaran(models.Model):
 
     @api.model
     def _get_faktur_pajak_type(self):
-        return self.env.ref(
-            "l10n_id_taxform_faktur_pajak_keluaran.fp_type_fp_keluaran")
+        return self.env.ref("l10n_id_taxform_faktur_pajak_keluaran.fp_type_fp_keluaran")
 
     @api.depends(
         "all_reference_ids",
@@ -35,8 +34,9 @@ class FakturPajakKeluaran(models.Model):
     @api.multi
     def _compute_keterangan_tambahan(self):
         for fp in self:
-            fp.enofa_id_keterangan_tambahan = fp.additional_flag_id and \
-                fp.additional_flag_id.id or "-"
+            fp.enofa_id_keterangan_tambahan = (
+                fp.additional_flag_id and fp.additional_flag_id.id or "-"
+            )
 
     @api.depends(
         "fp_payment",
@@ -110,7 +110,7 @@ class FakturPajakKeluaran(models.Model):
     @api.multi
     def _compute_nomor_dokumen(self):
         for fp in self:
-            fp.enofa_nomor_dokumen = "%s%s%s%s%s" % (
+            fp.enofa_nomor_dokumen = "{}{}{}{}{}".format(
                 fp.transaction_type_id.code,
                 fp.fp_state,
                 fp.seller_branch_id.ref,
@@ -141,8 +141,7 @@ class FakturPajakKeluaran(models.Model):
         comodel_name="l10n_id.nomor_seri_faktur_pajak",
         required=False,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     faktur_pajak_line_ids = fields.One2many(
         comodel_name="l10n_id.faktur_pajak_line",
@@ -288,8 +287,7 @@ class FakturPajakKeluaran(models.Model):
         "state",
     )
     def _check_nomor_seri(self):
-        if self.state == "confirmed" and \
-                not self.nomor_seri_id:
+        if self.state == "confirmed" and not self.nomor_seri_id:
             strWarning = _("Please select nomor seri FK")
             raise UserError(strWarning)
 
@@ -311,7 +309,7 @@ class FakturPajakKeluaran(models.Model):
     def _prepare_confirm_data(self):
         self.ensure_one()
         result = super(FakturPajakKeluaran, self)._prepare_confirm_data()
-        name = "%s%s.%s-%s.%s" % (
+        name = "{}{}.{}-{}.{}".format(
             self.transaction_type_id.code,
             self.fp_state,
             self.seller_branch_id.ref,
@@ -326,9 +324,8 @@ class FakturPajakKeluaran(models.Model):
         self.ensure_one()
         criteria = [
             ("faktur_pajak_id", "=", self.id),
-            ]
-        self.env["l10n_id.faktur_pajak_line"].search(
-            criteria).unlink()
+        ]
+        self.env["l10n_id.faktur_pajak_line"].search(criteria).unlink()
         line_data = []
         allowed_ppn_ids = self.allowed_ppn_tax_code_ids.ids
         allowed_ppnbm_ids = self.allowed_ppnbm_tax_code_ids.ids
@@ -345,20 +342,27 @@ class FakturPajakKeluaran(models.Model):
                     if tax.tax_code_id.id in allowed_ppnbm_ids:
                         ppnbm_tax = tax
                 if ppn_tax:
-                    line_data.append((0, 0, {
-                        "date": inv.date_invoice,
-                        "invoice_line_id": line.id,
-                        "name": line.product_id.name,
-                        "product_id": line.product_id.id,
-                        "quantity": line.quantity,
-                        "price_unit": line.price_subtotal /
-                        line.quantity,
-                        "ppn_tax_id": ppn_tax.id,
-                        "ppnbm_tax_id": ppnbm_tax and ppnbm_tax.id or False,
-                    }))
-        self.write({
-            "faktur_pajak_line_ids": line_data,
-        })
+                    line_data.append(
+                        (
+                            0,
+                            0,
+                            {
+                                "date": inv.date_invoice,
+                                "invoice_line_id": line.id,
+                                "name": line.product_id.name,
+                                "product_id": line.product_id.id,
+                                "quantity": line.quantity,
+                                "price_unit": line.price_subtotal / line.quantity,
+                                "ppn_tax_id": ppn_tax.id,
+                                "ppnbm_tax_id": ppnbm_tax and ppnbm_tax.id or False,
+                            },
+                        )
+                    )
+        self.write(
+            {
+                "faktur_pajak_line_ids": line_data,
+            }
+        )
 
 
 class FakturPajakLine(models.Model):
@@ -372,8 +376,7 @@ class FakturPajakLine(models.Model):
     @api.multi
     def _compute_subtotal(self):
         for line in self:
-            line.subtotal = line.currency_id.round(
-                line.price_unit * line.quantity)
+            line.subtotal = line.currency_id.round(line.price_unit * line.quantity)
             line.subtotal_company_currency = line.currency_id.compute(
                 line.subtotal,
                 line.company_currency_id,
@@ -386,8 +389,9 @@ class FakturPajakLine(models.Model):
     @api.multi
     def _compute_kode_objek(self):
         for line in self:
-            line.enofa_kode_objek = line.product_id and \
-                line.product_id.default_code or "-"
+            line.enofa_kode_objek = (
+                line.product_id and line.product_id.default_code or "-"
+            )
 
     @api.depends(
         "name",
@@ -490,12 +494,10 @@ class FakturPajakLine(models.Model):
         for line in self:
             line.ppn_amount = line.ppnbm_amount = 0.0
             if line.ppn_tax_id:
-                tax = line.ppn_tax_id.compute_all(
-                    line.subtotal_company_currency, 1.0)
+                tax = line.ppn_tax_id.compute_all(line.subtotal_company_currency, 1.0)
                 line.ppn_amount = tax["total_included"] - tax["total"]
             if line.ppnbm_tax_id:
-                tax = line.ppnbm_tax_id.compute_all(
-                    line.subtotal_company_currency, 1.0)
+                tax = line.ppnbm_tax_id.compute_all(line.subtotal_company_currency, 1.0)
                 line.ppnbm_amount = tax["total_included"] - tax["total"]
 
     ppn_tax_id = fields.Many2one(
@@ -624,8 +626,10 @@ class FakturPajakLine(models.Model):
             self.name = self.product_id.name
             self.price_unit = self.product_id.lst_price
         if self.invoice_line_id and self.product_id:
-            self.price_unit = self.invoice_line_id.price_subtotal_gross / \
-                self.invoice_line_id.quantity
+            self.price_unit = (
+                self.invoice_line_id.price_subtotal_gross
+                / self.invoice_line_id.quantity
+            )
         result["domain"] = {
             "invoice_line_ids": [
                 ("product_id", "=", self.product_id.id),

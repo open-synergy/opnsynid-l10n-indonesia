@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class GenerateNomorSeriFakturPajak(models.TransientModel):
@@ -42,8 +42,7 @@ class GenerateNomorSeriFakturPajak(models.TransientModel):
         result = {}
         if self.company_id:
             if self.branch_id:
-                if self.branch_id.commercial_partner_id != \
-                        self.company_id.partner_id:
+                if self.branch_id.commercial_partner_id != self.company_id.partner_id:
                     self.branch_id = False
             else:
                 self.branch_id = self.company_id.partner_id
@@ -60,7 +59,7 @@ class GenerateNomorSeriFakturPajak(models.TransientModel):
     @api.multi
     def generate_nomor_seri(self):
         self.ensure_one()
-        for qty in range(1, self.quantity + 1):
+        for _document in range(1, self.quantity + 1):
             name = self.sequence_id._next()
             data = {
                 "name": name,

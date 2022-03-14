@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class StockMove(models.Model):
@@ -21,20 +21,16 @@ class StockMove(models.Model):
                 if not quant.djbc_custom:
                     move.djbc_custom = False
 
-    @api.depends(
-        "picking_type_id",
-        "picking_type_id.allowed_document_type_ids")
+    @api.depends("picking_type_id", "picking_type_id.allowed_document_type_ids")
     def _compute_all_allowed_document_type_ids(self):
-        obj_document_type =\
-            self.env["l10n_id.djbc_document_type"]
+        obj_document_type = self.env["l10n_id.djbc_document_type"]
         for move in self:
-            if move.picking_type_id and \
-                    move.picking_type_id.allowed_document_type_ids:
-                move.all_allowed_document_type_ids = \
+            if move.picking_type_id and move.picking_type_id.allowed_document_type_ids:
+                move.all_allowed_document_type_ids = (
                     move.picking_type_id.allowed_document_type_ids
+                )
             else:
-                move.all_allowed_document_type_ids = \
-                    obj_document_type.search([])
+                move.all_allowed_document_type_ids = obj_document_type.search([])
 
     djbc_custom_document_id = fields.Many2one(
         string="DJBC Custom Document",

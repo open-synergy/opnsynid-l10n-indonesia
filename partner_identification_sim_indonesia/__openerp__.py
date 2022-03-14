@@ -7,14 +7,12 @@
     "version": "8.0.1.1.0",
     "summary": "Provide a SIM number to partner",
     "category": "Partner",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
         "partner_identification",
     ],
-    "data": [
-        "data/res_partner_id_category_data.xml"
-    ],
+    "data": ["data/res_partner_id_category_data.xml"],
 }

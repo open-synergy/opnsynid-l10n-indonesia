@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class FakturPajakType(models.Model):
@@ -36,12 +36,11 @@ class FakturPajakType(models.Model):
     allowed_invoice_journal_ids = fields.Many2many(
         string="Allowed Invoice Journals",
         domain=[
-            ("type", "in", [
-                "sale",
-                "sale_refund",
-                "purchase",
-                "purchase_refund"],
-             ),
+            (
+                "type",
+                "in",
+                ["sale", "sale_refund", "purchase", "purchase_refund"],
+            ),
         ],
         comodel_name="account.journal",
         relation="rel_fp_type_2_journal",

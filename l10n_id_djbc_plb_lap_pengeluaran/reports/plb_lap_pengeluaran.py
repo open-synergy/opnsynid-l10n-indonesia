@@ -3,8 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
-from openerp import tools
+from openerp import fields, models, tools
 
 
 class LapPlbLapPengeluaran(models.Model):
@@ -13,65 +12,35 @@ class LapPlbLapPengeluaran(models.Model):
     _auto = False
 
     jenis_dokumen = fields.Many2one(
-        string="Jenis Dokumen",
-        comodel_name="l10n_id.djbc_document_type"
+        string="Jenis Dokumen", comodel_name="l10n_id.djbc_document_type"
     )
 
-    no_dokumen = fields.Char(
-        string="No. Dokumen"
-    )
+    no_dokumen = fields.Char(string="No. Dokumen")
 
-    tgl_dokumen = fields.Date(
-        string="Tanggal Dokumen"
-    )
+    tgl_dokumen = fields.Date(string="Tanggal Dokumen")
 
-    no_pengeluaran = fields.Char(
-        string="Nomor Pengeluaran"
-    )
+    no_pengeluaran = fields.Char(string="Nomor Pengeluaran")
 
-    tgl_pengeluaran = fields.Datetime(
-        string="Tanggal Pengeluaran"
-    )
+    tgl_pengeluaran = fields.Datetime(string="Tanggal Pengeluaran")
 
-    penerima = fields.Many2one(
-        string="Pembeli/Penerima",
-        comodel_name="res.partner"
-    )
+    penerima = fields.Many2one(string="Pembeli/Penerima", comodel_name="res.partner")
 
-    kode_barang = fields.Char(
-        string="Kode Barang"
-    )
+    kode_barang = fields.Char(string="Kode Barang")
 
-    nama_barang = fields.Many2one(
-        string="Nama Barang",
-        comodel_name="product.product"
-    )
+    nama_barang = fields.Many2one(string="Nama Barang", comodel_name="product.product")
 
-    jumlah = fields.Float(
-        string="Jumlah"
-    )
+    jumlah = fields.Float(string="Jumlah")
 
-    satuan = fields.Many2one(
-        string="Satuan",
-        comodel_name="product.uom"
-    )
+    satuan = fields.Many2one(string="Satuan", comodel_name="product.uom")
 
-    nilai = fields.Float(
-        string="Nilai"
-    )
+    nilai = fields.Float(string="Nilai")
 
-    nilai_so = fields.Float(
-        string="Nilai SO"
-    )
+    nilai_so = fields.Float(string="Nilai SO")
 
-    warehouse_id = fields.Many2one(
-        string="Warehouse",
-        comodel_name="stock.warehouse"
-    )
+    warehouse_id = fields.Many2one(string="Warehouse", comodel_name="stock.warehouse")
 
     pemilik_barang = fields.Many2one(
-        string="Pemilik Barang",
-        comodel_name="res.partner"
+        string="Pemilik Barang", comodel_name="res.partner"
     )
 
     def _select(self):
@@ -147,15 +116,12 @@ class LapPlbLapPengeluaran(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             %s
             %s
             %s
-        )""" % (
-            self._table,
-            self._select(),
-            self._from(),
-            self._join(),
-            self._where()
-        ))
+        )"""
+            % (self._table, self._select(), self._from(), self._join(), self._where())
+        )

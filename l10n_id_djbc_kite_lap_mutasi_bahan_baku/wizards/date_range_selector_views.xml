@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
         <record id="kite_lap_mutasi_bahan_baku_wizard_view_form" model="ir.ui.view">
             <field name="name">l10n_id.kite_lap_mutasi_bahan_baku_wizard.form</field>
             <field name="model">l10n_id.kite_lap_mutasi_bahan_baku_wizard</field>
-            <field name="inherit_id" ref="l10n_id_djbc_app.date_range_selector_view_form"/>
+            <field
+                name="inherit_id"
+                ref="l10n_id_djbc_app.date_range_selector_view_form"
+            />
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
@@ -15,12 +17,15 @@
             </field>
         </record>
 
-        <record id="kite_lap_mutasi_bahan_baku_wizard_action" model="ir.actions.act_window">
+        <record
+            id="kite_lap_mutasi_bahan_baku_wizard_action"
+            model="ir.actions.act_window"
+        >
             <field name="name">Mutasi Bahan Baku</field>
             <field name="res_model">l10n_id.kite_lap_mutasi_bahan_baku_wizard</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="kite_lap_mutasi_bahan_baku_wizard_view_form"/>
+            <field name="view_id" ref="kite_lap_mutasi_bahan_baku_wizard_view_form" />
             <field name="target">new</field>
         </record>
 

@@ -5,8 +5,8 @@
     "name": "Indonesia - Laporan Pemakaian Bahan Baku for KITE",
     "version": "8.0.1.2.0",
     "category": "localization",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -17,6 +17,6 @@
         "security/ir.model.access.csv",
         "data/djbc_kite_movement_type_data.xml",
         "reports/djbc_kite_lap_pemakaian_bahan_baku.xml",
-        "wizards/date_range_selector_views.xml"
+        "wizards/date_range_selector_views.xml",
     ],
 }

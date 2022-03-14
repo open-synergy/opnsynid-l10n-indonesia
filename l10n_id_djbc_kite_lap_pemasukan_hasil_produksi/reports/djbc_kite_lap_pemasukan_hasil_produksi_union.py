@@ -2,8 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
-from openerp import tools
+from openerp import fields, models, tools
 
 
 class LapKitePemasukanHasilProduksiUnion(models.Model):
@@ -34,10 +33,7 @@ class LapKitePemasukanHasilProduksiUnion(models.Model):
     jumlah_disubkontrakkan = fields.Float(
         string="Jumlah Disubkontrakan",
     )
-    gudang = fields.Many2one(
-        string="Gudang",
-        comodel_name="stock.warehouse"
-    )
+    gudang = fields.Many2one(string="Gudang", comodel_name="stock.warehouse")
 
     # Object: l10n_id.lap_kite_pemasukan_hasil_produksi
     def _select_1(self):
@@ -84,16 +80,19 @@ class LapKitePemasukanHasilProduksiUnion(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             %s
             UNION
             %s
             %s
-        )""" % (
-            self._table,
-            self._select_1(),
-            self._from_1(),
-            self._select_2(),
-            self._from_2(),
-        ))
+        )"""
+            % (
+                self._table,
+                self._select_1(),
+                self._from_1(),
+                self._select_2(),
+                self._from_2(),
+            )
+        )

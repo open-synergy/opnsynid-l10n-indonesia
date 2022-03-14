@@ -5,11 +5,11 @@
 {
     "name": "Partner Identification - BPJS",
     "version": "8.0.1.0.0",
-    "author": "OpenSynergy Indonesia",
-    "website": "https://opensynergy-indonesia.com",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
+    "website": "https://simetri-sinergi.id",
     "license": "AGPL-3",
     "depends": [
-            "partner_identification",
+        "partner_identification",
     ],
     "external_dependencies": {
         "python": [

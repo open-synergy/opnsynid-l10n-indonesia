@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -29,16 +29,21 @@ class StockInventoryLine(models.Model):
         if wh_id:
             wh = obj_wh.browse([wh_id])[0]
 
-        adj_in_type = wh and wh.adjustment_in_type_id or \
-            company.djbc_adjustment_in_picking_type_id
+        adj_in_type = (
+            wh
+            and wh.adjustment_in_type_id
+            or company.djbc_adjustment_in_picking_type_id
+        )
         if not adj_in_type:
             raise UserError(_("No DJBC adjustment in picking type configured"))
 
-        adj_out_type = wh and wh.adjustment_out_type_id or \
-            company.djbc_adjustment_in_picking_type_id
+        adj_out_type = (
+            wh
+            and wh.adjustment_out_type_id
+            or company.djbc_adjustment_in_picking_type_id
+        )
         if not adj_out_type:
-            raise UserError(
-                _("No DJBC adjustment out picking type configured"))
+            raise UserError(_("No DJBC adjustment out picking type configured"))
 
         move_id = _super._resolve_inventory_line(inventory_line)
         if not move_id:

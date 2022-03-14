@@ -1,46 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2016 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_A_umum_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_A_umum_category"
+        >
             <field name="name">SIM A Umum</field>
             <field name="code">sim_A_umum</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_A_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_A_category"
+        >
             <field name="name">SIM A</field>
             <field name="code">sim_A</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_B1_umum_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_B1_umum_category"
+        >
             <field name="name">SIM B1 Umum</field>
             <field name="code">sim_B1_umum</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_B1_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_B1_category"
+        >
             <field name="name">SIM B1</field>
             <field name="code">sim_B1</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_B2_umum_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_B2_umum_category"
+        >
             <field name="name">SIM B2 Umum</field>
             <field name="code">sim_B2_umum</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_B2_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_B2_category"
+        >
             <field name="name">SIM B2</field>
             <field name="code">sim_B2</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_C_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_C_category"
+        >
             <field name="name">SIM C</field>
             <field name="code">sim_C</field>
         </record>
 
-        <record model="res.partner.id_category" id="partner_identification_SIM_D_category">
+        <record
+            model="res.partner.id_category"
+            id="partner_identification_SIM_D_category"
+        >
             <field name="name">SIM D</field>
             <field name="code">sim_D</field>
         </record>

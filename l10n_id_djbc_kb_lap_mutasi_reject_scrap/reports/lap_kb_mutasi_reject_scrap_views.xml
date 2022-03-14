@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_kb_lap_mutasi_reject_scrap_view_tree" model="ir.ui.view">
     <field name="name">tree l10n_id.djbc_kb_lap_mutasi_reject_scrap</field>
     <field name="model">l10n_id.djbc_kb_lap_mutasi_reject_scrap</field>
-    <field name="inherit_id" ref="l10n_id_djbc_kb_lap_common.djbc_lap_kb_mutasi_common_view_tree"/>
+    <field
+                name="inherit_id"
+                ref="l10n_id_djbc_kb_lap_common.djbc_lap_kb_mutasi_common_view_tree"
+            />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//tree" position="attributes">
-                <attribute name="string">tree l10n_id.djbc_kb_lap_mutasi_reject_scrap</attribute>
+                <attribute
+                            name="string"
+                        >tree l10n_id.djbc_kb_lap_mutasi_reject_scrap</attribute>
             </xpath>
         </data>
     </field>
@@ -20,11 +24,16 @@
 <record id="djbc_kb_lap_mutasi_reject_scrap_view_search" model="ir.ui.view">
     <field name="name">search l10n_id.djbc_kb_lap_mutasi_reject_scrap</field>
     <field name="model">l10n_id.djbc_kb_lap_mutasi_reject_scrap</field>
-    <field name="inherit_id" ref="l10n_id_djbc_kb_lap_common.djbc_lap_kb_mutasi_common_view_search"/>
+    <field
+                name="inherit_id"
+                ref="l10n_id_djbc_kb_lap_common.djbc_lap_kb_mutasi_common_view_search"
+            />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//search" position="attributes">
-                <attribute name="string">tree l10n_id.djbc_kb_lap_mutasi_reject_scrap</attribute>
+                <attribute
+                            name="string"
+                        >tree l10n_id.djbc_kb_lap_mutasi_reject_scrap</attribute>
             </xpath>
         </data>
     </field>
@@ -36,7 +45,7 @@
     <field name="res_model">l10n_id.djbc_kb_lap_mutasi_reject_scrap</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="djbc_kb_lap_mutasi_reject_scrap_view_tree"/>
+    <field name="view_id" ref="djbc_kb_lap_mutasi_reject_scrap_view_tree" />
 </record>
 </data>
 </openerp>

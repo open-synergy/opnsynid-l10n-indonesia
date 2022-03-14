@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="daftar_bukti_potong_pph_view_tree" model="ir.ui.view">
@@ -9,13 +8,13 @@
     <field name="model">l10n_id.daftar_bukti_potong_pph</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="date"/>
-            <field name="type_id" invisible="1"/>
-            <field name="company_id"/>
-            <field name="tax_period_id"/>
-            <field name="ttd_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="date" />
+            <field name="type_id" invisible="1" />
+            <field name="company_id" />
+            <field name="tax_period_id" />
+            <field name="ttd_id" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -25,27 +24,71 @@
     <field name="model">l10n_id.daftar_bukti_potong_pph</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="date"/>
-            <field name="company_id"/>
-            <field name="tax_period_id"/>
-            <field name="ttd_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="date" />
+            <field name="company_id" />
+            <field name="tax_period_id" />
+            <field name="ttd_id" />
+            <field name="state" />
             <group name="group_state" string="State">
-                <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
-                <filter name="filter_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
-                <filter name="filter_done" string="Done" domain="[('state','=','done')]"/>
-                <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+                <filter
+                            name="filter_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="filter_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="filter_done"
+                            string="Done"
+                            domain="[('state','=','done')]"
+                        />
+                <filter
+                            name="filter_cancel"
+                            string="Cancel"
+                            domain="[('state','=','cancel')]"
+                        />
             </group>
             <group name="group_main" string="Group By..">
-                <filter name="filter_grp_tax_period" string="Tax Period" context="{'group_by':'tax_period_id'}"/>
-                <filter name="filter_grp_ttd" string="TTD" context="{'group_by':'ttd_id'}"/>
-                <filter name="filter_grp_state" string="State" context="{'group_by':'state'}"/>
-                <separator/>
-                <filter name="filter_grp_day" string="Day" context="{'group_by':'date:day'}"/>
-                <filter name="filter_grp_week" string="Week" context="{'group_by':'date:week'}"/>
-                <filter name="filter_grp_month" string="Month" context="{'group_by':'date:month'}"/>
-                <filter name="filter_grp_year" string="Year" context="{'group_by':'date:year'}"/>
+                <filter
+                            name="filter_grp_tax_period"
+                            string="Tax Period"
+                            context="{'group_by':'tax_period_id'}"
+                        />
+                <filter
+                            name="filter_grp_ttd"
+                            string="TTD"
+                            context="{'group_by':'ttd_id'}"
+                        />
+                <filter
+                            name="filter_grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <separator />
+                <filter
+                            name="filter_grp_day"
+                            string="Day"
+                            context="{'group_by':'date:day'}"
+                        />
+                <filter
+                            name="filter_grp_week"
+                            string="Week"
+                            context="{'group_by':'date:week'}"
+                        />
+                <filter
+                            name="filter_grp_month"
+                            string="Month"
+                            context="{'group_by':'date:month'}"
+                        />
+                <filter
+                            name="filter_grp_year"
+                            string="Year"
+                            context="{'group_by':'date:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -57,42 +100,75 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="workflow_action_confirm" string="Confirm" type="object" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm daftar bukti potong?"/>
-                <button name="workflow_action_done" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}" confirm="Approve daftar bukti potong?"/>
-                <button name="workflow_action_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','not in', ['draft', 'confirm', 'done']),('cancel_ok','=',False)]}" confirm="Cancel daftar bukti potong?"/>
-                <button name="workflow_action_reset" string="Set to Draft" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('reset_ok','=',False)]}" confirm="Reset bukti potong?"/>
-                <field name="state" widget="statusbar"/>
+                <button
+                            name="workflow_action_confirm"
+                            string="Confirm"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                            confirm="Confirm daftar bukti potong?"
+                        />
+                <button
+                            name="workflow_action_done"
+                            string="Approve"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+                            confirm="Approve daftar bukti potong?"
+                        />
+                <button
+                            name="workflow_action_cancel"
+                            string="Cancel"
+                            type="object"
+                            attrs="{'invisible':['|',('state','not in', ['draft', 'confirm', 'done']),('cancel_ok','=',False)]}"
+                            confirm="Cancel daftar bukti potong?"
+                        />
+                <button
+                            name="workflow_action_reset"
+                            string="Set to Draft"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('reset_ok','=',False)]}"
+                            confirm="Reset bukti potong?"
+                        />
+                <field name="state" widget="statusbar" />
             </header>
             <sheet>
-                <h1 name="form_name"/>
+                <h1 name="form_name" />
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
-                        <field name="name"/>
-                        <field name="date"/>
-                        <field name="tax_period_id"/>
-                        <field name="company_id"/>
-                        <field name="pemotong_pajak_id" invisible="1"/>
-                        <field name="type_id" invisible="1"/>
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="tax_period_id" />
+                        <field name="company_id" />
+                        <field name="pemotong_pajak_id" invisible="1" />
+                        <field name="type_id" invisible="1" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
-                        <field name="ttd_mode"/>
-                        <field name="ttd_id" domain="[('is_company','=',False),('commercial_partner_id','=',pemotong_pajak_id)]"/>
+                        <field name="ttd_mode" />
+                        <field
+                                    name="ttd_id"
+                                    domain="[('is_company','=',False),('commercial_partner_id','=',pemotong_pajak_id)]"
+                                />
                     </group>
                 </group>
                 <notebook>
                     <page name="page_policy" string="Policy" groups="base.group_system">
                         <group name="group_policy" colspan="4" col="2">
-                            <field name="confirm_ok"/>
-                            <field name="approve_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="reset_ok"/>
+                            <field name="confirm_ok" />
+                            <field name="approve_ok" />
+                            <field name="cancel_ok" />
+                            <field name="reset_ok" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread"/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
             </div>
         </form>
     </field>

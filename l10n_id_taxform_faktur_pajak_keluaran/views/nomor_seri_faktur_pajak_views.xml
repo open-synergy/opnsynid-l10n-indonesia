@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="nomor_seri_faktur_pajak_view_tree" model="ir.ui.view">
@@ -9,9 +8,9 @@
     <field name="model">l10n_id.nomor_seri_faktur_pajak</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="faktur_pajak_id"/>
-            <field name="branch_id"/>
+            <field name="name" />
+            <field name="faktur_pajak_id" />
+            <field name="branch_id" />
         </tree>
     </field>
 </record>
@@ -22,10 +21,10 @@
     <field name="arch" type="xml">
         <form>
             <group name="group_main">
-                <field name="company_id"/>
-                <field name="name"/>
-                <field name="faktur_pajak_id"/>
-                <field name="branch_id"/>
+                <field name="company_id" />
+                <field name="name" />
+                <field name="faktur_pajak_id" />
+                <field name="branch_id" />
             </group>
         </form>
     </field>
@@ -40,12 +39,12 @@
 </record>
 
 <menuitem
-    id="nomor_seri_faktur_pajak_menu"
-    name="Nomor Seri Faktur Pajak"
-    parent="l10n_id_taxform.taxform_configuration_menu"
-    groups="l10n_id_taxform.manager_group_taxform"
-    action="nomor_seri_faktur_pajak_action"
-    sequence="1"
-    />
+            id="nomor_seri_faktur_pajak_menu"
+            name="Nomor Seri Faktur Pajak"
+            parent="l10n_id_taxform.taxform_configuration_menu"
+            groups="l10n_id_taxform.manager_group_taxform"
+            action="nomor_seri_faktur_pajak_action"
+            sequence="1"
+        />
 </data>
 </openerp>

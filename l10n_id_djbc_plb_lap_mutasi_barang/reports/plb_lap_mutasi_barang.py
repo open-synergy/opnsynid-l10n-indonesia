@@ -2,8 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
-from openerp import tools
+from openerp import api, fields, models, tools
 
 
 class LapPlbLapMutasiBarang(models.Model):
@@ -24,44 +23,49 @@ class LapPlbLapMutasiBarang(models.Model):
 
     @api.multi
     def _qty_where(
-        self, date_start, date_end, movement_type="in",
-        scrap=False, adjustment=False
+        self, date_start, date_end, movement_type="in", scrap=False, adjustment=False
     ):
         self.ensure_one()
         str_where = """
         WHERE
-            a.product_id = %s AND
-            b.warehouse_id = %s AND
-            b.djbc_plb_movement_type = '%s' AND
-            b.djbc_plb_scrap %s AND
+            a.product_id = {} AND
+            b.warehouse_id = {} AND
+            b.djbc_plb_movement_type = '{}' AND
+            b.djbc_plb_scrap {} AND
             a.state = 'done' AND
-        """ % (
+        """.format(
             self.product_id.id,
             self.warehouse_id.id,
             movement_type,
-            scrap and 'IS TRUE' or 'IS FALSE',
+            scrap and "IS TRUE" or "IS FALSE",
         )
         if date_start:
             str_where += """
-            a.date >= '%s' AND
-            a.date <= '%s'
-            """ % (date_start, date_end)
+            a.date >= '{}' AND
+            a.date <= '{}'
+            """.format(
+                date_start,
+                date_end,
+            )
         else:
             str_where += """
             a.date < '%s'
-            """ % (date_end)
+            """ % (
+                date_end
+            )
         if adjustment:
             str_where += """
              AND (a.inventory_id != %s OR
              a.inventory_id IS NULL)
-            """ % (adjustment)
+            """ % (
+                adjustment
+            )
 
         return str_where
 
     @api.multi
     def _qty_join(self):
         self.ensure_one()
-        pass
 
     @api.multi
     def _qty_select(self):
@@ -80,9 +84,9 @@ class LapPlbLapMutasiBarang(models.Model):
         obj_inv = self.env["stock.inventory"]
 
         for lap in self:
-            saldo_awal = pemasukan = pengeluaran = \
-                penyesuaian = saldo_akhir = stock_opname = \
-                selisih = 0.0
+            saldo_awal = (
+                pemasukan
+            ) = pengeluaran = penyesuaian = saldo_akhir = stock_opname = selisih = 0.0
 
             # Adjustment
             inv = False
@@ -98,15 +102,17 @@ class LapPlbLapMutasiBarang(models.Model):
             if invs:
                 inv = invs[0]
 
-            saldo_awal_pemasukan = lap._get_qty(
-                False, date_start, "in", False, False)
+            saldo_awal_pemasukan = lap._get_qty(False, date_start, "in", False, False)
             saldo_awal_pengeluaran = lap._get_qty(
-                False, date_start, "out", False, False)
+                False, date_start, "out", False, False
+            )
             saldo_awal = saldo_awal_pemasukan - saldo_awal_pengeluaran
             pemasukan = lap._get_qty(
-                date_start, date_end, "in", False, inv and inv.id or False)
+                date_start, date_end, "in", False, inv and inv.id or False
+            )
             pengeluaran = lap._get_qty(
-                date_start, date_end, "out", False, inv and inv.id or False)
+                date_start, date_end, "out", False, inv and inv.id or False
+            )
 
             if inv:
                 criteria = [
@@ -115,8 +121,7 @@ class LapPlbLapMutasiBarang(models.Model):
                 ]
                 for inv_line in obj_inv_line.search(criteria):
                     stock_opname += inv_line.product_qty
-                    penyesuaian += (inv_line.product_qty -
-                                    inv_line.theoretical_qty)
+                    penyesuaian += inv_line.product_qty - inv_line.theoretical_qty
 
             saldo_akhir = saldo_awal + pemasukan - pengeluaran + penyesuaian
             selisih = saldo_akhir - stock_opname
@@ -143,19 +148,13 @@ class LapPlbLapMutasiBarang(models.Model):
         result = 0.0
         # pylint: disable=locally-disabled, sql-injection
         str_sql = """
-        %s
-        %s
-        %s
-        """ % (
+        {}
+        {}
+        {}
+        """.format(
             self._qty_select(),
             self._qty_from(),
-            self._qty_where(
-                date_start,
-                date_end,
-                movement_type,
-                scrap,
-                adjustment
-            )
+            self._qty_where(date_start, date_end, movement_type, scrap, adjustment),
         )
         self.env.cr.execute(str_sql)
         a = self.env.cr.dictfetchall()
@@ -267,15 +266,12 @@ class LapPlbLapMutasiBarang(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             FROM %s
             %s
             %s
-        )""" % (
-            self._table,
-            self._select(),
-            self._from(),
-            self._join(),
-            self._where()
-        ))
+        )"""
+            % (self._table, self._select(), self._from(), self._join(), self._where())
+        )

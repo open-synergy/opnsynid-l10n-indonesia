@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
-<record id="djbc_kite_movement_type_pengeluaran_hasil_produksi" model="l10n_id.djbc_kite_movement_type">
+<record
+            id="djbc_kite_movement_type_pengeluaran_hasil_produksi"
+            model="l10n_id.djbc_kite_movement_type"
+        >
     <field name="name">Pengeluaran Hasil Produksi</field>
     <field name="code">KITE-PGHP</field>
-    <field name="active" eval="1"/>
+    <field name="active" eval="1" />
 </record>
 </data>
 </openerp>

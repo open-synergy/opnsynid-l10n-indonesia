@@ -2,8 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
-from openerp import tools
+from openerp import fields, models, tools
 
 
 class LapKitePengeluaranHasilProduksi(models.Model):
@@ -51,13 +50,8 @@ class LapKitePengeluaranHasilProduksi(models.Model):
         string="Mata Uang",
         comodel_name="res.currency",
     )
-    nilai = fields.Float(
-        string="Nilai"
-    )
-    gudang = fields.Many2one(
-        string="Gudang",
-        comodel_name="stock.warehouse"
-    )
+    nilai = fields.Float(string="Nilai")
+    gudang = fields.Many2one(string="Gudang", comodel_name="stock.warehouse")
 
     def _get_movement_type(self, cr):
         query = """
@@ -107,7 +101,9 @@ class LapKitePengeluaranHasilProduksi(models.Model):
                 a.djbc_custom IS TRUE AND
                 e.djbc_kite_scrap IS FALSE AND
                 e.djbc_kite_movement_type_id=%s
-        """ % (movement_type_id)
+        """ % (
+            movement_type_id
+        )
         return where_str
 
     def _join(self):
@@ -154,19 +150,21 @@ class LapKitePengeluaranHasilProduksi(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        movement_type_id =\
-            self._get_movement_type(cr)
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        movement_type_id = self._get_movement_type(cr)
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             %s
             %s
             %s
             %s
-        )""" % (
-            self._table,
-            self._select(),
-            self._from(),
-            self._join(),
-            self._where(movement_type_id),
-            self._order_by(),
-        ))
+        )"""
+            % (
+                self._table,
+                self._select(),
+                self._from(),
+                self._join(),
+                self._where(movement_type_id),
+                self._order_by(),
+            )
+        )

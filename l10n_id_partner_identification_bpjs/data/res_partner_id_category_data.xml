@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <openerp>
 <data>
 <record model="res.partner.id_category" id="partner_identification_bpjs_kesehatan">
@@ -6,7 +6,10 @@
     <field name="code">bpjs_kes</field>
 </record>
 
-<record model="res.partner.id_category" id="partner_identification_bpjs_ketenagakerjaan">
+<record
+            model="res.partner.id_category"
+            id="partner_identification_bpjs_ketenagakerjaan"
+        >
     <field name="name">BPJS Ketenagakerjaan</field>
     <field name="code">bpjs_tnk</field>
 </record>

@@ -1,50 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="faktur_pajak_masukan_view_search" model="ir.ui.view">
     <field name="name">Faktur Pajak Masukan</field>
     <field name="model">l10n_id.faktur_pajak_masukan</field>
-    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_search"/>
+    <field
+                name="inherit_id"
+                ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_search"
+            />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data/>
+        <data />
     </field>
 </record>
 
 <record id="faktur_pajak_masukan_view_tree" model="ir.ui.view">
     <field name="name">Faktur Pajak Masukan</field>
     <field name="model">l10n_id.faktur_pajak_masukan</field>
-    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_tree"/>
+    <field
+                name="inherit_id"
+                ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_tree"
+            />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data/>
+        <data />
     </field>
 </record>
 
 <record id="faktur_pajak_masukan_view_form" model="ir.ui.view">
     <field name="name">Faktur Pajak</field>
     <field name="model">l10n_id.faktur_pajak_masukan</field>
-    <field name="inherit_id" ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_form"/>
+    <field
+                name="inherit_id"
+                ref="l10n_id_taxform_faktur_pajak_common.faktur_pajak_common_view_form"
+            />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//group[@name='group_enofa']" position="inside">
-                <field name="enofa_jenis_transaksi"/>
-                <field name="enofa_fg_pengganti"/>
-                <field name="enofa_nomor_dokumen"/>
-                <field name="enofa_masa_pajak"/>
-                <field name="enofa_tahun_pajak"/>
-                <field name="enofa_tanggal_dokumen"/>
-                <field name="enofa_npwp"/>
-                <field name="enofa_nama"/>
-                <field name="enofa_alamat_lengkap"/>
-                <field name="enofa_jumlah_dpp"/>
-                <field name="enofa_jumlah_ppn"/>
-                <field name="enofa_jumlah_ppnbm"/>
-                <field name="enofa_is_creditable"/>
+                <field name="enofa_jenis_transaksi" />
+                <field name="enofa_fg_pengganti" />
+                <field name="enofa_nomor_dokumen" />
+                <field name="enofa_masa_pajak" />
+                <field name="enofa_tahun_pajak" />
+                <field name="enofa_tanggal_dokumen" />
+                <field name="enofa_npwp" />
+                <field name="enofa_nama" />
+                <field name="enofa_alamat_lengkap" />
+                <field name="enofa_jumlah_dpp" />
+                <field name="enofa_jumlah_ppn" />
+                <field name="enofa_jumlah_ppnbm" />
+                <field name="enofa_is_creditable" />
             </xpath>
         </data>
     </field>
@@ -54,18 +62,18 @@
     <field name="name">Faktur Pajak Masukan</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">l10n_id.faktur_pajak_masukan</field>
-    <field name="search_view_id" ref="faktur_pajak_masukan_view_search"/>
+    <field name="search_view_id" ref="faktur_pajak_masukan_view_search" />
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
 </record>
 
 <menuitem
-    id="faktur_pajak_masukan_menu"
-    name="Faktur Pajak Masukan"
-    parent="l10n_id_taxform_faktur_pajak_common.taxform_faktur_pajak_menu"
-    groups="l10n_id_taxform.user_group_taxform"
-    action="faktur_pajak_masukan_action"
-    sequence="2"
-    />
+            id="faktur_pajak_masukan_menu"
+            name="Faktur Pajak Masukan"
+            parent="l10n_id_taxform_faktur_pajak_common.taxform_faktur_pajak_menu"
+            groups="l10n_id_taxform.user_group_taxform"
+            action="faktur_pajak_masukan_action"
+            sequence="2"
+        />
 </data>
 </openerp>

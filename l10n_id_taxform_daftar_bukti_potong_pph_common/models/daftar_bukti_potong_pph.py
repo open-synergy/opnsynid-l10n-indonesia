@@ -2,8 +2,9 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, SUPERUSER_ID
 from datetime import datetime
+
+from openerp import SUPERUSER_ID, api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -36,21 +37,25 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
     def _compute_policy(self):
         for daftar_bukpot in self:
             if self.env.user.id == SUPERUSER_ID:
-                daftar_bukpot.confirm_ok = daftar_bukpot.approve_ok = \
-                    daftar_bukpot.cancel_ok = \
-                    daftar_bukpot.reset_ok = True
+                daftar_bukpot.confirm_ok = (
+                    daftar_bukpot.approve_ok
+                ) = daftar_bukpot.cancel_ok = daftar_bukpot.reset_ok = True
                 continue
 
             daftar_bukpot_type = daftar_bukpot.type_id
 
             daftar_bukpot.confirm_ok = self._get_button_policy(
-                daftar_bukpot_type, "confirm")
+                daftar_bukpot_type, "confirm"
+            )
             daftar_bukpot.approve_ok = self._get_button_policy(
-                daftar_bukpot_type, "approve")
+                daftar_bukpot_type, "approve"
+            )
             daftar_bukpot.cancel_ok = self._get_button_policy(
-                daftar_bukpot_type, "cancel")
+                daftar_bukpot_type, "cancel"
+            )
             daftar_bukpot.reset_ok = self._get_button_policy(
-                daftar_bukpot_type, "reset")
+                daftar_bukpot_type, "reset"
+            )
 
     name = fields.Char(
         string="# Daftar Bukti Potong",
@@ -62,7 +67,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     company_id = fields.Many2one(
         string="Company",
@@ -75,7 +80,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     pemotong_pajak_id = fields.Many2one(
         string="Pemotong Pajak",
@@ -91,7 +96,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     date = fields.Date(
         string="Date",
@@ -102,7 +107,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
 
     @api.multi
@@ -114,7 +119,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
         for bukpot in self:
             try:
                 bukpot.tax_period_id = obj_tax_period._find_period(bukpot.date)
-            except:
+            except Exception:
                 bukpot.tax_period_id = False
 
     tax_period_id = fields.Many2one(
@@ -148,7 +153,7 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     state = fields.Selection(
         string="State",
@@ -266,18 +271,20 @@ class DaftarBuktiPotongPPh(models.AbstractModel):
         if not button_group_ids:
             result = True
         else:
-            if (set(button_group_ids) & set(group_ids)):
+            if set(button_group_ids) & set(group_ids):
                 result = True
         return result
 
     @api.model
     def _create_sequence(self, type_id):
-        daftar_bukpot_type = self.env[
-            "l10n_id.daftar_bukti_potong_pph_type"].browse(type_id)
+        daftar_bukpot_type = self.env["l10n_id.daftar_bukti_potong_pph_type"].browse(
+            type_id
+        )
         if not daftar_bukpot_type.sequence_id:
             raise UserError(_("No sequence defined"))
-        name = self.env["ir.sequence"].\
-            next_by_id(daftar_bukpot_type.sequence_id.id) or "/"
+        name = (
+            self.env["ir.sequence"].next_by_id(daftar_bukpot_type.sequence_id.id) or "/"
+        )
         return name
 
     @api.model
