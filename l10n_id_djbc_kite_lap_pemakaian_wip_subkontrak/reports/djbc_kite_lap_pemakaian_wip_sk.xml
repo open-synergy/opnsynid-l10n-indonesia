@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="lap_kite_pemakaian_wip_sk_view_tree" model="ir.ui.view">
@@ -9,13 +8,13 @@
     <field name="model">l10n_id.lap_kite_pemakaian_wip_sk</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
-            <field name="no_pengeluaran"/>
-            <field name="tgl_pengeluaran"/>
-            <field name="kode_barang"/>
-            <field name="nama_barang"/>
-            <field name="satuan"/>
-            <field name="jumlah_disubkontrakkan"/>
-            <field name="penerima_subkontrak"/>
+            <field name="no_pengeluaran" />
+            <field name="tgl_pengeluaran" />
+            <field name="kode_barang" />
+            <field name="nama_barang" />
+            <field name="satuan" />
+            <field name="jumlah_disubkontrakkan" />
+            <field name="penerima_subkontrak" />
         </tree>
     </field>
 </record>
@@ -25,19 +24,43 @@
     <field name="model">l10n_id.lap_kite_pemakaian_wip_sk</field>
     <field name="arch" type="xml">
         <search>
-            <field name="no_pengeluaran"/>
-            <field name="tgl_pengeluaran"/>
-            <field name="kode_barang"/>
-            <field name="nama_barang"/>
-            <field name="penerima_subkontrak"/>
+            <field name="no_pengeluaran" />
+            <field name="tgl_pengeluaran" />
+            <field name="kode_barang" />
+            <field name="nama_barang" />
+            <field name="penerima_subkontrak" />
             <group name="group0" string="Group By..">
-                <filter name="filter_picking" string="No Pengeluaran" context="{'group_by':'no_pengeluaran'}"/>
-                <filter name="filter_subcontract" string="Penerima Subkontrak" context="{'group_by':'penerima_subkontrak'}"/>
-                <separator/>
-                <filter name="filter_move_date_day" string="Tanggal Pengeluaran per Hari" context="{'group_by':'tgl_pengeluaran:day'}"/>
-                <filter name="filter_move_date_week" string="Tanggal Pengeluaran per Minggu" context="{'group_by':'tgl_pengeluaran:week'}"/>
-                <filter name="filter_move_date_month" string="Tanggal Pengeluaran per Bulan" context="{'group_by':'tgl_pengeluaran:month'}"/>
-                <filter name="filter_move_date_year" string="Tanggal Pengeluaran per Tahun" context="{'group_by':'tgl_pengeluaran:year'}"/>
+                <filter
+                            name="filter_picking"
+                            string="No Pengeluaran"
+                            context="{'group_by':'no_pengeluaran'}"
+                        />
+                <filter
+                            name="filter_subcontract"
+                            string="Penerima Subkontrak"
+                            context="{'group_by':'penerima_subkontrak'}"
+                        />
+                <separator />
+                <filter
+                            name="filter_move_date_day"
+                            string="Tanggal Pengeluaran per Hari"
+                            context="{'group_by':'tgl_pengeluaran:day'}"
+                        />
+                <filter
+                            name="filter_move_date_week"
+                            string="Tanggal Pengeluaran per Minggu"
+                            context="{'group_by':'tgl_pengeluaran:week'}"
+                        />
+                <filter
+                            name="filter_move_date_month"
+                            string="Tanggal Pengeluaran per Bulan"
+                            context="{'group_by':'tgl_pengeluaran:month'}"
+                        />
+                <filter
+                            name="filter_move_date_year"
+                            string="Tanggal Pengeluaran per Tahun"
+                            context="{'group_by':'tgl_pengeluaran:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -49,8 +72,8 @@
     <field name="res_model">l10n_id.lap_kite_pemakaian_wip_sk</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="lap_kite_pemakaian_wip_sk_view_tree"/>
-    <field name="search_view_id" ref="lap_kite_pemakaian_wip_sk_view_search"/>
+    <field name="view_id" ref="lap_kite_pemakaian_wip_sk_view_tree" />
+    <field name="search_view_id" ref="lap_kite_pemakaian_wip_sk_view_search" />
     <field name="target">current</field>
 </record>
 

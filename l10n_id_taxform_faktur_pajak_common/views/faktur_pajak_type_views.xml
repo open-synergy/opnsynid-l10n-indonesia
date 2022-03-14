@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="faktur_pajak_type_view_tree" model="ir.ui.view">
@@ -9,8 +8,8 @@
     <field name="model">l10n_id.faktur_pajak_type</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </tree>
     </field>
 </record>
@@ -21,18 +20,18 @@
     <field name="arch" type="xml">
         <form>
             <group name="group_main">
-                <field name="code"/>
-                <field name="name"/>
-                <field name="active"/>
-                <field name="description"/>
-                <field name="allow_multiple_reference"/>
-                <field name="allow_reverse"/>
-                <field name="allow_substitute"/>
-                <field name="allowed_transaction_type_ids"/>
-                <field name="allowed_additional_flag_ids"/>
-                <field name="allowed_invoice_journal_ids"/>
-                <field name="allowed_ppn_tax_ids"/>
-                <field name="allowed_ppnbm_tax_ids"/>
+                <field name="code" />
+                <field name="name" />
+                <field name="active" />
+                <field name="description" />
+                <field name="allow_multiple_reference" />
+                <field name="allow_reverse" />
+                <field name="allow_substitute" />
+                <field name="allowed_transaction_type_ids" />
+                <field name="allowed_additional_flag_ids" />
+                <field name="allowed_invoice_journal_ids" />
+                <field name="allowed_ppn_tax_ids" />
+                <field name="allowed_ppnbm_tax_ids" />
             </group>
         </form>
     </field>
@@ -47,12 +46,12 @@
 </record>
 
 <menuitem
-    id="faktur_pajak_type_menu"
-    name="Faktur Pajak Type"
-    parent="l10n_id_taxform.taxform_configuration_menu"
-    groups="l10n_id_taxform.manager_group_taxform"
-    action="faktur_pajak_type_action"
-    sequence="1"
-    />
+            id="faktur_pajak_type_menu"
+            name="Faktur Pajak Type"
+            parent="l10n_id_taxform.taxform_configuration_menu"
+            groups="l10n_id_taxform.manager_group_taxform"
+            action="faktur_pajak_type_action"
+            sequence="1"
+        />
 </data>
 </openerp>

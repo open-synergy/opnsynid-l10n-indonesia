@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="lap_kite_pemasukan_hasil_produksi_union_view_tree" model="ir.ui.view">
@@ -9,13 +8,13 @@
     <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
-          <field name="no_penerimaan"/>
-          <field name="tgl_penerimaan"/>
-          <field name="kode_barang"/>
-          <field name="nama_barang"/>
-          <field name="satuan"/>
-          <field name="jumlah_produksi"/>
-          <field name="jumlah_disubkontrakkan"/>
+          <field name="no_penerimaan" />
+          <field name="tgl_penerimaan" />
+          <field name="kode_barang" />
+          <field name="nama_barang" />
+          <field name="satuan" />
+          <field name="jumlah_produksi" />
+          <field name="jumlah_disubkontrakkan" />
         </tree>
     </field>
 </record>
@@ -25,30 +24,53 @@
     <field name="model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="arch" type="xml">
       <search>
-          <field name="no_penerimaan"/>
-          <field name="tgl_penerimaan"/>
-          <field name="kode_barang"/>
-          <field name="nama_barang"/>
+          <field name="no_penerimaan" />
+          <field name="tgl_penerimaan" />
+          <field name="kode_barang" />
+          <field name="nama_barang" />
           <group name="group0" string="Group By..">
-              <filter name="filter_picking" string="No Penerimaan" context="{'group_by':'no_penerimaan'}"/>
-              <separator/>
-              <filter name="filter_move_date_day" string="Tanggal Penerimaan per Hari" context="{'group_by':'tgl_penerimaan:day'}"/>
-              <filter name="filter_move_date_week" string="Tanggal Penerimaan per Minggu" context="{'group_by':'tgl_penerimaan:week'}"/>
-              <filter name="filter_move_date_month" string="Tanggal Penerimaan per Bulan" context="{'group_by':'tgl_penerimaan:month'}"/>
-              <filter name="filter_move_date_year" string="Tanggal Penerimaan per Tahun" context="{'group_by':'tgl_penerimaan:year'}"/>
+              <filter
+                            name="filter_picking"
+                            string="No Penerimaan"
+                            context="{'group_by':'no_penerimaan'}"
+                        />
+              <separator />
+              <filter
+                            name="filter_move_date_day"
+                            string="Tanggal Penerimaan per Hari"
+                            context="{'group_by':'tgl_penerimaan:day'}"
+                        />
+              <filter
+                            name="filter_move_date_week"
+                            string="Tanggal Penerimaan per Minggu"
+                            context="{'group_by':'tgl_penerimaan:week'}"
+                        />
+              <filter
+                            name="filter_move_date_month"
+                            string="Tanggal Penerimaan per Bulan"
+                            context="{'group_by':'tgl_penerimaan:month'}"
+                        />
+              <filter
+                            name="filter_move_date_year"
+                            string="Tanggal Penerimaan per Tahun"
+                            context="{'group_by':'tgl_penerimaan:year'}"
+                        />
           </group>
       </search>
     </field>
 </record>
 
-<record id="lap_kite_pemasukan_hasil_produksi_union_action" model="ir.actions.act_window">
+<record
+            id="lap_kite_pemasukan_hasil_produksi_union_action"
+            model="ir.actions.act_window"
+        >
     <field name="name">Lap. Pemasukan Hasil Produksi</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">l10n_id.lap_kite_pemasukan_hasil_produksi_union</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="lap_kite_pemasukan_hasil_produksi_union_view_tree"/>
-    <field name="search_view_id" ref="lap_kite_pemasukan_hasil_produksi_union_search"/>
+    <field name="view_id" ref="lap_kite_pemasukan_hasil_produksi_union_view_tree" />
+    <field name="search_view_id" ref="lap_kite_pemasukan_hasil_produksi_union_search" />
     <field name="target">current</field>
 </record>
 

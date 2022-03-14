@@ -1,18 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
-<record id="djbc_kite_movement_type_pemakaian_bahan_baku" model="l10n_id.djbc_kite_movement_type">
+<record
+            id="djbc_kite_movement_type_pemakaian_bahan_baku"
+            model="l10n_id.djbc_kite_movement_type"
+        >
     <field name="name">Pemakaian Bahan Baku</field>
     <field name="code">KITE-PMKBB</field>
-    <field name="active" eval="1"/>
+    <field name="active" eval="1" />
 </record>
-<record id="djbc_kite_movement_type_pemakaian_bahan_baku_subkontrak" model="l10n_id.djbc_kite_movement_type">
+<record
+            id="djbc_kite_movement_type_pemakaian_bahan_baku_subkontrak"
+            model="l10n_id.djbc_kite_movement_type"
+        >
     <field name="name">Pemakaian Bahan Baku Subkontrak</field>
     <field name="code">KITE-PMKBB-SUB</field>
-    <field name="active" eval="1"/>
+    <field name="active" eval="1" />
 </record>
 </data>
 </openerp>

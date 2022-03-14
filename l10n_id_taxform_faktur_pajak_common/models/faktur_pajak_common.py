@@ -3,10 +3,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from openerp import models, fields, api
-import openerp.addons.decimal_precision as dp
-from datetime import datetime
 import re
+from datetime import datetime
+
+import openerp.addons.decimal_precision as dp
+from openerp import api, fields, models
 
 
 class FakturPajakCommon(models.AbstractModel):
@@ -105,8 +106,8 @@ class FakturPajakCommon(models.AbstractModel):
             fp.enofa_tanggal_dokumen = "-"
             if fp.date:
                 fp.enofa_tanggal_dokumen = datetime.strptime(
-                    fp.date, "%Y-%m-%d").strftime(
-                        "%d/%m/%Y")
+                    fp.date, "%Y-%m-%d"
+                ).strftime("%d/%m/%Y")
 
     @api.depends(
         "taxform_period_id",
@@ -156,8 +157,9 @@ class FakturPajakCommon(models.AbstractModel):
         for fp in self:
             fp.taxform_period_id = False
             if fp.date:
-                fp.taxform_period_id = self.env["l10n_id.tax_period"].\
-                    _find_period(fp.date).id
+                fp.taxform_period_id = (
+                    self.env["l10n_id.tax_period"]._find_period(fp.date).id
+                )
 
     @api.depends(
         "taxform_period_id",
@@ -174,8 +176,9 @@ class FakturPajakCommon(models.AbstractModel):
     )
     def _compute_transaction_type(self):
         for fp in self:
-            fp.allowed_transaction_type_ids = fp.type_id.\
-                allowed_transaction_type_ids.ids
+            fp.allowed_transaction_type_ids = (
+                fp.type_id.allowed_transaction_type_ids.ids
+            )
 
     @api.depends(
         "type_id",
@@ -184,8 +187,7 @@ class FakturPajakCommon(models.AbstractModel):
     def _compute_tax_code(self):
         obj_dpp_code = self.env["l10n_id.faktur_pajak_allowed_dpp_tax_code"]
         obj_ppn_code = self.env["l10n_id.faktur_pajak_allowed_ppn_tax_code"]
-        obj_ppnbm_code = self.env[
-            "l10n_id.faktur_pajak_allowed_ppnbm_tax_code"]
+        obj_ppnbm_code = self.env["l10n_id.faktur_pajak_allowed_ppnbm_tax_code"]
         for fp in self:
             criteria = [
                 ("type_id", "=", fp.type_id.id),
@@ -206,8 +208,7 @@ class FakturPajakCommon(models.AbstractModel):
     )
     def _compute_additional_flag(self):
         for fp in self:
-            fp.allowed_additional_flag_ids = fp.type_id.\
-                allowed_additional_flag_ids.ids
+            fp.allowed_additional_flag_ids = fp.type_id.allowed_additional_flag_ids.ids
 
     @api.depends(
         "type_id",
@@ -244,8 +245,8 @@ class FakturPajakCommon(models.AbstractModel):
             fp.enofa_tanggal_dokumen_balik = "-"
             if fp.reverse_id:
                 fp.enofa_tanggal_dokumen_balik = datetime.strptime(
-                    fp.reverse_id.date, "%Y-%m-%d").strftime(
-                        "%d/%m/%Y")
+                    fp.reverse_id.date, "%Y-%m-%d"
+                ).strftime("%d/%m/%Y")
 
     @api.depends(
         "reference_id",
@@ -258,8 +259,7 @@ class FakturPajakCommon(models.AbstractModel):
             if fp.type_id.allow_multiple_reference:
                 fp.all_reference_ids = fp.reference_ids.ids
             else:
-                fp.all_reference_ids = fp.reference_id and \
-                    [fp.reference_id.id] or False
+                fp.all_reference_ids = fp.reference_id and [fp.reference_id.id] or False
 
     @api.depends(
         "type_id",
@@ -306,8 +306,7 @@ class FakturPajakCommon(models.AbstractModel):
         comodel_name="res.currency",
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
 
     @api.model
@@ -320,8 +319,7 @@ class FakturPajakCommon(models.AbstractModel):
         required=True,
         readonly=True,
         default=lambda self: self._default_company_currency(),
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
 
     @api.model
@@ -350,8 +348,7 @@ class FakturPajakCommon(models.AbstractModel):
         comodel_name="l10n_id.faktur_pajak_transaction_type",
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
 
     @api.model
@@ -445,32 +442,28 @@ class FakturPajakCommon(models.AbstractModel):
         digits_compute=dp.get_precision("Account"),
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     base_company_currency = fields.Float(
         string="Base in Company Currency",
         digits_compute=dp.get_precision("Account"),
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     ppn_amount = fields.Float(
         string="PPn Amount",
         digits_compute=dp.get_precision("Account"),
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     ppnbm_amount = fields.Float(
         string="PPnBm Amount",
         digits_compute=dp.get_precision("Account"),
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     date = fields.Date(
         string="Document Date",
@@ -504,16 +497,14 @@ class FakturPajakCommon(models.AbstractModel):
         string="Doc. Reference",
         comodel_name="account.move.line",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     reference_ids = fields.Many2many(
         string="Doc. References",
         comodel_name="account.move.line",
         relation="rel_fp_dummy",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     all_reference_ids = fields.Many2many(
         string="Doc. References",
@@ -556,15 +547,13 @@ class FakturPajakCommon(models.AbstractModel):
         string="Additional Flag",
         comodel_name="l10n_id.faktur_pajak_additional_flag",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     reverse_id = fields.Many2one(
         string="Reverse From",
         comodel_name="l10n_id.faktur_pajak_common",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     allow_reverse = fields.Boolean(
         string="Allow to Reverse Document",
@@ -575,8 +564,7 @@ class FakturPajakCommon(models.AbstractModel):
         string="Substitute For",
         comodel_name="l10n_id.faktur_pajak_common",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]},
+        states={"draft": [("readonly", False)]},
     )
     allow_substitute = fields.Boolean(
         string="Allow to Substitute Document",
@@ -699,8 +687,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def workflow_action_confirm(self):
         for fp in self:
-            fp.write(
-                fp._prepare_confirm_data())
+            fp.write(fp._prepare_confirm_data())
 
     @api.multi
     def _prepare_confirm_data(self):
@@ -712,8 +699,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def workflow_action_done(self):
         for fp in self:
-            fp.write(
-                fp._prepare_done_data())
+            fp.write(fp._prepare_done_data())
 
     @api.multi
     def _prepare_done_data(self):
@@ -725,8 +711,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def workflow_action_cancel(self):
         for fp in self:
-            fp.write(
-                fp._prepare_cancel_data())
+            fp.write(fp._prepare_cancel_data())
 
     @api.multi
     def _prepare_cancel_data(self):
@@ -738,8 +723,7 @@ class FakturPajakCommon(models.AbstractModel):
     @api.multi
     def workflow_action_reset(self):
         for fp in self:
-            fp.write(
-                fp._prepare_reset_data())
+            fp.write(fp._prepare_reset_data())
 
     @api.multi
     def _prepare_reset_data(self):
@@ -768,11 +752,9 @@ class FakturPajakCommon(models.AbstractModel):
     def onchange_all_reference(self):
         obj_line = self.env["account.move.line"]
         if self.fp_direction == "masukan":
-            partner_id = self.seller_partner_id and \
-                self.seller_partner_id.id or 0
+            partner_id = self.seller_partner_id and self.seller_partner_id.id or 0
         else:
-            partner_id = self.buyer_partner_id and \
-                self.buyer_partner_id.id or 0
+            partner_id = self.buyer_partner_id and self.buyer_partner_id.id or 0
         criteria = [
             ("move_id", "in", self.all_reference_ids.ids),
             ("tax_code_id", "in", self.allowed_dpp_tax_code_ids.ids),

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_ppftz02_view_tree" model="ir.ui.view">
@@ -9,9 +8,9 @@
     <field name="model">l10n_id.djbc_ppftz02</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="date"/>            
-            <field name="type_id" invisible="context.get('hide_type', True)"/>                        
+            <field name="name" />
+            <field name="date" />
+            <field name="type_id" invisible="context.get('hide_type', True)" />
         </tree>
     </field>
 </record>
@@ -23,9 +22,13 @@
         <form>
             <sheet>
                 <group name="group_main_1" colspan="4" col="2">
-                    <field name="name"/>
-                    <field name="date"/>            
-                    <field name="type_id" widget="selection" invisible="context.get('hide_type', True)"/>                 
+                    <field name="name" />
+                    <field name="date" />
+                    <field
+                                name="type_id"
+                                widget="selection"
+                                invisible="context.get('hide_type', True)"
+                            />
                 </group>
             </sheet>
         </form>
@@ -38,14 +41,18 @@
     <field name="res_model">l10n_id.djbc_ppftz02</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="context" eval="{'hide_type':True, 'default_type_id':ref('djbc_document_type_ppftz02')}"/>
+    <field
+                name="context"
+                eval="{'hide_type':True, 'default_type_id':ref('djbc_document_type_ppftz02')}"
+            />
 </record>
 
 <menuitem
-    id="djbc_ppftz02_menu"
-    name="PPFTZ-02"
-    parent="l10n_id_djbc_app.djbc_custom_document_menu"
-    groups="l10n_id_djbc_app.group_djbc_user"
-    action="djbc_ppftz02_action"/>
+            id="djbc_ppftz02_menu"
+            name="PPFTZ-02"
+            parent="l10n_id_djbc_app.djbc_custom_document_menu"
+            groups="l10n_id_djbc_app.group_djbc_user"
+            action="djbc_ppftz02_action"
+        />
 </data>
 </openerp>

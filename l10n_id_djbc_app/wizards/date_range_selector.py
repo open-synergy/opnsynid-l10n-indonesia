@@ -3,9 +3,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
-from openerp import api, models, fields
-from openerp.tools.translate import _
+
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
+from openerp.tools.translate import _
 
 
 class DateRangeSelector(models.AbstractModel):
@@ -39,37 +40,28 @@ class DateRangeSelector(models.AbstractModel):
     output_format = fields.Selection(
         string="Output Format",
         required=True,
-        selection=[
-            ("screen", "On-Screen"),
-            ("ods", "ODS"),
-            ("xls", "XLS")
-        ],
+        selection=[("screen", "On-Screen"), ("ods", "ODS"), ("xls", "XLS")],
         default="screen",
     )
 
-    @api.constrains(
-        "date_start", "date_end")
+    @api.constrains("date_start", "date_end")
     def _check_date(self):
-        strWarning = _(
-            "Date start must be greater than date end")
+        strWarning = _("Date start must be greater than date end")
         if self.date_start and self.date_end:
             if self.date_start > self.date_end:
                 raise UserError(strWarning)
 
     @api.multi
     def action_print_sreen(self):
-        raise UserError(
-            _("This feature hasn't been implemented yet"))
+        raise UserError(_("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print_ods(self):
-        raise UserError(
-            _("This feature hasn't been implemented yet"))
+        raise UserError(_("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print_xls(self):
-        raise UserError(
-            _("This feature hasn't been implemented yet"))
+        raise UserError(_("This feature hasn't been implemented yet"))
 
     @api.multi
     def action_print(self):

@@ -8,7 +8,7 @@
     "version": "8.0.2.0.0",
     "category": "localization",
     "website": "https://simetri-sinergi.id",
-    "author": "PT. Simetri Sinergi Indonesia,OpenSynergy Indonesia",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [

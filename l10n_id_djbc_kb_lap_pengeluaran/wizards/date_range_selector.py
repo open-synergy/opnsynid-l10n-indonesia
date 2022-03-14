@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, models, fields
+from openerp import api, fields, models
 
 
 class KBLapPengeluaranWizard(models.TransientModel):
@@ -14,17 +14,18 @@ class KBLapPengeluaranWizard(models.TransientModel):
         comodel_name="stock.warehouse",
         relation="rel_djbc_pengeluaran_2_warehouse",
         column1="wizard_id",
-        column2="warehouse_id"
+        column2="warehouse_id",
     )
 
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
-            "l10n_id_djbc_kb_lap_pengeluaran.djbc_kb_lap_pengeluaran_action")
+            "l10n_id_djbc_kb_lap_pengeluaran.djbc_kb_lap_pengeluaran_action"
+        )
         criteria = [
             ("tgl_penerimaan", ">=", self.date_start),
             ("tgl_penerimaan", "<=", self.date_end),
-            ("warehouse_id", "in", self.warehouse_ids.ids)
+            ("warehouse_id", "in", self.warehouse_ids.ids),
         ]
         waction.domain = criteria
         return waction.read()[0]

@@ -2,8 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
-from openerp import tools
+from openerp import fields, models, tools
 
 
 class DaftarKlienAuditUmum(models.Model):
@@ -33,12 +32,8 @@ class DaftarKlienAuditUmum(models.Model):
     date = fields.Date(
         string="Tanggal Laporan",
     )
-    date_start = fields.Date(
-        string="Awal Tahun Buku"
-    )
-    date_end = fields.Date(
-        string="Awal Tahun Buku"
-    )
+    date_start = fields.Date(string="Awal Tahun Buku")
+    date_end = fields.Date(string="Awal Tahun Buku")
     signing_accountant_id = fields.Many2one(
         string="Penandatangan Laporan Auditor Independen (LAI)",
         comodel_name="res.partner",
@@ -54,12 +49,8 @@ class DaftarKlienAuditUmum(models.Model):
         string="Bidang Usaha",
         comodel_name="res.partner.sector",
     )
-    total_net_profit = fields.Float(
-        string="Laba/Rugi Bersih"
-    )
-    total_asset = fields.Float(
-        string="Total Aset"
-    )
+    total_net_profit = fields.Float(string="Laba/Rugi Bersih")
+    total_asset = fields.Float(string="Total Aset")
 
     def _select(self):
         select_str = """
@@ -114,15 +105,12 @@ class DaftarKlienAuditUmum(models.Model):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             FROM %s
             %s
             %s
-        )""" % (
-            self._table,
-            self._select(),
-            self._from(),
-            self._join(),
-            self._where()
-        ))
+        )"""
+            % (self._table, self._select(), self._from(), self._join(), self._where())
+        )

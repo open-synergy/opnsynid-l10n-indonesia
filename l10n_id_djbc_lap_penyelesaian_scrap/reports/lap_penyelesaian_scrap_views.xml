@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_lap_penyelesaian_scrap_view_tree" model="ir.ui.view">
@@ -9,13 +8,13 @@
     <field name="model">l10n_id.djbc_lap_penyelesaian_scrap</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="custom_document_id"/>
-            <field name="custom_document_date"/>
-            <field name="product_id"/>
-            <field name="product_name"/>
-            <field name="product_code"/>
-            <field name="uom_id"/>
-            <field name="quantity"/>
+            <field name="custom_document_id" />
+            <field name="custom_document_date" />
+            <field name="product_id" />
+            <field name="product_name" />
+            <field name="product_code" />
+            <field name="uom_id" />
+            <field name="quantity" />
         </tree>
     </field>
 </record>
@@ -25,16 +24,36 @@
     <field name="model">l10n_id.djbc_lap_penyelesaian_scrap</field>
     <field name="arch" type="xml">
         <search>
-            <field name="product_id"/>
-            <field name="custom_document_id"/>
-            <field name="custom_document_date"/>            
+            <field name="product_id" />
+            <field name="custom_document_id" />
+            <field name="custom_document_date" />
             <group name="group0" string="Group By..">
-                <filter name="filter_product" string="Product" context="{'group_by':'product_id'}"/>
-                <separator/>
-                <filter name="filter_doc_date_day" string="Custom Document Date by Day" context="{'group_by':'custom_document_date:day'}"/>
-                <filter name="filter_doc_date_week" string="Custom Document Date by Week" context="{'group_by':'custom_document_date:week'}"/>
-                <filter name="filter_doc_date_month" string="Custom Document Date by Month" context="{'group_by':'custom_document_date:month'}"/>
-                <filter name="filter_doc_date_year" string="Custom Document Date by Year" context="{'group_by':'custom_document_date:year'}"/>                
+                <filter
+                            name="filter_product"
+                            string="Product"
+                            context="{'group_by':'product_id'}"
+                        />
+                <separator />
+                <filter
+                            name="filter_doc_date_day"
+                            string="Custom Document Date by Day"
+                            context="{'group_by':'custom_document_date:day'}"
+                        />
+                <filter
+                            name="filter_doc_date_week"
+                            string="Custom Document Date by Week"
+                            context="{'group_by':'custom_document_date:week'}"
+                        />
+                <filter
+                            name="filter_doc_date_month"
+                            string="Custom Document Date by Month"
+                            context="{'group_by':'custom_document_date:month'}"
+                        />
+                <filter
+                            name="filter_doc_date_year"
+                            string="Custom Document Date by Year"
+                            context="{'group_by':'custom_document_date:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -50,10 +69,11 @@
 </record>
 
 <menuitem
-    id="djbc_lap_penyelesaian_scrap_menu"
-    name="Lap. Penyelesaian Scrap"
-    parent="l10n_id_djbc_app.djbc_reporting_menu"
-    groups="l10n_id_djbc_app.group_djbc_user"
-    action="djbc_lap_penyelesaian_scrap_action"/>
+            id="djbc_lap_penyelesaian_scrap_menu"
+            name="Lap. Penyelesaian Scrap"
+            parent="l10n_id_djbc_app.djbc_reporting_menu"
+            groups="l10n_id_djbc_app.group_djbc_user"
+            action="djbc_lap_penyelesaian_scrap_action"
+        />
 </data>
 </openerp>

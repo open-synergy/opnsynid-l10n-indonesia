@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -9,10 +8,13 @@
 <record id="tax_template_22_1_O_0_01" model="account.tax.template">
     <field name="name">PPh 22 Out - BBM SPBU Non Pertamina/Agen/Penyalur</field>
     <field name="description">22.1.O.0.01</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -20,10 +22,13 @@
 <record id="tax_template_22_1_I_0_01" model="account.tax.template">
     <field name="name">PPh 22 In - BBM SPBU Non Pertamina/Agen/Penyalur</field>
     <field name="description">22.1.I.0.01</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -32,10 +37,13 @@
 <record id="tax_template_22_1_O_0_02" model="account.tax.template">
     <field name="name">PPh 22 Out - BBG SPBU/Agen/Penyalur</field>
     <field name="description">22.1.O.0.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -43,10 +51,13 @@
 <record id="tax_template_22_1_I_0_02" model="account.tax.template">
     <field name="name">PPh 22 In - BBG SPBU/Agen/Penyalur</field>
     <field name="description">22.1.I.0.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -55,10 +66,13 @@
 <record id="tax_template_22_1_O_0_03" model="account.tax.template">
     <field name="name">PPh 22 Out - Pelumas SPBU/Agen/Penyalur</field>
     <field name="description">22.1.O.0.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -66,10 +80,13 @@
 <record id="tax_template_22_1_I_0_03" model="account.tax.template">
     <field name="name">PPh 22 In - Pelumas SPBU/Agen/Penyalur</field>
     <field name="description">22.1.I.0.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -78,10 +95,13 @@
 <record id="tax_template_22_1_O_0_04" model="account.tax.template">
     <field name="name">PPh 22 Out - BBM SPBU Pertamina</field>
     <field name="description">22.1.O.0.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_04_01_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
@@ -89,10 +109,13 @@
 <record id="tax_template_22_1_I_0_04" model="account.tax.template">
     <field name="name">PPh 22 In - BBM SPBU Pertamina</field>
     <field name="description">22.1.I.0.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_01_01_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_01_03_01_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
@@ -101,10 +124,13 @@
 <record id="tax_template_22_2_O_1_02" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - BBM Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.1.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -112,10 +138,13 @@
 <record id="tax_template_22_2_O_0_02" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP Out - BBM Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.0.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -123,10 +152,13 @@
 <record id="tax_template_22_2_I_1_02" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - BBM Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.1.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -134,10 +166,13 @@
 <record id="tax_template_22_2_I_0_02" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP In - BBM Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.0.02</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -146,10 +181,13 @@
 <record id="tax_template_22_2_O_1_03" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - BBG Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.1.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -157,10 +195,13 @@
 <record id="tax_template_22_2_O_0_03" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP Out - BBG Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.0.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -168,10 +209,13 @@
 <record id="tax_template_22_2_I_1_03" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - BBG Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.1.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -179,10 +223,13 @@
 <record id="tax_template_22_2_I_0_03" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP In - BBG Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.0.03</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -191,10 +238,13 @@
 <record id="tax_template_22_2_O_1_04" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - Pelumas Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.1.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -202,10 +252,13 @@
 <record id="tax_template_22_2_O_0_04" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP Out - Pelumas Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.O.0.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -213,10 +266,13 @@
 <record id="tax_template_22_2_I_1_04" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Pelumas Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.1.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
@@ -224,33 +280,46 @@
 <record id="tax_template_22_2_I_0_04" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP In - Pelumas Selain SPBU/Agen/Penyalur</field>
     <field name="description">22.2.I.0.04</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
 
 <!-- Tidak Final; Penjualan Hasil Produksi Industri Kertas -->
 <record id="tax_template_22_2_O_1_05" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Penjualan Hasil Produksi Inductri Kertas</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Penjualan Hasil Produksi Industri Kertas</field>
     <field name="description">22.2.O.1.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.001)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_05" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Kertas</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Kertas</field>
     <field name="description">22.2.O.0.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.002)</field>
 </record>
@@ -258,66 +327,90 @@
 <record id="tax_template_22_2_I_1_05" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Penjualan Hasil Produksi Inductri Kertas</field>
     <field name="description">22.2.I.1.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.001)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_05" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Kertas</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Kertas</field>
     <field name="description">22.2.I.0.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.002)</field>
 </record>
 
 <!-- Tidak Final; Penjualan Hasil Produksi Industri Semen -->
-<record id="tax_template_22_2_O_1_05" model="account.tax.template">
+<record id="tax_template_22_2_O_1_05_2" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - Penjualan Hasil Produksi Industri Semen</field>
     <field name="description">22.2.O.1.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
-<record id="tax_template_22_2_O_0_05" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Semen</field>
+<record id="tax_template_22_2_O_0_05_2" model="account.tax.template">
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Semen</field>
     <field name="description">22.2.O.0.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
-<record id="tax_template_22_2_I_1_05" model="account.tax.template">
+<record id="tax_template_22_2_I_1_05_2" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Penjualan Hasil Produksi Industri Semen</field>
     <field name="description">22.2.I.1.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
-<record id="tax_template_22_2_I_0_05" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Semen</field>
+<record id="tax_template_22_2_I_0_05_2" model="account.tax.template">
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Semen</field>
     <field name="description">22.2.I.0.05</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
@@ -327,21 +420,29 @@
 <record id="tax_template_22_2_O_1_06" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - Penjualan Hasil Produksi Industri Baja</field>
     <field name="description">22.2.O.1.06</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_06" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Baja</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Baja</field>
     <field name="description">22.2.O.0.06</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
@@ -349,66 +450,94 @@
 <record id="tax_template_22_2_I_1_06" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Penjualan Hasil Produksi Industri Baja</field>
     <field name="description">22.2.I.1.06</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.003)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_06" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Baja</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Baja</field>
     <field name="description">22.2.I.0.06</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.006)</field>
 </record>
 
 <!-- Tidak Final; Penjualan Hasil Produksi Industri Otomotif -->
 <record id="tax_template_22_2_O_1_07" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Penjualan Hasil Produksi Industri Otomotif</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Penjualan Hasil Produksi Industri Otomotif</field>
     <field name="description">22.2.O.1.07</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0045)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_07" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Otomotif</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Penjualan Hasil Produksi Industri Otomotif</field>
     <field name="description">22.2.O.0.07</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.009)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_07" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Penjualan Hasil Produksi Industri Otomotif</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Penjualan Hasil Produksi Industri Otomotif</field>
     <field name="description">22.2.I.1.07</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0045)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_07" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Otomotif</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Penjualan Hasil Produksi Industri Otomotif</field>
     <field name="description">22.2.I.0.07</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.009)</field>
 </record>
@@ -417,10 +546,13 @@
 <record id="tax_template_22_2_O_1_08" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - Penjualan Barang Sangat Mewah</field>
     <field name="description">22.2.O.1.08</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.05)</field>
 </record>
@@ -428,10 +560,13 @@
 <record id="tax_template_22_2_O_0_08" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP Out - Penjualan Barang Sangat Mewah</field>
     <field name="description">22.2.O.0.08</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.1)</field>
 </record>
@@ -439,10 +574,13 @@
 <record id="tax_template_22_2_I_1_08" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Penjualan Barang Sangat Mewah</field>
     <field name="description">22.2.I.1.08</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.05)</field>
 </record>
@@ -450,190 +588,273 @@
 <record id="tax_template_22_2_I_0_08" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP In - Penjualan Barang Sangat Mewah</field>
     <field name="description">22.2.I.0.08</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.1)</field>
 </record>
 
 <!-- Tidak Final; Pembelian Bahan-bahan untuk Keperluan Industri/Eksport Perhutanan dari Pengumpul -->
 <record id="tax_template_22_2_O_1_09" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
     <field name="description">22.2.O.1.09</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_09" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
     <field name="description">22.2.O.0.09</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_09" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
     <field name="description">22.2.I.1.09</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_09" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perhutanan dari Pengumpul</field>
     <field name="description">22.2.I.0.09</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <!-- Tidak Final; Pembelian Bahan-bahan untuk Keperluan Industri/Eksport Perkebunan dari Pengumpul -->
 <record id="tax_template_22_2_O_1_10" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
     <field name="description">22.2.O.1.10</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_10" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
     <field name="description">22.2.O.0.10</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_10" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
     <field name="description">22.2.I.1.10</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_10" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perkebunan dari Pengumpul</field>
     <field name="description">22.2.I.0.10</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <!-- Tidak Final; Pembelian Bahan-bahan untuk Keperluan Industri/Eksport Perkebunan dari Pertanian -->
 <record id="tax_template_22_2_O_1_11" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
     <field name="description">22.2.O.1.11</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_11" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
     <field name="description">22.2.O.0.11</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_11" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
     <field name="description">22.2.I.1.11</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_11" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Pertanian dari Pengumpul</field>
     <field name="description">22.2.I.0.11</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <!-- Tidak Final; Pembelian Bahan-bahan untuk Keperluan Industri/Eksport Perikanan dari Pertanian -->
 <record id="tax_template_22_2_O_1_12" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
     <field name="description">22.2.O.1.12</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_12" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
     <field name="description">22.2.O.0.12</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_12" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
     <field name="description">22.2.I.1.12</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.0025)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_12" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Pembelian Bahan-bahan untuk Keperluan/Eksport Industri Perikanan dari Pengumpul</field>
     <field name="description">22.2.I.0.12</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.005)</field>
 </record>
@@ -641,45 +862,65 @@
 <!-- U.M. -->
 <!-- Import Yang Tidak Menggunakan API -->
 <record id="tax_template_22_2_O_1_13" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.1.13</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_13" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.0.13</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_13" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.1.13</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_13" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Import Yang Tidak Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.0.13</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -687,45 +928,65 @@
 <!-- U.M. -->
 <!-- Import Yang Menggunakan API -->
 <record id="tax_template_22_2_O_1_14" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.1.14</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_14" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.0.14</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_14" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.1.14</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_14" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Import Selain Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.0.14</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -734,45 +995,65 @@
 <!-- U.M. -->
 <!-- Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan API -->
 <record id="tax_template_22_2_O_1_15" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.1.15</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_15" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.O.0.15</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_15" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.1.15</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_15" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Import Kedelai, Gandum, dan Tepung Terigu Yang Menggunakan Angka Pengenal Import (API)</field>
     <field name="description">22.2.I.0.15</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_04_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -782,10 +1063,13 @@
 <record id="tax_template_22_2_O_1_16" model="account.tax.template">
     <field name="name">PPh 22 NPWP Out - Hasil Lelang DJBC</field>
     <field name="description">22.2.O.1.16</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_05"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_05"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_05" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_05" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
@@ -793,10 +1077,13 @@
 <record id="tax_template_22_2_O_0_16" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP Out - Hasil Lelang DJBC</field>
     <field name="description">22.2.O.0.16</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_05"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_05"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_05" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_05" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -804,10 +1091,13 @@
 <record id="tax_template_22_2_I_1_16" model="account.tax.template">
     <field name="name">PPh 22 NPWP In - Hasil Lelang DJBC</field>
     <field name="description">22.2.I.1.16</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_05"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_05"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_05" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_05" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.075)</field>
 </record>
@@ -815,10 +1105,13 @@
 <record id="tax_template_22_2_I_0_16" model="account.tax.template">
     <field name="name">PPh 22 Non NPWP In - Hasil Lelang DJBC</field>
     <field name="description">22.2.I.0.16</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_05"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_05"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_05" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_05" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -826,45 +1119,65 @@
 <!-- U.M. -->
 <!-- Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD -->
 <record id="tax_template_22_2_O_1_17" model="account.tax.template">
-    <field name="name">PPh 22 NPWP Out - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
+    <field
+                name="name"
+            >PPh 22 NPWP Out - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
     <field name="description">22.2.O.1.17</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_03"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_03"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_03" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_03" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.015)</field>
 </record>
 
 <record id="tax_template_22_2_O_0_17" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP Out - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP Out - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
     <field name="description">22.2.O.0.17</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_02_03"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_04_03"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_02_03" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_04_03" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.30)</field>
 </record>
 
 <record id="tax_template_22_2_I_1_17" model="account.tax.template">
-    <field name="name">PPh 22 NPWP In - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
+    <field
+                name="name"
+            >PPh 22 NPWP In - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
     <field name="description">22.2.I.1.17</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_03"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_03"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_03" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_03" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.015)</field>
 </record>
 
 <record id="tax_template_22_2_I_0_17" model="account.tax.template">
-    <field name="name">PPh 22 Non NPWP In - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
+    <field
+                name="name"
+            >PPh 22 Non NPWP In - Pembelian Barang yang Dilakukan DJPB, Bendahara Pemerintah, BUMN/BUMD</field>
     <field name="description">22.2.I.0.17</field>
-    <field name="base_code_id" ref="tax_code_template_22_02_01_03"/>
-    <field name="tax_code_id" ref="tax_code_template_22_02_03_03"/>
+    <field name="base_code_id" ref="tax_code_template_22_02_01_03" />
+    <field name="tax_code_id" ref="tax_code_template_22_02_03_03" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.30)</field>
 </record>

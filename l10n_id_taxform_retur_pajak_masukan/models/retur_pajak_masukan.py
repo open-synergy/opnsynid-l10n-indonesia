@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class ReturPajakMasukan(models.Model):
@@ -13,8 +13,7 @@ class ReturPajakMasukan(models.Model):
 
     @api.model
     def _get_faktur_pajak_type(self):
-        return self.env.ref(
-            "l10n_id_taxform_retur_pajak_masukan.fp_type_rp_masukan")
+        return self.env.ref("l10n_id_taxform_retur_pajak_masukan.fp_type_rp_masukan")
 
     name = fields.Char(
         string="# Retur Pajak Masukan",

@@ -5,16 +5,12 @@
     "name": "Indonesia - Common Feature for Bukti Potong",
     "version": "8.0.5.1.2",
     "category": "localization",
-    "website": "https://opensynergy-indonesia.com/",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "mail",
-        "l10n_id_taxform_period",
-        "base_amount_to_text"
-    ],
+    "depends": ["mail", "l10n_id_taxform_period", "base_amount_to_text"],
     "data": [
         "security/ir.model.access.csv",
         "data/data_decimal_precision.xml",

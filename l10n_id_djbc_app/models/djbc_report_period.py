@@ -2,9 +2,10 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
-from openerp.tools.translate import _
 from datetime import datetime
+
+from openerp import api, fields, models
+from openerp.tools.translate import _
 
 
 class ReportPeriod(models.Model):
@@ -38,9 +39,7 @@ class ReportPeriod(models.Model):
     @api.multi
     def _next_period(self, step):
         self.ensure_one()
-        criteria = [
-            ("date_start", ">", self.date_start)
-        ]
+        criteria = [("date_start", ">", self.date_start)]
         results = self.search(criteria)
         if results:
             return results[step - 1]
@@ -49,9 +48,7 @@ class ReportPeriod(models.Model):
     @api.multi
     def _previous_period(self, step):
         self.ensure_one()
-        criteria = [
-            ("date_start", "<", self.date_start)
-        ]
+        criteria = [("date_start", "<", self.date_start)]
         results = self.search(criteria, order="date_start desc")
         if results:
             return results[step - 1]

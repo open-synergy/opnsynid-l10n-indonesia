@@ -6,17 +6,14 @@
     "name": "Indonesia - PPAJP - Daftar Klien Audit Umum",
     "version": "8.0.1.0.0",
     "category": "localization",
-    "website": "https://opensynergy-indonesia.com/",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "depends": [
         "accountant_report",
         "l10n_id_ppajp_kap",
         "partner_go_public",
-        "partner_sector"
+        "partner_sector",
     ],
-    "data": [
-        "security/ir.model.access.csv",
-        "reports/daftar_klien_audit_umum.xml"
-    ],
+    "data": ["security/ir.model.access.csv", "reports/daftar_klien_audit_umum.xml"],
 }

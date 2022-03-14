@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record model="account.account.type" id="accountType_rootView">
@@ -347,7 +347,7 @@
           <field name="report_type">liability</field>
         </record>
 
-       
+
         <record model="account.account.type" id="accountType_labaTahunBerjalan">
           <field name="name">Laba/Tahun Berjalan</field>
           <field name="code">LABA.RUGI.BERJALAN</field>
@@ -452,42 +452,60 @@
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanBangunanPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanBangunanPabrik"
+        >
           <field name="name">Biaya Penyusutan Bangunan Pabrik</field>
           <field name="code">BIAYA.PENYUSUTAN.BANGUNAN.PABRIK</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanBangunanPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanBangunanPabrik"
+        >
           <field name="name">Biaya Pemeliharaan Bangunan Pabrik</field>
           <field name="code">BIAYA.PEMELIHARAAN.BANGUNAN.PABRIK</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanMesinPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanMesinPabrik"
+        >
           <field name="name">Biaya Penyusutan Mesin Pabrik</field>
           <field name="code">BIAYA.PENYUSUTAN.MESIN.PABRIK</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanMesinPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanMesinPabrik"
+        >
           <field name="name">Biaya Pemeliharaan Mesin Pabrik</field>
           <field name="code">BIAYA.PEMELIHARAAN.MESIN.PABRIK</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanPeralatanPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanPeralatanPabrik"
+        >
           <field name="name">Biaya Penyusutan Peralatan Pabrik</field>
           <field name="code">BIAYA.PENYUSUTAN.PERALATAN.PABRIK</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanPeralatanPabrik">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanPeralatanPabrik"
+        >
           <field name="name">Biaya Pemeliharaan Peralatan Pabrik</field>
           <field name="code">BIAYA.PEMELIHARAAN.PERALATAN.PABRIK</field>
           <field name="close_method">none</field>
@@ -515,49 +533,70 @@
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanBangunanKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanBangunanKantor"
+        >
           <field name="name">Biaya Penyusutan Bangunan Kantor</field>
           <field name="code">BIAYA.PENYUSUTAN.BANGUNAN.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanBangunanKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanBangunanKantor"
+        >
           <field name="name">Biaya Pemeliharaan Bangunan Kantor</field>
           <field name="code">BIAYA.PEMELIHARAAN.BANGUNAN.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanFurnitureKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanFurnitureKantor"
+        >
           <field name="name">Biaya Penyusutan Furniture Kantor</field>
           <field name="code">BIAYA.PENYUSUTAN.FURNITURE.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanFurnitureKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanFurnitureKantor"
+        >
           <field name="name">Biaya Pemeliharaan Furniture Kantor</field>
           <field name="code">BIAYA.PEMELIHARAAN.FURNITURE.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPenyusutanPeralatanKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPenyusutanPeralatanKantor"
+        >
           <field name="name">Biaya Penyusutan Peralatan Kantor</field>
           <field name="code">BIAYA.PENYUSUTAN.PERALATAN.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_biayaPemeliharaanPeralatanKantor">
+        <record
+            model="account.account.type"
+            id="accountType_biayaPemeliharaanPeralatanKantor"
+        >
           <field name="name">Biaya Pemeliharaan Peralatan Kantor</field>
           <field name="code">BIAYA.PEMELIHARAAN.PERALATAN.KANTOR</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_bebanPemeliharaanAsetKantor">
+        <record
+            model="account.account.type"
+            id="accountType_bebanPemeliharaanAsetKantor"
+        >
           <field name="name">Beban Pemeliharaan Aset Kantor</field>
           <field name="code">Beban.PEMELIHARAAN.ASET.KANTOR</field>
           <field name="close_method">none</field>
@@ -599,14 +638,20 @@
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_bebanEntertainmentPenjualan">
+        <record
+            model="account.account.type"
+            id="accountType_bebanEntertainmentPenjualan"
+        >
           <field name="name">Biaya Entertainment Penjualan</field>
           <field name="code">BEBAN.ENTERTAINMENT.PENJUALAN</field>
           <field name="close_method">none</field>
           <field name="report_type">expense</field>
         </record>
 
-        <record model="account.account.type" id="accountType_bebanTransportasiPenjualan">
+        <record
+            model="account.account.type"
+            id="accountType_bebanTransportasiPenjualan"
+        >
           <field name="name">Beban Transportasi Penjualan</field>
           <field name="code">BEBAN.TRANSPORTASI.PENJUALAN</field>
           <field name="close_method">none</field>
@@ -664,4 +709,3 @@
 
     </data>
 </openerp>
-

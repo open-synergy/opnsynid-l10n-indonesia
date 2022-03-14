@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_kite_lap_mutasi_common_view_tree" model="ir.ui.view">
@@ -9,16 +8,16 @@
     <field name="model">l10n_id.djbc_kite_lap_mutasi_common</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
-            <field name="kode_barang"/>
-            <field name="product_id"/>
-            <field name="uom_id"/>
-            <field name="saldo_awal"/>
-            <field name="pemasukan"/>
-            <field name="pengeluaran"/>
-            <field name="saldo_akhir"/>
-            <field name="selisih"/>
-            <field name="keterangan"/>
-            <field name="warehouse_id"/>
+            <field name="kode_barang" />
+            <field name="product_id" />
+            <field name="uom_id" />
+            <field name="saldo_awal" />
+            <field name="pemasukan" />
+            <field name="pengeluaran" />
+            <field name="saldo_akhir" />
+            <field name="selisih" />
+            <field name="keterangan" />
+            <field name="warehouse_id" />
         </tree>
     </field>
 </record>

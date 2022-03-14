@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -9,10 +8,13 @@
 <record id="tax_template_411124_O01" model="account.tax.template">
     <field name="name">PPh 23 Out - Deviden</field>
     <field name="description">411124.O01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
     <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
@@ -20,761 +22,1020 @@
 <record id="tax_template_411124_O02" model="account.tax.template">
     <field name="name">PPh 23 Out - Bunga</field>
     <field name="description">411124.O02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
     <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_O03" model="account.tax.template">
     <field name="name">PPh 23 Out - Royalti</field>
     <field name="description">411124.O03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_03" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>    
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_O04" model="account.tax.template">
     <field name="name">PPh 23 Out - Hadiah dan Penghargaan</field>
     <field name="description">411124.O04</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_04"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_04"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_04" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_04" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>    
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_O05" model="account.tax.template">
-    <field name="name">PPh 23 Out - Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >PPh 23 Out - Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="description">411124.O05</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_05"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_05"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_05" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_05" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_01" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa Teknik</field>
     <field name="description">411124.O.06.01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_02" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa Manajemen</field>
     <field name="description">411124.O.06.02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_03" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa Konsultan</field>
     <field name="description">411124.O.06.03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_03" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_01" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa penilai (appraisal)</field>
     <field name="description">411124.O.06.04.01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_01" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_02" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa aktuaris</field>
     <field name="description">411124.O.06.04.02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_02" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_03" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="description">411124.O.06.04.03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_03" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_04" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa perancang (design)</field>
     <field name="description">411124.O.06.04.04</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_04"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_04"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_04" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_04" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_05" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="description">411124.O.06.04.05</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_05"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_05"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_05" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_05" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_06" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa penunjang di bidang penambangan migas</field>
     <field name="description">411124.O.06.04.06</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_06"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_06"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_06" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_06" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_07" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="description">411124.O.06.04.07</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_07"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_07"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_07" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_07" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_08" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa penunjang di bidang penerbangan dan bandar udara</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="description">411124.O.06.04.08</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_08"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_08"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_08" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_08" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_09" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa penebangan hutan</field>
     <field name="description">411124.O.06.04.09</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_09"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_09"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_09" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_09" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_10" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa pengolahan limbah</field>
     <field name="description">411124.O.06.04.10</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_10"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_10"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_10" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_10" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_11" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa penyedia tenaga kerja (outsourcing services)</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="description">411124.O.06.04.11</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_11"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_11"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_11" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_11" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_12" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa perantara dan/atau keagenan</field>
     <field name="description">411124.O.06.04.12</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_12"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_12"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_12" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_12" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_13" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="description">411124.O.06.04.13</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_13"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_13"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_13" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_13" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_14" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="description">411124.O.06.04.14</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_14"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_14"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_14" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_14" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_15" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="description">411124.O.06.04.15</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_15"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_15"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_15" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_15" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_16" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa mixing film</field>
     <field name="description">411124.O.06.04.16</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_16"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_16"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_16" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_16" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_17" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa sehubungan dengan software komputer</field>
     <field name="description">411124.O.06.04.17</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_17"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_17"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_17" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_17" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_18" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="description">411124.O.06.04.18</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_18"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_18"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_18" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_18" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_19" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="description">411124.O.06.04.19</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_19"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_19"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_19" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_19" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_20" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa maklon</field>
     <field name="description">411124.O.06.04.20</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_20"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_20"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_20" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_20" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_21" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa penyelidikan dan keamanan</field>
     <field name="description">411124.O.06.04.21</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_21"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_21"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_21" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_21" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_22" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa penyelenggara kegiatan atau event organizer</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="description">411124.O.06.04.22</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_22"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_22"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_22" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_22" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_23" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa pengepakan</field>
     <field name="description">411124.O.06.04.23</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_23"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_23"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_23" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_23" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_24" model="account.tax.template">
-    <field name="name">PPh 23 Out - Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >PPh 23 Out - Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="description">411124.O.06.04.24</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_24"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_24"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_24" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_24" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_25" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa pembasmian hama</field>
     <field name="description">411124.O.06.04.25</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_25"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_25"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_25" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_25" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_26" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa kebersihan atau cleaning service</field>
     <field name="description">411124.O.06.04.26</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_26"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_26"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_26" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_26" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_O06_04_27" model="account.tax.template">
     <field name="name">PPh 23 Out - Jasa katering atau tata boga</field>
     <field name="description">411124.O.06.04.27</field>
-    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_27"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_27"/>
+    <field name="base_code_id" ref="tax_code_template_411124_2_06_04_27" />
+    <field name="tax_code_id" ref="tax_code_template_411124_4_06_04_27" />
     <field name="type_tax_use">purchase</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <!-- PPh 23 - U.M -->
 <record id="tax_template_411124_I01" model="account.tax.template">
     <field name="name">PPh 23 In - Deviden</field>
     <field name="description">411124.I01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>        
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_I02" model="account.tax.template">
     <field name="name">PPh 23 In - Bunga</field>
     <field name="description">411124.I02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_I03" model="account.tax.template">
     <field name="name">PPh 23 In - Royalti</field>
     <field name="description">411124.I03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_03" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_I04" model="account.tax.template">
     <field name="name">PPh 23 In - Hadiah dan Penghargaan</field>
     <field name="description">411124.I04</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_04"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_04"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_04" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_04" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.15)</field>
 </record>
 
 <record id="tax_template_411124_I05" model="account.tax.template">
-    <field name="name">PPh 23 In - Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >PPh 23 In - Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="description">411124.I05</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_05"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_05"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_05" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_05" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>            
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_01" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa Teknik</field>
     <field name="description">411124.I.06.01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_02" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa Manajemen</field>
     <field name="description">411124.I.06.02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_03" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa Konsultan</field>
     <field name="description">411124.I.06.03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_03" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_01" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa penilai (appraisal)</field>
     <field name="description">411124.I.06.04.01</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_01"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_01"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_01" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_01" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_02" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa aktuaris</field>
     <field name="description">411124.I.06.04.02</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_02"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_02"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_02" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_02" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_03" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="description">411124.I.06.04.03</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_03"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_03"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_03" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_03" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_04" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa perancang (design)</field>
     <field name="description">411124.I.06.04.04</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_04"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_04"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_04" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_04" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_05" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="description">411124.I.06.04.05</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_05"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_05"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_05" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_05" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_06" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa penunjang di bidang penambangan migas</field>
     <field name="description">411124.I.06.04.06</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_06"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_06"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_06" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_06" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_07" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="description">411124.I.06.04.07</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_07"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_07"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_07" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_07" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_08" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa penunjang di bidang penerbangan dan bandar udara</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="description">411124.I.06.04.08</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_08"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_08"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_08" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_08" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_09" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa penebangan hutan</field>
     <field name="description">411124.I.06.04.09</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_09"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_09"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_09" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_09" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_10" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa pengolahan limbah</field>
     <field name="description">411124.I.06.04.10</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_10"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_10"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_10" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_10" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_11" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa penyedia tenaga kerja (outsourcing services)</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="description">411124.I.06.04.11</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_11"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_11"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_11" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_11" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_12" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa perantara dan/atau keagenan</field>
     <field name="description">411124.I.06.04.12</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_12"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_12"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_12" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_12" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_13" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="description">411124.I.06.04.13</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_13"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_13"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_13" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_13" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_14" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="description">411124.I.06.04.14</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_14"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_14"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_14" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_14" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_15" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="description">411124.I.06.04.15</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_15"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_15"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_15" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_15" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_16" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa mixing film</field>
     <field name="description">411124.I.06.04.16</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_16"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_16"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_16" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_16" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_17" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa sehubungan dengan software komputer</field>
     <field name="description">411124.I.06.04.17</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_17"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_17"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_17" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_17" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_18" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="description">411124.I.06.04.18</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_18"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_18"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_18" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_18" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_19" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="description">411124.I.06.04.19</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_19"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_19"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_19" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_19" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_20" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa maklon</field>
     <field name="description">411124.I.06.04.20</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_20"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_20"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_20" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_20" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_21" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa penyelidikan dan keamanan</field>
     <field name="description">411124.I.06.04.21</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_21"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_21"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_21" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_21" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_22" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa penyelenggara kegiatan atau event organizer</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="description">411124.I.06.04.22</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_22"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_22"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_22" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_22" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_23" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa pengepakan</field>
     <field name="description">411124.I.06.04.23</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_23"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_23"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_23" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_23" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_24" model="account.tax.template">
-    <field name="name">PPh 23 In - Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >PPh 23 In - Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="description">411124.I.06.04.24</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_24"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_24"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_24" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_24" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_25" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa pembasmian hama</field>
     <field name="description">411124.I.06.04.25</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_25"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_25"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_25" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_25" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_26" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa kebersihan atau cleaning service</field>
     <field name="description">411124.I.06.04.26</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_26"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_26"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_26" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_26" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 
 <record id="tax_template_411124_I06_04_27" model="account.tax.template">
     <field name="name">PPh 23 In - Jasa katering atau tata boga</field>
     <field name="description">411124.I.06.04.27</field>
-    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_27"/>
-    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_27"/>
+    <field name="base_code_id" ref="tax_code_template_411124_1_06_04_27" />
+    <field name="tax_code_id" ref="tax_code_template_411124_3_06_04_27" />
     <field name="type_tax_use">sale</field>
-    <field name="chart_template_id" ref="l10n_id_chart_of_account_template.coa_id_empty"/>
-    <field name="type">code</field>    
-    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>                
+    <field
+                name="chart_template_id"
+                ref="l10n_id_chart_of_account_template.coa_id_empty"
+            />
+    <field name="type">code</field>
+    <field name="python_compute">result = int(int(price_unit) * 0.02)</field>
 </record>
 </data>
 </openerp>

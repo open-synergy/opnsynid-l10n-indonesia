@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class NomorSeriFakturPajak(models.Model):
@@ -45,8 +45,7 @@ class NomorSeriFakturPajak(models.Model):
         result = {}
         if self.company_id:
             if self.branch_id:
-                if self.branch_id.commercial_partner_id != \
-                        self.company_id.partner_id:
+                if self.branch_id.commercial_partner_id != self.company_id.partner_id:
                     self.branch_id = False
             else:
                 self.branch_id = self.company_id.partner_id

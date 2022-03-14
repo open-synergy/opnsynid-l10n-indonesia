@@ -1,19 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="stock_move_view_form" model="ir.ui.view">
     <field name="name">Stock Move Form</field>
     <field name="model">stock.move</field>
-    <field name="inherit_id" ref="stock.view_move_picking_form"/>
+    <field name="inherit_id" ref="stock.view_move_picking_form" />
     <field name="arch" type="xml">
         <xpath expr="//group[@name='quants_grp']" position="before">
             <group name="grp_djbc" string="DJBC Info" colspan="4">
-                <field name="all_allowed_document_type_ids" invisible="1"/>
-                <field name="djbc_custom_document_id" domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"/>
-                <field name="djbc_custom"/>
+                <field name="all_allowed_document_type_ids" invisible="1" />
+                <field
+                            name="djbc_custom_document_id"
+                            domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"
+                        />
+                <field name="djbc_custom" />
             </group>
         </xpath>
     </field>
@@ -22,13 +24,16 @@
 <record id="stock_move_view_form_2" model="ir.ui.view">
     <field name="name">Stock Move Form 2</field>
     <field name="model">stock.move</field>
-    <field name="inherit_id" ref="stock.view_move_form"/>
+    <field name="inherit_id" ref="stock.view_move_form" />
     <field name="arch" type="xml">
         <xpath expr="//group[@name='quants_grp']" position="before">
             <group name="grp_djbc" string="DJBC Info" colspan="4">
-                <field name="all_allowed_document_type_ids" invisible="1"/>
-                <field name="djbc_custom_document_id" domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"/>
-                <field name="djbc_custom"/>
+                <field name="all_allowed_document_type_ids" invisible="1" />
+                <field
+                            name="djbc_custom_document_id"
+                            domain="[('type_id', 'in', all_allowed_document_type_ids[0][2])]"
+                        />
+                <field name="djbc_custom" />
             </group>
         </xpath>
     </field>
@@ -37,11 +42,11 @@
 <record id="stock_move_view_tree" model="ir.ui.view">
     <field name="name">Stock Move Tree</field>
     <field name="model">stock.move</field>
-    <field name="inherit_id" ref="stock.view_move_tree"/>
+    <field name="inherit_id" ref="stock.view_move_tree" />
     <field name="arch" type="xml">
         <xpath expr="//field[@name='picking_type_id']" position="after">
-            <field name="djbc_custom_document_id"/>
-            <field name="djbc_custom"/>
+            <field name="djbc_custom_document_id" />
+            <field name="djbc_custom" />
         </xpath>
     </field>
 </record>
@@ -53,14 +58,15 @@
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
     <field name="domain">[('djbc_custom','=',True)]</field>
-    <field name="view_id" ref="stock.view_move_tree"/>
+    <field name="view_id" ref="stock.view_move_tree" />
 </record>
 
 <menuitem
-    id="djbc_stock_move_menu"
-    name="Stock Move"
-    parent="djbc_traceability_menu"
-    groups="l10n_id_djbc_app.group_djbc_user"
-    action="stock_move_action"/>
+            id="djbc_stock_move_menu"
+            name="Stock Move"
+            parent="djbc_traceability_menu"
+            groups="l10n_id_djbc_app.group_djbc_user"
+            action="stock_move_action"
+        />
 </data>
 </openerp>

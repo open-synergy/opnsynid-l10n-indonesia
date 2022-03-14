@@ -3,20 +3,17 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
-    "name": "Indonesia - Lap. Mutasi Barang for DJBC's "
-            "Pusat Logistik Berikat",
+    "name": "Indonesia - Lap. Mutasi Barang for DJBC's " "Pusat Logistik Berikat",
     "version": "8.0.1.1.0",
     "category": "localization",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "l10n_id_djbc_plb_common"
-    ],
+    "depends": ["l10n_id_djbc_plb_common"],
     "data": [
         "security/ir.model.access.csv",
         "wizards/date_range_selector_views.xml",
-        "reports/plb_lap_mutasi_barang.xml"
+        "reports/plb_lap_mutasi_barang.xml",
     ],
 }

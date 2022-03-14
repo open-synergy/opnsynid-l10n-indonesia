@@ -13,7 +13,9 @@ class LapKbMutasiBahanBakuPenolong(models.Model):
 
     def _join(self):
         _super = super(LapKbMutasiBahanBakuPenolong, self)
-        join_str = _super._join() + """
+        join_str = (
+            _super._join()
+            + """
         JOIN product_categ_rel AS c ON
             b.id = c.product_id
         JOIN product_category AS d ON
@@ -28,4 +30,5 @@ class LapKbMutasiBahanBakuPenolong(models.Model):
             ) as e ON
             d.id = e.res_id
         """
+        )
         return join_str

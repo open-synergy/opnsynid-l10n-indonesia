@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, models, fields
+from openerp import api, fields, models
 
 
 class KiteLapMutasiBahanBakuWizard(models.TransientModel):
@@ -14,14 +14,15 @@ class KiteLapMutasiBahanBakuWizard(models.TransientModel):
         comodel_name="stock.warehouse",
         relation="rel_kite_mutasi_bb_2_warehouse",
         column1="wizard_id",
-        column2="warehouse_id"
+        column2="warehouse_id",
     )
 
     @api.multi
     def action_print_sreen(self):
         waction = self.env.ref(
             "l10n_id_djbc_kite_lap_mutasi_bahan_baku."
-            "djbc_kite_lap_mutasi_bahan_baku_action")
+            "djbc_kite_lap_mutasi_bahan_baku_action"
+        )
         context = {
             "date_start": self.date_start,
             "date_end": self.date_end,

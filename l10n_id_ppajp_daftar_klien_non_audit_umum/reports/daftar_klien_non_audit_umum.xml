@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_ppajp_daftar_klien_non_audit_umum_view_tree" model="ir.ui.view">
@@ -9,17 +8,17 @@
     <field name="model">l10n_id.ppajp_daftar_klien_non_audit_umum</field>
     <field name="arch" type="xml">
         <tree create="false" edit="false" delete="false">
-            <field name="name"/>
-            <field name="company_id" groups="base.multi_company"/>
-            <field name="partner_id"/>
-            <field name="contact_address"/>
-            <field name="npwp"/>
-            <field name="date"/>
-            <field name="date_start"/>
-            <field name="date_end"/>
-            <field name="signing_accountant_id"/>
-            <field name="service_id"/>
-            <field name="sector_id"/>
+            <field name="name" />
+            <field name="company_id" groups="base.multi_company" />
+            <field name="partner_id" />
+            <field name="contact_address" />
+            <field name="npwp" />
+            <field name="date" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="signing_accountant_id" />
+            <field name="service_id" />
+            <field name="sector_id" />
         </tree>
     </field>
 </record>
@@ -29,38 +28,44 @@
     <field name="model">l10n_id.ppajp_daftar_klien_non_audit_umum</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="company_id" groups="base.multi_company"/>
-            <field name="partner_id"/>
-            <field name="npwp"/>
-            <field name="date"/>
-            <field name="date_start"/>
-            <field name="date_end"/>
-            <field name="signing_accountant_id"/>
-            <field name="sector_id"/>
-            <field name="service_id"/>
+            <field name="name" />
+            <field name="company_id" groups="base.multi_company" />
+            <field name="partner_id" />
+            <field name="npwp" />
+            <field name="date" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="signing_accountant_id" />
+            <field name="sector_id" />
+            <field name="service_id" />
         </search>
     </field>
 </record>
 
 
-<record id="djbc_ppajp_daftar_klien_non_audit_umum_action" model="ir.actions.act_window">
+<record
+            id="djbc_ppajp_daftar_klien_non_audit_umum_action"
+            model="ir.actions.act_window"
+        >
     <field name="name">Daftar Klien Non Audit Umum</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">l10n_id.ppajp_daftar_klien_non_audit_umum</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="djbc_ppajp_daftar_klien_non_audit_umum_view_tree"/>
-    <field name="search_view_id" ref="djbc_ppajp_daftar_klien_non_audit_umum_view_search"/>
+    <field name="view_id" ref="djbc_ppajp_daftar_klien_non_audit_umum_view_tree" />
+    <field
+                name="search_view_id"
+                ref="djbc_ppajp_daftar_klien_non_audit_umum_view_search"
+            />
 </record>
 
 <menuitem
-    id="accountant_ppajp_daftar_klien_non_audit_umum_menu"
-    name="Daftar Klien Non Audit Umum"
-    sequence="2"
-    action="djbc_ppajp_daftar_klien_non_audit_umum_action"
-    parent="l10n_id_ppajp_kap.accountant_ppajp_report_menu"
-    />
+            id="accountant_ppajp_daftar_klien_non_audit_umum_menu"
+            name="Daftar Klien Non Audit Umum"
+            sequence="2"
+            action="djbc_ppajp_daftar_klien_non_audit_umum_action"
+            parent="l10n_id_ppajp_kap.accountant_ppajp_report_menu"
+        />
 
 </data>
 </openerp>

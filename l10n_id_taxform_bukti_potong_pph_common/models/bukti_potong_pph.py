@@ -2,8 +2,9 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, SUPERUSER_ID
 from datetime import datetime
+
+from openerp import SUPERUSER_ID, api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -61,10 +62,7 @@ class BuktiPotongPPh(models.Model):
                 bukpot.total_tax += line.amount_tax
 
     @api.multi
-    @api.depends(
-        "type_id",
-        "type_id.journal_ids"
-    )
+    @api.depends("type_id", "type_id.journal_ids")
     def _compute_allowed_journal(self):
         obj_journal = self.env["account.journal"]
         for bukpot in self:
@@ -88,8 +86,11 @@ class BuktiPotongPPh(models.Model):
                 bukpot.allowed_account_ids = bukpot.type_id.account_ids
             else:
                 criteria = [
-                    ("type", "not in", [
-                     "view", "liquidity", "consolidation", "closed"]),
+                    (
+                        "type",
+                        "not in",
+                        ["view", "liquidity", "consolidation", "closed"],
+                    ),
                 ]
                 bukpot.allowed_account_ids = obj_account.search(criteria)
 
@@ -143,20 +144,17 @@ class BuktiPotongPPh(models.Model):
     def _compute_policy(self):
         for bukpot in self:
             if self.env.user.id == SUPERUSER_ID:
-                bukpot.confirm_ok = bukpot.approve_ok = bukpot.cancel_ok = \
-                    bukpot.reset_ok = True
+                bukpot.confirm_ok = (
+                    bukpot.approve_ok
+                ) = bukpot.cancel_ok = bukpot.reset_ok = True
                 continue
 
             bukpot_type = bukpot.type_id
 
-            bukpot.confirm_ok = self._get_button_policy(
-                bukpot_type, "confirm")
-            bukpot.approve_ok = self._get_button_policy(
-                bukpot_type, "approve")
-            bukpot.cancel_ok = self._get_button_policy(
-                bukpot_type, "cancel")
-            bukpot.reset_ok = self._get_button_policy(
-                bukpot_type, "reset")
+            bukpot.confirm_ok = self._get_button_policy(bukpot_type, "confirm")
+            bukpot.approve_ok = self._get_button_policy(bukpot_type, "approve")
+            bukpot.cancel_ok = self._get_button_policy(bukpot_type, "cancel")
+            bukpot.reset_ok = self._get_button_policy(bukpot_type, "reset")
 
     name = fields.Char(
         string="# Bukti Potong",
@@ -168,7 +166,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     company_id = fields.Many2one(
         string="Company",
@@ -181,7 +179,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     direction = fields.Selection(
         string="Type",
@@ -239,7 +237,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
 
     @api.multi
@@ -251,7 +249,7 @@ class BuktiPotongPPh(models.Model):
         for bukpot in self:
             try:
                 bukpot.tax_period_id = obj_tax_period._find_period(bukpot.date)
-            except:
+            except Exception:
                 bukpot.tax_period_id = False
 
     tax_period_id = fields.Many2one(
@@ -270,7 +268,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     journal_id = fields.Many2one(
         string="Journal",
@@ -282,7 +280,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     account_id = fields.Many2one(
         string="Account",
@@ -294,7 +292,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     kpp_id = fields.Many2one(
         string="KPP",
@@ -306,7 +304,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     wajib_pajak_id = fields.Many2one(
         string="Wajib Pajak",
@@ -319,7 +317,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     pemotong_pajak_id = fields.Many2one(
         string="Pemotong Pajak",
@@ -332,7 +330,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     ttd_id = fields.Many2one(
         string="TTD",
@@ -343,7 +341,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     total_tax = fields.Float(
         string="Total Tax",
@@ -371,7 +369,7 @@ class BuktiPotongPPh(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     move_id = fields.Many2one(
         string="Accounting Entry",
@@ -504,15 +502,14 @@ class BuktiPotongPPh(models.Model):
         if not button_group_ids:
             result = True
         else:
-            if (set(button_group_ids) & set(group_ids)):
+            if set(button_group_ids) & set(group_ids):
                 result = True
         return result
 
     @api.multi
     def _create_sequence(self, journal_id):
         journal = self.env["account.journal"].browse(journal_id)
-        name = self.env["ir.sequence"].\
-            next_by_id(journal.sequence_id.id) or "/"
+        name = self.env["ir.sequence"].next_by_id(journal.sequence_id.id) or "/"
         return name
 
     @api.model
@@ -533,8 +530,7 @@ class BuktiPotongPPh(models.Model):
         obj_move = self.env["account.move"]
         if self.total_tax <= 0.0:
             raise UserError(_("Total tax has to be greater than 0"))
-        move = obj_move.create(
-            self._prepare_accounting_entry_data())
+        move = obj_move.create(self._prepare_accounting_entry_data())
         return move
 
     @api.multi
@@ -564,8 +560,7 @@ class BuktiPotongPPh(models.Model):
         self.ensure_one()
         for aml in self.move_line_ids:
             aml.refresh()
-            reconcile = aml.reconcile_id or aml.reconcile_partial_id or \
-                False
+            reconcile = aml.reconcile_id or aml.reconcile_partial_id or False
             if reconcile:
                 move_lines = reconcile.line_id
                 move_lines -= aml
@@ -576,8 +571,7 @@ class BuktiPotongPPh(models.Model):
 
     @api.onchange("date")
     def onchange_period_id(self):
-        period = self.env["account.period"].find(
-            self.date)
+        period = self.env["account.period"].find(self.date)
         self.period_id = period[0].id
 
     @api.onchange("pemotong_pajak_id")

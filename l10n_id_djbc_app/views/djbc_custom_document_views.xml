@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_custom_document_view_tree" model="ir.ui.view">
@@ -9,9 +8,9 @@
     <field name="model">l10n_id.djbc_custom_document</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="date"/>
-            <field name="type_id" invisible="context.get('hide_type', False)"/>
+            <field name="name" />
+            <field name="date" />
+            <field name="type_id" invisible="context.get('hide_type', False)" />
         </tree>
     </field>
 </record>
@@ -24,9 +23,13 @@
             <header />
             <sheet>
                 <group name="group_main_1" colspan="4" col="2">
-                    <field name="name"/>
-                    <field name="date"/>
-                    <field name="type_id" widget="selection" invisible="context.get('hide_type', False)"/>
+                    <field name="name" />
+                    <field name="date" />
+                    <field
+                                name="type_id"
+                                widget="selection"
+                                invisible="context.get('hide_type', False)"
+                            />
                 </group>
                 <notebook />
             </sheet>
@@ -44,10 +47,11 @@
 </record>
 
 <menuitem
-    id="djbc_all_custom_document_menu"
-    name="All Custom Document"
-    parent="djbc_custom_document_menu"
-    groups="l10n_id_djbc_app.group_djbc_user"
-    action="djbc_custom_document_action"/>
+            id="djbc_all_custom_document_menu"
+            name="All Custom Document"
+            parent="djbc_custom_document_menu"
+            groups="l10n_id_djbc_app.group_djbc_user"
+            action="djbc_custom_document_action"
+        />
 </data>
 </openerp>

@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class DaftarBuktiPotongPPhD113205(models.Model):
@@ -14,7 +14,8 @@ class DaftarBuktiPotongPPhD113205(models.Model):
     def _default_type_id(self):
         return self.env.ref(
             "l10n_id_taxform_daftar_bukti_potong_pph_d113205."
-            "daftar_bukti_potong_pph_type_d113205").id
+            "daftar_bukti_potong_pph_type_d113205"
+        ).id
 
     type_id = fields.Many2one(
         default=lambda self: self._default_type_id(),
@@ -34,7 +35,7 @@ class DaftarBuktiPotongPPhD113205(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )
     bukpot_26_ids = fields.Many2many(
         string="Bukti Potong PPh 26",
@@ -47,5 +48,5 @@ class DaftarBuktiPotongPPhD113205(models.Model):
             "draft": [
                 ("readonly", False),
             ],
-        }
+        },
     )

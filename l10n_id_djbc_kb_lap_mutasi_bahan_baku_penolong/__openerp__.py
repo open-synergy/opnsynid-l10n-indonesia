@@ -4,11 +4,11 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Indonesia - Lap.  Mutasi Bahan Baku/Penolong "
-            "for DJBC's Kawasan Berikat Reporting",
+    "for DJBC's Kawasan Berikat Reporting",
     "version": "8.0.1.2.0",
     "category": "localization",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="djbc_lap_pengeluaran_hasil_produksi_view_tree" model="ir.ui.view">
@@ -9,20 +8,20 @@
     <field name="model">l10n_id.djbc_lap_pengeluaran_hasil_produksi</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="document_type_id"/>
-            <field name="custom_document_id"/>
-            <field name="custom_document_date"/>
-            <field name="picking_id"/>
-            <field name="move_date"/>                       
-            <field name="product_id"/>
-            <field name="product_name"/>
-            <field name="product_code"/>
-            <field name="uom_id"/>
-            <field name="quantity"/>
-            <field name="currency_id"/>
-            <field name="inventory_value"/>
-            <field name="partner_id"/>
-            <field name="country_id"/>
+            <field name="document_type_id" />
+            <field name="custom_document_id" />
+            <field name="custom_document_date" />
+            <field name="picking_id" />
+            <field name="move_date" />
+            <field name="product_id" />
+            <field name="product_name" />
+            <field name="product_code" />
+            <field name="uom_id" />
+            <field name="quantity" />
+            <field name="currency_id" />
+            <field name="inventory_value" />
+            <field name="partner_id" />
+            <field name="country_id" />
         </tree>
     </field>
 </record>
@@ -32,33 +31,93 @@
     <field name="model">l10n_id.djbc_lap_pengeluaran_hasil_produksi</field>
     <field name="arch" type="xml">
         <search>
-            <field name="document_type_id"/>
-            <field name="custom_document_id"/>
-            <field name="custom_document_date"/>
-            <field name="picking_id"/>
-            <field name="move_date"/>                       
-            <field name="product_id"/>
-            <field name="currency_id"/>
-            <field name="partner_id"/>
-            <field name="country_id"/>
+            <field name="document_type_id" />
+            <field name="custom_document_id" />
+            <field name="custom_document_date" />
+            <field name="picking_id" />
+            <field name="move_date" />
+            <field name="product_id" />
+            <field name="currency_id" />
+            <field name="partner_id" />
+            <field name="country_id" />
             <group name="group0" string="Group By..">
-                <filter name="filter_type" string="Custom Document Type" context="{'group_by':'document_type_id'}"/>
-                <filter name="filter_doc" string="Custom Document" context="{'group_by':'custom_document_id'}"/>
-                <filter name="filter_picking" string="Picking" context="{'group_by':'picking_id'}"/>
-                <filter name="filter_product" string="Product" context="{'group_by':'product_id'}"/>
-                <filter name="filter_currency" string="Currency" context="{'group_by':'currency_id'}"/>
-                <filter name="filter_customer" string="Customer" context="{'group_by':'partner_id'}"/>
-                <filter name="filter_country" string="Country Origin" context="{'group_by':'country_id'}"/>
-                <separator/>
-                <filter name="filter_doc_date_day" string="Custom Document Date by Day" context="{'group_by':'custom_document_date:day'}"/>
-                <filter name="filter_doc_date_week" string="Custom Document Date by Week" context="{'group_by':'custom_document_date:week'}"/>
-                <filter name="filter_doc_date_month" string="Custom Document Date by Month" context="{'group_by':'custom_document_date:month'}"/>
-                <filter name="filter_doc_date_year" string="Custom Document Date by Year" context="{'group_by':'custom_document_date:year'}"/>
-                <separator/>
-                <filter name="filter_move_date_day" string="Move Date by Day" context="{'group_by':'move_date:day'}"/>
-                <filter name="filter_move_date_week" string="Move Date by Week" context="{'group_by':'move_date:week'}"/>
-                <filter name="filter_move_date_month" string="Move Date by Month" context="{'group_by':'move_date:month'}"/>
-                <filter name="filter_move_date_year" string="Move Date by Year" context="{'group_by':'move_date:year'}"/>
+                <filter
+                            name="filter_type"
+                            string="Custom Document Type"
+                            context="{'group_by':'document_type_id'}"
+                        />
+                <filter
+                            name="filter_doc"
+                            string="Custom Document"
+                            context="{'group_by':'custom_document_id'}"
+                        />
+                <filter
+                            name="filter_picking"
+                            string="Picking"
+                            context="{'group_by':'picking_id'}"
+                        />
+                <filter
+                            name="filter_product"
+                            string="Product"
+                            context="{'group_by':'product_id'}"
+                        />
+                <filter
+                            name="filter_currency"
+                            string="Currency"
+                            context="{'group_by':'currency_id'}"
+                        />
+                <filter
+                            name="filter_customer"
+                            string="Customer"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="filter_country"
+                            string="Country Origin"
+                            context="{'group_by':'country_id'}"
+                        />
+                <separator />
+                <filter
+                            name="filter_doc_date_day"
+                            string="Custom Document Date by Day"
+                            context="{'group_by':'custom_document_date:day'}"
+                        />
+                <filter
+                            name="filter_doc_date_week"
+                            string="Custom Document Date by Week"
+                            context="{'group_by':'custom_document_date:week'}"
+                        />
+                <filter
+                            name="filter_doc_date_month"
+                            string="Custom Document Date by Month"
+                            context="{'group_by':'custom_document_date:month'}"
+                        />
+                <filter
+                            name="filter_doc_date_year"
+                            string="Custom Document Date by Year"
+                            context="{'group_by':'custom_document_date:year'}"
+                        />
+                <separator />
+                <filter
+                            name="filter_move_date_day"
+                            string="Move Date by Day"
+                            context="{'group_by':'move_date:day'}"
+                        />
+                <filter
+                            name="filter_move_date_week"
+                            string="Move Date by Week"
+                            context="{'group_by':'move_date:week'}"
+                        />
+                <filter
+                            name="filter_move_date_month"
+                            string="Move Date by Month"
+                            context="{'group_by':'move_date:month'}"
+                        />
+                <filter
+                            name="filter_move_date_year"
+                            string="Move Date by Year"
+                            context="{'group_by':'move_date:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -74,10 +133,11 @@
 </record>
 
 <menuitem
-    id="djbc_lap_pengeluaran_hasil_produksi_menu"
-    name="Lap. Pengeluaran Hasil Produksi"
-    parent="l10n_id_djbc_app.djbc_reporting_menu"
-    groups="l10n_id_djbc_app.group_djbc_user"
-    action="djbc_lap_pengeluaran_hasil_produksi_action"/>
+            id="djbc_lap_pengeluaran_hasil_produksi_menu"
+            name="Lap. Pengeluaran Hasil Produksi"
+            parent="l10n_id_djbc_app.djbc_reporting_menu"
+            groups="l10n_id_djbc_app.group_djbc_user"
+            action="djbc_lap_pengeluaran_hasil_produksi_action"
+        />
 </data>
 </openerp>

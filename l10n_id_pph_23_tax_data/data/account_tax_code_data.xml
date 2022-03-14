@@ -1,1234 +1,1305 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="tax_code_template_411124" model="account.tax.code.template">
     <field name="name">PPh 23</field>
     <field name="code">411124</field>
-    <field name="sign" eval="1"/>
+    <field name="sign" eval="1" />
 </record>
 
 <record id="tax_code_template_411124_1" model="account.tax.code.template">
     <field name="name">Penghasilan Bruto</field>
     <field name="code">411124.1</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124"/>
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124" />
 </record>
 
 <record id="tax_code_template_411124_2" model="account.tax.code.template">
     <field name="name">Beban Bruto</field>
     <field name="code">411124.2</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124" />
 </record>
 
 <record id="tax_code_template_411124_3" model="account.tax.code.template">
     <field name="name">PPh Dipotong - U.M.</field>
     <field name="code">411124.3</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124" />
 </record>
 
 <record id="tax_code_template_411124_4" model="account.tax.code.template">
     <field name="name">PPh Dipotong - Hutang</field>
     <field name="code">411124.4</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124" />
 </record>
 
 <!-- Pendapatan Bruto -->
 <record id="tax_code_template_411124_1_01" model="account.tax.code.template">
     <field name="name">Deviden</field>
     <field name="code">411124.1.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_02" model="account.tax.code.template">
     <field name="name">Bunga</field>
     <field name="code">411124.1.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_03" model="account.tax.code.template">
     <field name="name">Royalti</field>
     <field name="code">411124.1.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_04" model="account.tax.code.template">
     <field name="name">Hadiah dan Penghargaan</field>
     <field name="code">411124.1.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_05" model="account.tax.code.template">
-    <field name="name">Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="code">411124.1.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_06" model="account.tax.code.template">
-    <field name="name">Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
+    <field
+                name="name"
+            >Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
     <field name="code">411124.1.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_1"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_1" />
 </record>
 
 <record id="tax_code_template_411124_1_06_01" model="account.tax.code.template">
     <field name="name">Jasa Teknik</field>
     <field name="code">411124.1.06.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06" />
 </record>
 
 <record id="tax_code_template_411124_1_06_02" model="account.tax.code.template">
     <field name="name">Jasa Manajemen</field>
     <field name="code">411124.1.06.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06" />
 </record>
 
 <record id="tax_code_template_411124_1_06_03" model="account.tax.code.template">
     <field name="name">Jasa Konsultan</field>
     <field name="code">411124.1.06.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04" model="account.tax.code.template">
     <field name="name">Jasa Lain</field>
     <field name="code">411124.1.06.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_01" model="account.tax.code.template">
     <field name="name">Jasa penilai (appraisal)</field>
     <field name="code">411124.1.06.04.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_02" model="account.tax.code.template">
     <field name="name">Jasa aktuaris</field>
     <field name="code">411124.1.06.04.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_03" model="account.tax.code.template">
     <field name="name">Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="code">411124.1.06.04.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_04" model="account.tax.code.template">
     <field name="name">Jasa perancang (design)</field>
     <field name="code">411124.1.06.04.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_05" model="account.tax.code.template">
-    <field name="name">Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="code">411124.1.06.04.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_06" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penambangan migas</field>
     <field name="code">411124.1.06.04.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_07" model="account.tax.code.template">
-    <field name="name">Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="code">411124.1.06.04.07</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="7"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="7" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_08" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="code">411124.1.06.04.08</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="8"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="8" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_09" model="account.tax.code.template">
     <field name="name">Jasa penebangan hutan</field>
     <field name="code">411124.1.06.04.09</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="9"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="9" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_10" model="account.tax.code.template">
     <field name="name">Jasa pengolahan limbah</field>
     <field name="code">411124.1.06.04.10</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="10"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="10" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_11" model="account.tax.code.template">
     <field name="name">Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="code">411124.1.06.04.11</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="11"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="11" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_12" model="account.tax.code.template">
     <field name="name">Jasa perantara dan/atau keagenan</field>
     <field name="code">411124.1.06.04.12</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="12"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="12" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_13" model="account.tax.code.template">
-    <field name="name">Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="code">411124.1.06.04.13</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="13"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="13" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_14" model="account.tax.code.template">
-    <field name="name">Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="code">411124.1.06.04.14</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="14"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="14" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_15" model="account.tax.code.template">
     <field name="name">Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="code">411124.1.06.04.15</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="15"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="15" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_16" model="account.tax.code.template">
     <field name="name">Jasa mixing film</field>
     <field name="code">411124.1.06.04.16</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="16"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="16" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_17" model="account.tax.code.template">
     <field name="name">Jasa sehubungan dengan software komputer</field>
     <field name="code">411124.1.06.04.17</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="17"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="17" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_18" model="account.tax.code.template">
-    <field name="name">Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="code">411124.1.06.04.18</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="18"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="18" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_19" model="account.tax.code.template">
-    <field name="name">Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="code">411124.1.06.04.19</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="19"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="19" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_20" model="account.tax.code.template">
     <field name="name">Jasa maklon</field>
     <field name="code">411124.1.06.04.20</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="20"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="20" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_21" model="account.tax.code.template">
     <field name="name">Jasa penyelidikan dan keamanan</field>
     <field name="code">411124.1.06.04.21</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="21"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="21" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_22" model="account.tax.code.template">
     <field name="name">Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="code">411124.1.06.04.22</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="22"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="22" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_23" model="account.tax.code.template">
     <field name="name">Jasa pengepakan</field>
     <field name="code">411124.1.06.04.23</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="23"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="23" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_24" model="account.tax.code.template">
-    <field name="name">Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="code">411124.1.06.04.24</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="24"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="24" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_25" model="account.tax.code.template">
     <field name="name">Jasa pembasmian hama</field>
     <field name="code">411124.1.06.04.25</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="25"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="25" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_26" model="account.tax.code.template">
     <field name="name">Jasa kebersihan atau cleaning service</field>
     <field name="code">411124.1.06.04.26</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="26"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="26" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <record id="tax_code_template_411124_1_06_04_27" model="account.tax.code.template">
     <field name="name">Jasa katering atau tata boga</field>
     <field name="code">411124.1.06.04.27</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="27"/>
-    <field name="parent_id" eval="tax_code_template_411124_1_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="27" />
+    <field name="parent_id" eval="tax_code_template_411124_1_06_04" />
 </record>
 
 <!-- Beban Bruto -->
 <record id="tax_code_template_411124_2_01" model="account.tax.code.template">
     <field name="name">Deviden</field>
     <field name="code">411124.2.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_02" model="account.tax.code.template">
     <field name="name">Bunga</field>
     <field name="code">411124.2.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_03" model="account.tax.code.template">
     <field name="name">Royalti</field>
     <field name="code">411124.2.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_04" model="account.tax.code.template">
     <field name="name">Hadiah dan Penghargaan</field>
     <field name="code">411124.2.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_05" model="account.tax.code.template">
-    <field name="name">Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="code">411124.2.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_06" model="account.tax.code.template">
-    <field name="name">Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
+    <field
+                name="name"
+            >Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
     <field name="code">411124.2.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_2"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_2" />
 </record>
 
 <record id="tax_code_template_411124_2_06_01" model="account.tax.code.template">
     <field name="name">Jasa Teknik</field>
     <field name="code">411124.2.06.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06" />
 </record>
 
 <record id="tax_code_template_411124_2_06_02" model="account.tax.code.template">
     <field name="name">Jasa Manajemen</field>
     <field name="code">411124.2.06.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06" />
 </record>
 
 <record id="tax_code_template_411124_2_06_03" model="account.tax.code.template">
     <field name="name">Jasa Konsultan</field>
     <field name="code">411124.2.06.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04" model="account.tax.code.template">
     <field name="name">Jasa Lain</field>
     <field name="code">411124.2.06.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_01" model="account.tax.code.template">
     <field name="name">Jasa penilai (appraisal)</field>
     <field name="code">411124.2.06.04.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_02" model="account.tax.code.template">
     <field name="name">Jasa aktuaris</field>
     <field name="code">411124.2.06.04.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_03" model="account.tax.code.template">
     <field name="name">Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="code">411124.2.06.04.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_04" model="account.tax.code.template">
     <field name="name">Jasa perancang (design)</field>
     <field name="code">411124.2.06.04.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_05" model="account.tax.code.template">
-    <field name="name">Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="code">411124.2.06.04.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_06" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penambangan migas</field>
     <field name="code">411124.2.06.04.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_07" model="account.tax.code.template">
-    <field name="name">Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="code">411124.2.06.04.07</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="7"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="7" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_08" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="code">411124.2.06.04.08</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="8"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="8" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_09" model="account.tax.code.template">
     <field name="name">Jasa penebangan hutan</field>
     <field name="code">411124.2.06.04.09</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="9"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="9" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_10" model="account.tax.code.template">
     <field name="name">Jasa pengolahan limbah</field>
     <field name="code">411124.2.06.04.10</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="10"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="10" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_11" model="account.tax.code.template">
     <field name="name">Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="code">411124.2.06.04.11</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="11"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="11" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_12" model="account.tax.code.template">
     <field name="name">Jasa perantara dan/atau keagenan</field>
     <field name="code">411124.2.06.04.12</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="12"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="12" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_13" model="account.tax.code.template">
-    <field name="name">Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="code">411124.2.06.04.13</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="13"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="13" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_14" model="account.tax.code.template">
-    <field name="name">Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="code">411124.2.06.04.14</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="14"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="14" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_15" model="account.tax.code.template">
     <field name="name">Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="code">411124.2.06.04.15</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="15"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="15" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_16" model="account.tax.code.template">
     <field name="name">Jasa mixing film</field>
     <field name="code">411124.2.06.04.16</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="16"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="16" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_17" model="account.tax.code.template">
     <field name="name">Jasa sehubungan dengan software komputer</field>
     <field name="code">411124.2.06.04.17</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="17"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="17" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_18" model="account.tax.code.template">
-    <field name="name">Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="code">411124.2.06.04.18</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="18"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="18" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_19" model="account.tax.code.template">
-    <field name="name">Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="code">411124.2.06.04.19</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="19"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="19" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_20" model="account.tax.code.template">
     <field name="name">Jasa maklon</field>
     <field name="code">411124.2.06.04.20</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="20"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="20" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_21" model="account.tax.code.template">
     <field name="name">Jasa penyelidikan dan keamanan</field>
     <field name="code">411124.2.06.04.21</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="21"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="21" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_22" model="account.tax.code.template">
     <field name="name">Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="code">411124.2.06.04.22</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="22"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="22" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_23" model="account.tax.code.template">
     <field name="name">Jasa pengepakan</field>
     <field name="code">411124.2.06.04.23</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="23"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="23" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_24" model="account.tax.code.template">
-    <field name="name">Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="code">411124.2.06.04.24</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="24"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="24" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_25" model="account.tax.code.template">
     <field name="name">Jasa pembasmian hama</field>
     <field name="code">411124.2.06.04.25</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="25"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="25" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_26" model="account.tax.code.template">
     <field name="name">Jasa kebersihan atau cleaning service</field>
     <field name="code">411124.2.06.04.26</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="26"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="26" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <record id="tax_code_template_411124_2_06_04_27" model="account.tax.code.template">
     <field name="name">Jasa katering atau tata boga</field>
     <field name="code">411124.2.06.04.27</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="27"/>
-    <field name="parent_id" eval="tax_code_template_411124_2_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="27" />
+    <field name="parent_id" eval="tax_code_template_411124_2_06_04" />
 </record>
 
 <!-- PPh Dipotong - U.M. -->
 <record id="tax_code_template_411124_3_01" model="account.tax.code.template">
     <field name="name">Deviden</field>
     <field name="code">411124.3.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_02" model="account.tax.code.template">
     <field name="name">Bunga</field>
     <field name="code">411124.3.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_03" model="account.tax.code.template">
     <field name="name">Royalti</field>
     <field name="code">411124.3.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_04" model="account.tax.code.template">
     <field name="name">Hadiah dan Penghargaan</field>
     <field name="code">411124.3.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_05" model="account.tax.code.template">
-    <field name="name">Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="code">411124.3.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_06" model="account.tax.code.template">
-    <field name="name">Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
+    <field
+                name="name"
+            >Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
     <field name="code">411124.3.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_3"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_3" />
 </record>
 
 <record id="tax_code_template_411124_3_06_01" model="account.tax.code.template">
     <field name="name">Jasa Teknik</field>
     <field name="code">411124.3.06.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06" />
 </record>
 
 <record id="tax_code_template_411124_3_06_02" model="account.tax.code.template">
     <field name="name">Jasa Manajemen</field>
     <field name="code">411124.3.06.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06" />
 </record>
 
 <record id="tax_code_template_411124_3_06_03" model="account.tax.code.template">
     <field name="name">Jasa Konsultan</field>
     <field name="code">411124.3.06.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04" model="account.tax.code.template">
     <field name="name">Jasa Lain</field>
     <field name="code">411124.3.06.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_01" model="account.tax.code.template">
     <field name="name">Jasa penilai (appraisal)</field>
     <field name="code">411124.3.06.04.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_02" model="account.tax.code.template">
     <field name="name">Jasa aktuaris</field>
     <field name="code">411124.3.06.04.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_03" model="account.tax.code.template">
     <field name="name">Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="code">411124.3.06.04.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_04" model="account.tax.code.template">
     <field name="name">Jasa perancang (design)</field>
     <field name="code">411124.3.06.04.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_05" model="account.tax.code.template">
-    <field name="name">Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="code">411124.3.06.04.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_06" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penambangan migas</field>
     <field name="code">411124.3.06.04.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_07" model="account.tax.code.template">
-    <field name="name">Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="code">411124.3.06.04.07</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="7"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="7" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_08" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="code">411124.3.06.04.08</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="8"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="8" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_09" model="account.tax.code.template">
     <field name="name">Jasa penebangan hutan</field>
     <field name="code">411124.3.06.04.09</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="9"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="9" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_10" model="account.tax.code.template">
     <field name="name">Jasa pengolahan limbah</field>
     <field name="code">411124.3.06.04.10</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="10"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="10" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_11" model="account.tax.code.template">
     <field name="name">Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="code">411124.3.06.04.11</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="11"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="11" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_12" model="account.tax.code.template">
     <field name="name">Jasa perantara dan/atau keagenan</field>
     <field name="code">411124.3.06.04.12</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="12"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="12" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_13" model="account.tax.code.template">
-    <field name="name">Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="code">411124.3.06.04.13</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="13"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="13" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_14" model="account.tax.code.template">
-    <field name="name">Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="code">411124.3.06.04.14</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="14"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="14" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_15" model="account.tax.code.template">
     <field name="name">Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="code">411124.3.06.04.15</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="15"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="15" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_16" model="account.tax.code.template">
     <field name="name">Jasa mixing film</field>
     <field name="code">411124.3.06.04.16</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="16"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="16" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_17" model="account.tax.code.template">
     <field name="name">Jasa sehubungan dengan software komputer</field>
     <field name="code">411124.3.06.04.17</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="17"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="17" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_18" model="account.tax.code.template">
-    <field name="name">Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="code">411124.3.06.04.18</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="18"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="18" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_19" model="account.tax.code.template">
-    <field name="name">Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="code">411124.3.06.04.19</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="19"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="19" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_20" model="account.tax.code.template">
     <field name="name">Jasa maklon</field>
     <field name="code">411124.3.06.04.20</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="20"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="20" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_21" model="account.tax.code.template">
     <field name="name">Jasa penyelidikan dan keamanan</field>
     <field name="code">411124.3.06.04.21</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="21"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="21" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_22" model="account.tax.code.template">
     <field name="name">Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="code">411124.3.06.04.22</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="22"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="22" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_23" model="account.tax.code.template">
     <field name="name">Jasa pengepakan</field>
     <field name="code">411124.3.06.04.23</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="23"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="23" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_24" model="account.tax.code.template">
-    <field name="name">Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="code">411124.3.06.04.24</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="24"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="24" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_25" model="account.tax.code.template">
     <field name="name">Jasa pembasmian hama</field>
     <field name="code">411124.3.06.04.25</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="25"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="25" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_26" model="account.tax.code.template">
     <field name="name">Jasa kebersihan atau cleaning service</field>
     <field name="code">411124.3.06.04.26</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="26"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="26" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <record id="tax_code_template_411124_3_06_04_27" model="account.tax.code.template">
     <field name="name">Jasa katering atau tata boga</field>
     <field name="code">411124.3.06.04.27</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="27"/>
-    <field name="parent_id" eval="tax_code_template_411124_3_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="27" />
+    <field name="parent_id" eval="tax_code_template_411124_3_06_04" />
 </record>
 
 <!-- PPh Dipotong - Hutang -->
 <record id="tax_code_template_411124_4_01" model="account.tax.code.template">
     <field name="name">Deviden</field>
     <field name="code">411124.4.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_02" model="account.tax.code.template">
     <field name="name">Bunga</field>
     <field name="code">411124.4.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_03" model="account.tax.code.template">
     <field name="name">Royalti</field>
     <field name="code">411124.4.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_04" model="account.tax.code.template">
     <field name="name">Hadiah dan Penghargaan</field>
     <field name="code">411124.4.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_05" model="account.tax.code.template">
-    <field name="name">Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
+    <field
+                name="name"
+            >Sewa dan Penghasilan lain sehubungan dengan penggunaan harta</field>
     <field name="code">411124.4.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_06" model="account.tax.code.template">
-    <field name="name">Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
+    <field
+                name="name"
+            >Jasa Teknik, Jasa Manajemen, Jasa Konsultasi dan Jasa Lain sesuai PMK-244/PMK.03/2018</field>
     <field name="code">411124.4.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_4"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_4" />
 </record>
 
 <record id="tax_code_template_411124_4_06_01" model="account.tax.code.template">
     <field name="name">Jasa Teknik</field>
     <field name="code">411124.4.06.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06" />
 </record>
 
 <record id="tax_code_template_411124_4_06_02" model="account.tax.code.template">
     <field name="name">Jasa Manajemen</field>
     <field name="code">411124.4.06.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06" />
 </record>
 
 <record id="tax_code_template_411124_4_06_03" model="account.tax.code.template">
     <field name="name">Jasa Konsultan</field>
     <field name="code">411124.4.06.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04" model="account.tax.code.template">
     <field name="name">Jasa Lain</field>
     <field name="code">411124.4.06.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_01" model="account.tax.code.template">
     <field name="name">Jasa penilai (appraisal)</field>
     <field name="code">411124.4.06.04.01</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="1"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="1" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_02" model="account.tax.code.template">
     <field name="name">Jasa aktuaris</field>
     <field name="code">411124.4.06.04.02</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="2"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="2" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_03" model="account.tax.code.template">
     <field name="name">Jasa akuntansi, pembukuan, dan atestasi laporan keuangan</field>
     <field name="code">411124.4.06.04.03</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="3"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="3" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_04" model="account.tax.code.template">
     <field name="name">Jasa perancang (design)</field>
     <field name="code">411124.4.06.04.04</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="4"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="4" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_05" model="account.tax.code.template">
-    <field name="name">Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
+    <field
+                name="name"
+            >Jasa pengeboran (drilling) di bidang penambangan minyak dan gas bumf (migas), kecuali yang dilakukan oleh bentuk usaha tetap (BUT)</field>
     <field name="code">411124.4.06.04.05</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="5"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="5" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_06" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penambangan migas</field>
     <field name="code">411124.4.06.04.06</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="6"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="6" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_07" model="account.tax.code.template">
-    <field name="name">Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
+    <field
+                name="name"
+            >Jasa penambangan dan jasa penunjang di bidang penambangan selain migas</field>
     <field name="code">411124.4.06.04.07</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="7"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="7" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_08" model="account.tax.code.template">
     <field name="name">Jasa penunjang di bidang penerbangan dan bandar udara</field>
     <field name="code">411124.4.06.04.08</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="8"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="8" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_09" model="account.tax.code.template">
     <field name="name">Jasa penebangan hutan</field>
     <field name="code">411124.4.06.04.09</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="9"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="9" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_10" model="account.tax.code.template">
     <field name="name">Jasa pengolahan limbah</field>
     <field name="code">411124.4.06.04.10</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="10"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="10" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_11" model="account.tax.code.template">
     <field name="name">Jasa penyedia tenaga kerja (outsourcing services)</field>
     <field name="code">411124.4.06.04.11</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="11"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="11" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_12" model="account.tax.code.template">
     <field name="name">Jasa perantara dan/atau keagenan</field>
     <field name="code">411124.4.06.04.12</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="12"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="12" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_13" model="account.tax.code.template">
-    <field name="name">Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
+    <field
+                name="name"
+            >Jasa di bidang perdagangan surat-surat berharga, kecuali yang dilakukan oleh Bursa Efek, KSEI dan KPEI</field>
     <field name="code">411124.4.06.04.13</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="13"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="13" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_14" model="account.tax.code.template">
-    <field name="name">Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
+    <field
+                name="name"
+            >Jasa kustodian/penyimpanan/penitipan, kecuali yang dilakukan oleh KSEI</field>
     <field name="code">411124.4.06.04.14</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="14"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="14" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_15" model="account.tax.code.template">
     <field name="name">Jasa pengisian suara (dubbing) dan/atau sulih suara</field>
     <field name="code">411124.4.06.04.15</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="15"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="15" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_16" model="account.tax.code.template">
     <field name="name">Jasa mixing film</field>
     <field name="code">411124.4.06.04.16</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="16"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="16" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_17" model="account.tax.code.template">
     <field name="name">Jasa sehubungan dengan software komputer</field>
     <field name="code">411124.4.06.04.17</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="17"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="17" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_18" model="account.tax.code.template">
-    <field name="name">Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
+    <field
+                name="name"
+            >Jasa instalasi/pemasangan mesin, peralatan, listrik, telepon, air, gas, AC, dan/atau TV kabel</field>
     <field name="code">411124.4.06.04.18</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="18"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="18" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_19" model="account.tax.code.template">
-    <field name="name">Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
+    <field
+                name="name"
+            >Jasa perawatan/perbaikan/pemeliharaan mesin, peralatan, listrik, telepon, air, gas, AC, TV kabel, alat transportasi/kendaraan dan/atau bangunan</field>
     <field name="code">411124.4.06.04.19</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="19"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="19" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_20" model="account.tax.code.template">
     <field name="name">Jasa maklon</field>
     <field name="code">411124.4.06.04.20</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="20"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="20" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_21" model="account.tax.code.template">
     <field name="name">Jasa penyelidikan dan keamanan</field>
     <field name="code">411124.4.06.04.21</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="21"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="21" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_22" model="account.tax.code.template">
     <field name="name">Jasa penyelenggara kegiatan atau event organizer</field>
     <field name="code">411124.4.06.04.22</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="22"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="22" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_23" model="account.tax.code.template">
     <field name="name">Jasa pengepakan</field>
     <field name="code">411124.4.06.04.23</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="23"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="23" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_24" model="account.tax.code.template">
-    <field name="name">Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
+    <field
+                name="name"
+            >Jasa penyediaan tempat dan/atau waktu dalam media masa, media luar ruang atau media lain untuk penyampaian informasi</field>
     <field name="code">411124.4.06.04.24</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="24"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="24" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_25" model="account.tax.code.template">
     <field name="name">Jasa pembasmian hama</field>
     <field name="code">411124.4.06.04.25</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="25"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="25" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_26" model="account.tax.code.template">
     <field name="name">Jasa kebersihan atau cleaning service</field>
     <field name="code">411124.4.06.04.26</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="26"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="26" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 <record id="tax_code_template_411124_4_06_04_27" model="account.tax.code.template">
     <field name="name">Jasa katering atau tata boga</field>
     <field name="code">411124.4.06.04.27</field>
-    <field name="sign" eval="1"/>
-    <field name="sequence" eval="27"/>
-    <field name="parent_id" eval="tax_code_template_411124_4_06_04"/>    
+    <field name="sign" eval="1" />
+    <field name="sequence" eval="27" />
+    <field name="parent_id" eval="tax_code_template_411124_4_06_04" />
 </record>
 
 

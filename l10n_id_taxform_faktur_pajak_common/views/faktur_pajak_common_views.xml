@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="faktur_pajak_common_view_search" model="ir.ui.view">
@@ -10,25 +9,57 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="date"/>
-            <field name="seller_partner_id"/>
-            <field name="seller_branch_id"/>
-            <field name="buyer_partner_id"/>
-            <field name="buyer_branch_id"/>
-            <field name="transaction_type_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="date" />
+            <field name="seller_partner_id" />
+            <field name="seller_branch_id" />
+            <field name="buyer_partner_id" />
+            <field name="buyer_branch_id" />
+            <field name="transaction_type_id" />
+            <field name="state" />
             <group name="group_main" string="Group By..">
-                <filter name="grp_seller_partner" string="Seller" context="{'group_by':'seller_partner_id'}"/>
-                <filter name="grp_seller_branch" string="Seller Branch" context="{'group_by':'seller_branch_id'}"/>
-                <filter name="grp_buyer_partner" string="Buyer" context="{'group_by':'buyer_partner_id'}"/>
-                <filter name="grp_buyer_branch" string="Buyer Branch" context="{'group_by':'buyer_branch_id'}"/>
-                <separator/>
-                <filter name="grp_taxform_period" string="Taxform Period" context="{'group_by':'taxform_period_id'}"/>
-                <filter name="grp_taxform_year" string="Taxform Year" context="{'group_by':'taxform_year_id'}"/>
-                <separator/>
-                <filter name="grp_transaction_type" string="Transaction Type" context="{'group_by':'transaction_type_id'}"/>
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter
+                            name="grp_seller_partner"
+                            string="Seller"
+                            context="{'group_by':'seller_partner_id'}"
+                        />
+                <filter
+                            name="grp_seller_branch"
+                            string="Seller Branch"
+                            context="{'group_by':'seller_branch_id'}"
+                        />
+                <filter
+                            name="grp_buyer_partner"
+                            string="Buyer"
+                            context="{'group_by':'buyer_partner_id'}"
+                        />
+                <filter
+                            name="grp_buyer_branch"
+                            string="Buyer Branch"
+                            context="{'group_by':'buyer_branch_id'}"
+                        />
+                <separator />
+                <filter
+                            name="grp_taxform_period"
+                            string="Taxform Period"
+                            context="{'group_by':'taxform_period_id'}"
+                        />
+                <filter
+                            name="grp_taxform_year"
+                            string="Taxform Year"
+                            context="{'group_by':'taxform_year_id'}"
+                        />
+                <separator />
+                <filter
+                            name="grp_transaction_type"
+                            string="Transaction Type"
+                            context="{'group_by':'transaction_type_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
             </group>
         </search>
     </field>
@@ -40,20 +71,20 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="date"/>
-            <field name="taxform_period_id"/>
-            <field name="taxform_year_id"/>
-            <field name="seller_partner_id"/>
-            <field name="seller_branch_id"/>
-            <field name="buyer_partner_id"/>
-            <field name="buyer_branch_id"/>
-            <field name="type_id" invisible="1"/>
-            <field name="transaction_type_id"/>
-            <field name="enofa_jumlah_dpp" string="Base"/>
-            <field name="enofa_jumlah_ppn" string="PPN"/>
-            <field name="enofa_jumlah_ppnbm" string="PPnBM"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="date" />
+            <field name="taxform_period_id" />
+            <field name="taxform_year_id" />
+            <field name="seller_partner_id" />
+            <field name="seller_branch_id" />
+            <field name="buyer_partner_id" />
+            <field name="buyer_branch_id" />
+            <field name="type_id" invisible="1" />
+            <field name="transaction_type_id" />
+            <field name="enofa_jumlah_dpp" string="Base" />
+            <field name="enofa_jumlah_ppn" string="PPN" />
+            <field name="enofa_jumlah_ppnbm" string="PPnBM" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -65,121 +96,203 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="workflow_action_confirm" 
-                    string="Confirm"
-                    type="object"
-                    states="draft"
-                    class="oe_highlight"/>
-                <button name="workflow_action_done" 
-                    string="Approve" 
-                    type="object"
-                    states="confirmed"
-                    class="oe_highlight"/>
-                <button name="workflow_action_cancel" 
-                    string="Cancel" 
-                    type="object"
-                    states="draft,confirmed,done"/>
-                <button name="workflow_action_reset" 
-                    string="Set To Draft" 
-                    type="object"
-                    states="cancelled"/>
-                <field name="state" 
-                    widget="statusbar"
-                    />
+                <button
+                            name="workflow_action_confirm"
+                            string="Confirm"
+                            type="object"
+                            states="draft"
+                            class="oe_highlight"
+                        />
+                <button
+                            name="workflow_action_done"
+                            string="Approve"
+                            type="object"
+                            states="confirmed"
+                            class="oe_highlight"
+                        />
+                <button
+                            name="workflow_action_cancel"
+                            string="Cancel"
+                            type="object"
+                            states="draft,confirmed,done"
+                        />
+                <button
+                            name="workflow_action_reset"
+                            string="Set To Draft"
+                            type="object"
+                            states="cancelled"
+                        />
+                <field name="state" widget="statusbar" />
             </header>
             <sheet>
                 <group name="group_main" colspan="4" col="2">
-                    <group name="group_main_1" string="General Information" colspan="1" col="2">
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="name"/>
-                        <field name="date"/>
-                        <field name="taxform_year_id"/>
-                        <field name="taxform_period_id"/>
-                        <field name="company_currency_id" groups="base.group_multi_currency"/>
-                        <field name="currency_id" groups="base.group_multi_currency"/>
-                        <field name="transaction_type_id"
-                            domain="[('id','in',allowed_transaction_type_ids[0][2])]"/>
-                        <field name="additional_flag_id"
-                            domain="[('id','in',allowed_additional_flag_ids[0][2])]"/>
-                        <field name="fp_state"/>
-                        <field name="creditable"
-                            attrs="{'invisible':[('allow_creditable','=',False)]}"/>
+                    <group
+                                name="group_main_1"
+                                string="General Information"
+                                colspan="1"
+                                col="2"
+                            >
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="taxform_year_id" />
+                        <field name="taxform_period_id" />
+                        <field
+                                    name="company_currency_id"
+                                    groups="base.group_multi_currency"
+                                />
+                        <field name="currency_id" groups="base.group_multi_currency" />
+                        <field
+                                    name="transaction_type_id"
+                                    domain="[('id','in',allowed_transaction_type_ids[0][2])]"
+                                />
+                        <field
+                                    name="additional_flag_id"
+                                    domain="[('id','in',allowed_additional_flag_ids[0][2])]"
+                                />
+                        <field name="fp_state" />
+                        <field
+                                    name="creditable"
+                                    attrs="{'invisible':[('allow_creditable','=',False)]}"
+                                />
                     </group>
-                    <group name="group_main_2" string="Seller &amp; Buyer" colspan="1" col="2">
-                        <field name="seller_partner_id"
-                            domain="[('parent_id','=',False)]"/>
-                        <field name="seller_branch_id"
-                            domain="[('id','child_of',seller_partner_id),('is_company','=',True)]"/>
-                        <field name="buyer_partner_id"
-                            domain="[('parent_id','=',False)]"/>
-                        <field name="buyer_branch_id"
-                            domain="[('id','child_of',buyer_partner_id),('is_company','=',True)]"/>
+                    <group
+                                name="group_main_2"
+                                string="Seller &amp; Buyer"
+                                colspan="1"
+                                col="2"
+                            >
+                        <field
+                                    name="seller_partner_id"
+                                    domain="[('parent_id','=',False)]"
+                                />
+                        <field
+                                    name="seller_branch_id"
+                                    domain="[('id','child_of',seller_partner_id),('is_company','=',True)]"
+                                />
+                        <field
+                                    name="buyer_partner_id"
+                                    domain="[('parent_id','=',False)]"
+                                />
+                        <field
+                                    name="buyer_branch_id"
+                                    domain="[('id','child_of',buyer_partner_id),('is_company','=',True)]"
+                                />
                     </group>
-                    <group name="group_main_3" string="Doc. Reference(s)" colspan="1" col="2">
-                        <field name="reference_id"
-                            attrs="{'invisible':[('allow_multiple_reference','=',True)]}"/>
-                        <field name="reference_ids"
-                            widget="many2many_tags"
-                            attrs="{'invisible':[('allow_multiple_reference','=',False)]}"/>
-                        <field name="reverse_id"
-                            attrs="{'invisible':[('allow_reverse','=',False)]}"/>
-                        <field name="substitute_id"
-                            attrs="{'invisible':[
+                    <group
+                                name="group_main_3"
+                                string="Doc. Reference(s)"
+                                colspan="1"
+                                col="2"
+                            >
+                        <field
+                                    name="reference_id"
+                                    attrs="{'invisible':[('allow_multiple_reference','=',True)]}"
+                                />
+                        <field
+                                    name="reference_ids"
+                                    widget="many2many_tags"
+                                    attrs="{'invisible':[('allow_multiple_reference','=',False)]}"
+                                />
+                        <field
+                                    name="reverse_id"
+                                    attrs="{'invisible':[('allow_reverse','=',False)]}"
+                                />
+                        <field
+                                    name="substitute_id"
+                                    attrs="{'invisible':[
                                 '|',
                                 ('allow_substitute','=',False),
                                 ('allow_substitute','=',True),
                                 ('fp_state','=','0')
-                                ]}"/>
-                            
+                                ]}"
+                                />
+
                     </group>
-                    <group name="group_main_4" string="Tax Computation" colspan="1" col="2">
-                        <field name="base"
-                            widget="monetary"
-                            options="{'currency_field': 'currency_id'}"
-                            />
-                        <field name="base_company_currency"
-                            widget="monetary"
-                            options="{'currency_field': 'company_currency_id'}"
-                            groups="base.group_multi_currency"
-                            />
-                        <field name="ppn_amount"
-                            widget="monetary"
-                            options="{'currency_field': 'company_currency_id'}"
-                            />
-                        <field name="ppnbm_amount"
-                            widget="monetary"
-                            options="{'currency_field': 'company_currency_id'}"
-                            />
+                    <group
+                                name="group_main_4"
+                                string="Tax Computation"
+                                colspan="1"
+                                col="2"
+                            >
+                        <field
+                                    name="base"
+                                    widget="monetary"
+                                    options="{'currency_field': 'currency_id'}"
+                                />
+                        <field
+                                    name="base_company_currency"
+                                    widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}"
+                                    groups="base.group_multi_currency"
+                                />
+                        <field
+                                    name="ppn_amount"
+                                    widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}"
+                                />
+                        <field
+                                    name="ppnbm_amount"
+                                    widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}"
+                                />
                     </group>
                 </group>
                 <notebook colspan="4">
                     <page string="Note" name="page_note">
-                        <field name="note" colspan="4" nolabel="1"/>
+                        <field name="note" colspan="4" nolabel="1" />
                     </page>
                     <page string="E-Nofa" name="page_enofa">
-                        <group name="group_enofa" colspan="4" col="2"/>
+                        <group name="group_enofa" colspan="4" col="2" />
                     </page>
-                    <page string="Technical Information" name="page_technical" groups="base.group_system">
+                    <page
+                                string="Technical Information"
+                                name="page_technical"
+                                groups="base.group_system"
+                            >
                         <group name="group_technical" colspan="4" col="2">
-                            <field name="type_id"/>
-                            <field name="fp_direction"/>
-                            <field name="allowed_transaction_type_ids" widget="many2many_tags"/>
-                            <field name="allowed_additional_flag_ids" widget="many2many_tags"/>
-                            <field name="allowed_dpp_tax_code_ids" widget="many2many_tags"/>
-                            <field name="allowed_ppn_tax_code_ids" widget="many2many_tags"/>
-                            <field name="allowed_ppnbm_tax_code_ids" widget="many2many_tags"/>
-                            <field name="allow_multiple_reference"/>
-                            <field name="allow_reverse"/>
-                            <field name="allow_substitute"/>
-                            <field name="allow_creditable"/>
-                            <field name="all_reference_ids" widget="many2many_tags"/>
+                            <field name="type_id" />
+                            <field name="fp_direction" />
+                            <field
+                                        name="allowed_transaction_type_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="allowed_additional_flag_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="allowed_dpp_tax_code_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="allowed_ppn_tax_code_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="allowed_ppnbm_tax_code_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field name="allow_multiple_reference" />
+                            <field name="allow_reverse" />
+                            <field name="allow_substitute" />
+                            <field name="allow_creditable" />
+                            <field name="all_reference_ids" widget="many2many_tags" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread" placeholder="Share a note..."/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field
+                            name="message_ids"
+                            widget="mail_thread"
+                            placeholder="Share a note..."
+                        />
             </div>
         </form>
     </field>

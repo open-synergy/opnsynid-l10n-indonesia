@@ -2,8 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
-from openerp import tools
+from openerp import fields, models, tools
 
 
 class LapPosisiBarangHelperCommon(models.AbstractModel):
@@ -156,15 +155,12 @@ class LapPosisiBarangHelperCommon(models.AbstractModel):
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
         # pylint: disable=locally-disabled, sql-injection
-        cr.execute("""CREATE or REPLACE VIEW %s as (
+        cr.execute(
+            """CREATE or REPLACE VIEW %s as (
             %s
             FROM %s
             %s
             %s
-        )""" % (
-            self._table,
-            self._select(),
-            self._from(),
-            self._join(),
-            self._where()
-        ))
+        )"""
+            % (self._table, self._select(), self._from(), self._join(), self._where())
+        )

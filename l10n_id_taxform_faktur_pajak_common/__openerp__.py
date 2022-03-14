@@ -5,8 +5,8 @@
     "name": "Indonesia - Faktur Pajak Common Feature",
     "version": "8.0.7.0.3",
     "license": "AGPL-3",
-    "author": "OpenSynergy Indonesia",
-    "website": "https://opensynergy-indonesia.com",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
+    "website": "https://simetri-sinergi.id",
     "category": "Localization",
     "depends": [
         "partner_street_number",
